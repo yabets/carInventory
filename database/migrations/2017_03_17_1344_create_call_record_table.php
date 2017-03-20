@@ -15,18 +15,15 @@ class CreateCallRecordTable extends Migration
         Schema::create('call_records', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->dateTime('deleted_at')->nullable()->default(null);
             $table->boolean('found');
             $table->boolean('wantSee');
             $table->dateTime('schedule')->nullable();
             $table->boolean('checked')->nullable();
             $table->boolean('sold')->nullable();
             $table->string('Remark', 255)->nullable();
-            $table->integer('buyer_id');
-
-        });
-
-        Schema::table('call_records', function($table){
-            $table->foreign('buyer_id')->references('id')->on('buyer');
+            $table->integer('buyer_id')->unsigned();
+            $table->foreign('buyer_id')->references('id')->on('buyers');
         });
     }
 

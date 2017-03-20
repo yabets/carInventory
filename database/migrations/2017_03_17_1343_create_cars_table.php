@@ -15,6 +15,7 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->dateTime('deleted_at')->nullable()->default(null);
             $table->string('Brand', 30);
             $table->string('Name', 30);
             $table->char('Year', 4);
@@ -29,9 +30,7 @@ class CreateCarsTable extends Migration
             $table->string('Remark', 255)->nullable();
             $table->boolean('published');
             $table->integer('counter')->nullable();
-            $table->integer('owner_id');
-        });
-        Schema::create('cars', function (Blueprint $table) {
+            $table->integer('owner_id')->unsigned();
             $table->foreign('owner_id')->references('id')->on('owner');
         });
     }

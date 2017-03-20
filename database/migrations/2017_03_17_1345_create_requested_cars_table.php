@@ -15,7 +15,8 @@ class CreateRequestedCarsTable extends Migration
         Schema::create('requested_cars', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('call_id');
+            $table->dateTime('deleted_at')->nullable()->default(null);
+            $table->integer('call_id')->unsigned();
             $table->string('Brand', 30);
             $table->string('Name', 30);
             $table->char('Year', 4);
@@ -27,10 +28,9 @@ class CreateRequestedCarsTable extends Migration
             $table->string('Status', 15);
             $table->string('Meri', 30);
             $table->string('Remark', 255)->nullable();
+            $table->foreign('call_id')->references('id')->on('call_records');
         });
-        Schema::create('requested_cars', function ($table) {
-            $table->foreign('call_id')->references('id')->on('call_record');
-        });
+
     }
 
     /**

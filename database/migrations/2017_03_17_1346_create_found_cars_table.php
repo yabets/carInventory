@@ -15,12 +15,11 @@ class CreateFoundCarsTable extends Migration
         Schema::create('found_cars', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('call_id');
-            $table->integer('car_id');
+            $table->dateTime('deleted_at')->nullable()->default(null);
+            $table->integer('call_id')->unsigned();
+            $table->integer('car_id')->unsigned();
             $table->string('Remark', 255);
-        });
-        Schema::create('found_cars', function ($table) {
-            $table->foreign('call_id')->references('id')->on('call_record');
+            $table->foreign('call_id')->references('id')->on('call_records');
             $table->foreign('car_id')->references('id')->on('cars');
         });
     }
