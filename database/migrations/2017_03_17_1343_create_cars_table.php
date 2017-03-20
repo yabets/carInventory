@@ -31,7 +31,7 @@ class CreateCarsTable extends Migration
             $table->boolean('published');
             $table->integer('counter')->nullable();
             $table->integer('owner_id')->unsigned();
-            $table->foreign('owner_id')->references('id')->on('owner');
+            $table->foreign('owner_id')->references('id')->on('owners');
         });
     }
 
