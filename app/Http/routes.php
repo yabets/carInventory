@@ -12,6 +12,19 @@ use App\Task;
 | and give it the controller to call when that URI is requested.
 |
 */
+
+
+//Car inventory routes
+Route::resource('owners', 'OwnerController');
+Route::resource('cars', 'CarController');
+Route::resource('buyers', 'BuyerController');
+Route::resource('foundcars', 'FoundCarController');
+Route::resource('callrecords', 'CallRecordController');
+Route::resource('requestedcars', 'RequestedCarController');
+
+
+
+
 Route::get('/', function()
 {
     return View::make('home');
