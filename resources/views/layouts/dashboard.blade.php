@@ -12,222 +12,222 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url ('') }}">SB Admin v2.0 | Laravel 5</a>
+                <a class="navbar-brand" href="{{ url ('') }}">Addis Cars</a>
             </div>
             <!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-tasks">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 1</strong>
-                                        <span class="pull-right text-muted">40% Complete</span>
-                                    </p>
-                                   
-                                        <div>
-                                        @include('widgets.progress', array('animated'=> true, 'class'=>'success', 'value'=>'40'))
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                   
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 2</strong>
-                                        <span class="pull-right text-muted">20% Complete</span>
-                                    </p>
-                                   
-                                        <div>
-                                        @include('widgets.progress', array('animated'=> true, 'class'=>'info', 'value'=>'20'))
-                                            <span class="sr-only">20% Complete</span>
-                                        </div>
-                                   
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 3</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    
-                                        <div>
-                                        @include('widgets.progress', array('animated'=> true, 'class'=>'warning', 'value'=>'60'))
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                   
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 4</strong>
-                                        <span class="pull-right text-muted">80% Complete</span>
-                                    </p>
-                                    
-                                        <div>
-                                        @include('widgets.progress', array('animated'=> true,'class'=>'danger', 'value'=>'80'))
-                                            <span class="sr-only">80% Complete (danger)</span>
-                                        </div>
-                                    
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Tasks</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-tasks -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="{{ url ('login') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
+            {{--<ul class="nav navbar-top-links navbar-right">--}}
+                {{--<li class="dropdown">--}}
+                    {{--<a class="dropdown-toggle" data-toggle="dropdown" href="#">--}}
+                        {{--<i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu dropdown-messages">--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<strong>John Smith</strong>--}}
+                                    {{--<span class="pull-right text-muted">--}}
+                                        {{--<em>Yesterday</em>--}}
+                                    {{--</span>--}}
+                                {{--</div>--}}
+                                {{--<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<strong>John Smith</strong>--}}
+                                    {{--<span class="pull-right text-muted">--}}
+                                        {{--<em>Yesterday</em>--}}
+                                    {{--</span>--}}
+                                {{--</div>--}}
+                                {{--<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<strong>John Smith</strong>--}}
+                                    {{--<span class="pull-right text-muted">--}}
+                                        {{--<em>Yesterday</em>--}}
+                                    {{--</span>--}}
+                                {{--</div>--}}
+                                {{--<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a class="text-center" href="#">--}}
+                                {{--<strong>Read All Messages</strong>--}}
+                                {{--<i class="fa fa-angle-right"></i>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                    {{--<!-- /.dropdown-messages -->--}}
+                {{--</li>--}}
+                {{--<!-- /.dropdown -->--}}
+                {{--<li class="dropdown">--}}
+                    {{--<a class="dropdown-toggle" data-toggle="dropdown" href="#">--}}
+                        {{--<i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu dropdown-tasks">--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<p>--}}
+                                        {{--<strong>Task 1</strong>--}}
+                                        {{--<span class="pull-right text-muted">40% Complete</span>--}}
+                                    {{--</p>--}}
+                                   {{----}}
+                                        {{--<div>--}}
+                                        {{--@include('widgets.progress', array('animated'=> true, 'class'=>'success', 'value'=>'40'))--}}
+                                            {{--<span class="sr-only">40% Complete (success)</span>--}}
+                                        {{--</div>--}}
+                                   {{----}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<p>--}}
+                                        {{--<strong>Task 2</strong>--}}
+                                        {{--<span class="pull-right text-muted">20% Complete</span>--}}
+                                    {{--</p>--}}
+                                   {{----}}
+                                        {{--<div>--}}
+                                        {{--@include('widgets.progress', array('animated'=> true, 'class'=>'info', 'value'=>'20'))--}}
+                                            {{--<span class="sr-only">20% Complete</span>--}}
+                                        {{--</div>--}}
+                                   {{----}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<p>--}}
+                                        {{--<strong>Task 3</strong>--}}
+                                        {{--<span class="pull-right text-muted">60% Complete</span>--}}
+                                    {{--</p>--}}
+                                    {{----}}
+                                        {{--<div>--}}
+                                        {{--@include('widgets.progress', array('animated'=> true, 'class'=>'warning', 'value'=>'60'))--}}
+                                            {{--<span class="sr-only">60% Complete (warning)</span>--}}
+                                        {{--</div>--}}
+                                   {{----}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<p>--}}
+                                        {{--<strong>Task 4</strong>--}}
+                                        {{--<span class="pull-right text-muted">80% Complete</span>--}}
+                                    {{--</p>--}}
+                                    {{----}}
+                                        {{--<div>--}}
+                                        {{--@include('widgets.progress', array('animated'=> true,'class'=>'danger', 'value'=>'80'))--}}
+                                            {{--<span class="sr-only">80% Complete (danger)</span>--}}
+                                        {{--</div>--}}
+                                    {{----}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a class="text-center" href="#">--}}
+                                {{--<strong>See All Tasks</strong>--}}
+                                {{--<i class="fa fa-angle-right"></i>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                    {{--<!-- /.dropdown-tasks -->--}}
+                {{--</li>--}}
+                {{--<!-- /.dropdown -->--}}
+                {{--<li class="dropdown">--}}
+                    {{--<a class="dropdown-toggle" data-toggle="dropdown" href="#">--}}
+                        {{--<i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu dropdown-alerts">--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<i class="fa fa-comment fa-fw"></i> New Comment--}}
+                                    {{--<span class="pull-right text-muted small">4 minutes ago</span>--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<i class="fa fa-twitter fa-fw"></i> 3 New Followers--}}
+                                    {{--<span class="pull-right text-muted small">12 minutes ago</span>--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<i class="fa fa-envelope fa-fw"></i> Message Sent--}}
+                                    {{--<span class="pull-right text-muted small">4 minutes ago</span>--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<i class="fa fa-tasks fa-fw"></i> New Task--}}
+                                    {{--<span class="pull-right text-muted small">4 minutes ago</span>--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<div>--}}
+                                    {{--<i class="fa fa-upload fa-fw"></i> Server Rebooted--}}
+                                    {{--<span class="pull-right text-muted small">4 minutes ago</span>--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li>--}}
+                            {{--<a class="text-center" href="#">--}}
+                                {{--<strong>See All Alerts</strong>--}}
+                                {{--<i class="fa fa-angle-right"></i>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                    {{--<!-- /.dropdown-alerts -->--}}
+                {{--</li>--}}
+                {{--<!-- /.dropdown -->--}}
+                {{--<li class="dropdown">--}}
+                    {{--<a class="dropdown-toggle" data-toggle="dropdown" href="#">--}}
+                        {{--<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu dropdown-user">--}}
+                        {{--<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>--}}
+                        {{--</li>--}}
+                        {{--<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"></li>--}}
+                        {{--<li><a href="{{ url ('login') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                    {{--<!-- /.dropdown-user -->--}}
+                {{--</li>--}}
+                {{--<!-- /.dropdown -->--}}
+            {{--</ul>--}}
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
@@ -244,6 +244,71 @@
                             </div>
                             <!-- /input-group -->
                         </li>
+                        <!-- Cars menu -->
+                        <li>
+                            <a href="/cars/"><i class="fa fa-automobile fa-fw"></i> Cars<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('cars/create') }}">New Car</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url ('cars') }}">Cars</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <!-- Owners menu -->
+                        <li>
+                            <a href="/owners/"><i class="fa fa-user fa-fw"></i>Owners<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('owners/create') }}">New Owner</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url ('owners') }}">Owners</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="/buyers/"><i class="fa fa-phone fa-fw"></i>Call record<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('callrecords/create') }}">New Call</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url ('callrecords') }}">Call records</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <!-- CarRequest menu -->
+                        <li>
+                            <a href="/requestedcars/"><i class="fa fa-automobile fa-fw"></i>Requested Cars<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('requestedcars/create') }}">New Car Request</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url ('requestedcars') }}">Requested Cars</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <!-- CarFound menu -->
+                        <li>
+                            <a href="/foundcars/"><i class="fa fa-automobile fa-fw"></i>Found Cars<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('foundcars/create') }}">New Found Car</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url ('foundcars') }}">Found Cars</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
                         <li {{ (Request::is('/') ? 'class="active"' : '') }}>
                             <a href="{{ url ('') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>

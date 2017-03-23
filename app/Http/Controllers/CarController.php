@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Owner;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+
+use App\Car;
+use Illuminate\Support\Facades\Validator;
 
 class CarController extends Controller
 {
@@ -16,6 +20,7 @@ class CarController extends Controller
     public function index()
     {
         //
+        return view('cars.car');
     }
 
     /**
@@ -25,7 +30,9 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+
+        $owners = Owner::all();
+        return view('cars.create')->with(["owners" => $owners]);
     }
 
     /**
@@ -36,7 +43,19 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        //Car::create($request->input());
+        $input = $request->except('_token');
+        $validator = Validator::make($input, [
+            "name"=>"required|min:5|alpha_num"
+        ]);
+        if($validator->fails()){
+            return redirect('create')->with($validator->messages());
+        }
+
+//        dd($input);
+        Car::create($input);
+        return redirect('cars');
     }
 
     /**

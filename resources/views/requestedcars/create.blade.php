@@ -1,7 +1,8 @@
 @extends('layouts.dashboard')
-@section('page_heading','Create Car')
+@section('page_heading','Create New Car Request')
 @section('section')
-    <form role="form" action="cars" method="post">
+    <form role="form" action="/requestedcars" method="post">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
@@ -25,29 +26,28 @@
                     <p class="help-block">Example black, silver, gray, red</p>
                 </div>
                 <div class="form-group">
-                    <label>Price</label>
-                    <input class="form-control" name="price " placeholder="100,000">
+                    <label>Price From</label>
+                    <input class="form-control" name="pricefrom" placeholder="100,000">
                     <p class="help-block">Example 100,000 250,000 1,500,000</p>
                 </div>
                 <div class="form-group">
-                    <label>Transmission</label>
-                    <input class="form-control" name="transmission" placeholder="transmission">
-                    <p class="help-block">Example manual, automatic </p>
+                    <label>Price To</label>
+                    <input class="form-control" name="priceto" placeholder="200,000">
+                    <p class="help-block">Example 100,000 250,000 1,500,000</p>
                 </div>
             </div>
 
             <div class="col-lg-6">
                 <div class="form-group">
-                    <label>Plate</label>
-                    <input class="form-control" name="plate" placeholder="plate">
-                    <p class="help-block">Example AA-2-A-12345, OR-3-12345 </p>
+                    <label>Transmission</label>
+                    <input class="form-control" name="transmission" placeholder="transmission">
+                    <p class="help-block">Example manual, automatic </p>
                 </div>
                 <div class="form-group">
-                    <label>Location</label>
-                    <input class="form-control" name="location" placeholder="location">
-                    <p class="help-block">Example Kera, Saris, Bole, Piassa, Arat Kilo</p>
+                    <label>Plate</label>
+                    <input class="form-control" name="plate" placeholder="plate">
+                    <p class="help-block">Example new, old </p>
                 </div>
-
                 <div class="form-group">
                     <label>Meri</label>
                     <input class="form-control" name="meri" placeholder="Meri">

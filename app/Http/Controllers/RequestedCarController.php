@@ -26,6 +26,7 @@ class RequestedCarController extends Controller
     public function create()
     {
         //
+        return view('requestedcars.create');
     }
 
     /**
@@ -36,7 +37,8 @@ class RequestedCarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->save();
+        return $request->input();
     }
 
     /**
