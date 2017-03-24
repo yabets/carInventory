@@ -7,11 +7,14 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>John</td>
-			<td>john@gmail.com</td>
-			<td>London, UK</td>
-		</tr>
+		@foreach ($fields as $field)
+			<tr>
+				<td>{{$field[]}}</td>
+				<td>john@gmail.com</td>
+				<td>London, UK</td>
+			</tr>
+		@endforeach
+
 		<tr>
 			<td>Andy</td>
 			<td>andygmail.com</td>

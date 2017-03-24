@@ -23,7 +23,7 @@
                     <p class="help-block">Example Toyota, Mercedes-Benz, BMW</p>
                 </div>
                 <div class="form-group">
-                    <label>Name</label>
+                    <label>Model Name</label>
                     <input class="form-control" name="name" placeholder="name">
                     <p class="help-block">Example Corolla, Hilux, Vitz, Platz, Yaris</p>
                 </div>
@@ -47,9 +47,6 @@
                     <input class="form-control" name="transmission" placeholder="transmission">
                     <p class="help-block">Example manual, automatic </p>
                 </div>
-            </div>
-
-            <div class="col-lg-6">
                 <div class="form-group">
                     <label>Plate</label>
                     <input class="form-control" name="plate" placeholder="plate">
@@ -60,7 +57,9 @@
                     <input class="form-control" name="location" placeholder="location">
                     <p class="help-block">Example Kera, Saris, Bole, Piassa, Arat Kilo</p>
                 </div>
+            </div>
 
+            <div class="col-lg-6">
                 <div class="form-group">
                     <label>Meri</label>
                     <input class="form-control" name="meri" placeholder="Meri">
@@ -79,7 +78,7 @@
                 <div class="form-group">
                     <label>Owner</label>
                     <input class="form-control" name="owner_id" value="1">
-                    <p class="help-block">Example select </p>
+                    <p class="help-block">Example select owner</p>
                 </div>
                 <div class="form-group">
                     <label>Remark</label>

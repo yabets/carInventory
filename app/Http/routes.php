@@ -30,6 +30,8 @@ Route::get('/', function()
     return View::make('home');
 });
 
+Route::post('/cars/search', 'CarController@search');
+
 Route::get('/charts', function()
 {
     return View::make('mcharts');

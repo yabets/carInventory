@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Validator;
+
 use App\Http\Requests;
+
+use App\Owner;
 
 class OwnerController extends Controller
 {
@@ -15,7 +19,9 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        //
+        $owners = Owner::all();
+        //dd($cars);
+        return view('owners.owner', compact('owners'));
     }
 
     /**
@@ -25,7 +31,7 @@ class OwnerController extends Controller
      */
     public function create()
     {
-        //
+        return view('owners.create');
     }
 
     /**
@@ -36,7 +42,18 @@ class OwnerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->except('_token');
+        $validator = Validator::make($input, [
+            "name"=>"required|min:1|alpha_num"
+        ]);
+        if($validator->fails()){
+            return redirect('post/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        Owner::create($input);
+        return redirect('owners');
     }
 
     /**
@@ -83,4 +100,21 @@ class OwnerController extends Controller
     {
         //
     }
+
+    public function search(Request $request)
+    {
+
+        //Car::create($request->input());
+        $input = $request->except('_token');
+        $search = $input['search'];
+        $cars = Owner::where('Name','like','%'.$search.'%')
+            ->orWhere('Brand','like','%'.$search.'%')
+            ->orWhere('Status','like','%'.$search.'%')
+            ->orWhere('Color','like','%'.$search.'%')
+            ->orWhere('Year','like','%'.$search.'%')
+            ->paginate(20);
+        dd($cars);
+        return view('cars', compact('cars'));
+    }
+
 }

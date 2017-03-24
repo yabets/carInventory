@@ -20,7 +20,9 @@ class CarController extends Controller
     public function index()
     {
         //
-        return view('cars.car');
+        $cars = Car::all();
+        //dd($cars);
+        return view('cars.car')->with(['cars'=>$cars]);
     }
 
     /**
@@ -47,13 +49,14 @@ class CarController extends Controller
         //Car::create($request->input());
         $input = $request->except('_token');
         $validator = Validator::make($input, [
-            "name"=>"required|min:5|alpha_num"
+            "name"=>"required|min:1|alpha_num"
         ]);
         if($validator->fails()){
-            return redirect('create')->with($validator->messages());
+            return redirect('post/create')
+                ->withErrors($validator)
+                ->withInput();
         }
 
-//        dd($input);
         Car::create($input);
         return redirect('cars');
     }
@@ -101,5 +104,21 @@ class CarController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+
+        //Car::create($request->input());
+        $input = $request->except('_token');
+        $search = $input['search'];
+        $cars = Car::where('Name','like','%'.$search.'%')
+            ->orWhere('Brand','like','%'.$search.'%')
+            ->orWhere('Status','like','%'.$search.'%')
+            ->orWhere('Color','like','%'.$search.'%')
+            ->orWhere('Year','like','%'.$search.'%')
+            ->paginate(20);
+        dd($cars);
+        return view('cars', compact('cars'));
     }
 }
