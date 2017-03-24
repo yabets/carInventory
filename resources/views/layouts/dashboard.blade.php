@@ -107,27 +107,26 @@
 
         <div id="page-wrapper">
 			 <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="page-header">@yield('page_heading')</h1>
-                </div>
-                 <!-- /.col-lg-6 -->
-                 <div class="col-lg-4">
-                     <div class="page-header input-group custom-search-form">
-                         <form class="input-group" role="form" action="@yield('search_page')" method="post">
-                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                             <input type="text" class="form-control" name="search" placeholder="Search...">
+                <div class="col-lg-12">
+                    <h1 class="page-header pull-left">@yield('page_heading')</h1>
+                    <div class="page-header input-group custom-search-form pull-right">
+                        <form class="input-group" role="form" action="@yield('search_page')" method="post">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="text" class="form-control" name="search" placeholder="Search...">
                              <span class="input-group-btn">
                                  <button class="btn btn-default" type="submit">
                                      <i class="fa fa-search"></i>
                                  </button>
                              </span>
-                         </form>
-                     </div>
-                     <!-- /input-group -->
-                 </div>
-                 <!-- /.col-lg-6 -->
+                        </form>
+                    </div>
+                </div>
+                 <!-- /.col-lg-12 -->
            </div>
-			<div class="row">  
+
+            @yield('filters')
+
+            <div class="row">
 				@yield('section')
 
             </div>

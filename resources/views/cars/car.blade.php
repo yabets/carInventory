@@ -2,6 +2,86 @@
 @section('page_heading','Cars')
 @section('search_page','/cars/search')
 
+@section('filters')
+    <form class="form-inline" >
+        <div class="jumbotron form-inline">
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <label>Brand</label>
+                    <input class="form-control" name="brand" placeholder="brand">
+                </div>
+            </div>
+            {{--col-lg-2--}}
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control" name="name" placeholder="name">
+                </div>
+            </div>
+            {{--col-lg-2--}}
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <label>Year</label>
+                    <input class="form-control" name="year" placeholder="year">
+                </div>
+            </div>
+            {{--col-lg-2--}}
+            <div class="col-lg-5">
+                <div class="form-group">
+                    <label>Price</label>
+                    <input class="form-control" name="priceFrom" placeholder="100000">
+                    <label> - </label>
+                    <input class="form-control" name="priceTo" placeholder="400000">
+                </div>
+            </div>
+            {{--col-lg-6--}}
+
+            <p class="clearfix"></p>
+
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <label>Color</label>
+                    <input class="form-control" name="color" placeholder="color">
+                </div>
+            </div>
+            {{--col-lg-2--}}
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <label>Transmission</label>
+                    <input class="form-control" name="transmission" placeholder="Transmission">
+                </div>
+            </div>
+            {{--col-lg-2--}}
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <label>Meri</label>
+                    <input class="form-control" name="meri" placeholder="Meri">
+                </div>
+            </div>
+            {{--col-lg-2--}}
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <label>Status</label>
+                    <input class="form-control" name="status" placeholder="Status">
+                </div>
+            </div>
+            {{--col-lg-2--}}
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <label>Owner</label>
+                    <input class="form-control" name="owner" placeholder="Owner">
+                </div>
+            </div>
+            {{--col-lg-2--}}
+
+            <p class="clearfix"></p>
+
+            <div class="col-lg-4 col-offset-4">
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </div>
+        </div>
+    </form>
+@endsection
 @section('section')
 
     <div class="col-sm-12">
@@ -42,5 +122,7 @@
         @endsection
         @include('widgets.panel', array('header'=>true, 'as'=>'htable'))
     </div>
+
+
             
 @stop
