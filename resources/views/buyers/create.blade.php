@@ -2,7 +2,7 @@
 @section('page_heading','Create Buyer')
 @section('section')
 
-    <form role="form" action="/buyers" method="post">
+    <form role="form" action="/index.php/buyers" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-lg-6">

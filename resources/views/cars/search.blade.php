@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('page_heading','Cars')
-@section('search_page','/cars/search')
+@section('search_page','cars/search')
 
 @section('section')
 
