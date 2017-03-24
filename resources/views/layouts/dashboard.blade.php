@@ -27,7 +27,7 @@
                             <a href="/cars/"><i class="fa fa-automobile fa-fw"></i> Cars<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('/index.phpcars/create') }}">New Car</a>
+                                    <a href="{{ url ('/index.php/cars/create') }}">New Car</a>
                                 </li>
                                 <li>
                                     <a href="{{ url ('/index.php/cars') }}">Cars</a>
@@ -40,7 +40,7 @@
                             <a href="/owners/"><i class="fa fa-user fa-fw"></i>Owners<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('/index.phpowners/create') }}">New Owner</a>
+                                    <a href="{{ url ('/index.php/owners/create') }}">New Owner</a>
                                 </li>
                                 <li>
                                     <a href="{{ url ('/index.php/owners') }}">Owners</a>
