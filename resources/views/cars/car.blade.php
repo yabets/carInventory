@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('page_heading','Cars')
-@section('search_page','/cars/search')
+@section('search_page','/index.php/cars/search')
 
 @section('filters')
     <form class="form-inline" >
@@ -52,16 +52,27 @@
                 </div>
             </div>
             {{--col-lg-2--}}
+
             <div class="col-lg-2">
                 <div class="form-group">
-                    <label>Meri</label>
-                    <input class="form-control" name="meri" placeholder="Meri">
+                    <label for="meri">Meri</label>
+                    <select class="form-control" id="meri" name="meri">
+                        <option></option>
+                        <option>yalezore</option>
+                        <option>yezore</option>
+                    </select>
                 </div>
             </div>
             {{--col-lg-2--}}
             <div class="col-lg-2">
                 <div class="form-group">
-                    <label>Status</label>
+                    <label for="status">Status</label>
+                    <select class="form-control" id="status" name="status">
+                        <option></option>
+                        <option>avaliable</option>
+                        <option>unavalible</option>
+                        <option>sold</option>
+                    </select>
                     <input class="form-control" name="status" placeholder="Status">
                 </div>
             </div>

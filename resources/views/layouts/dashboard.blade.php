@@ -27,10 +27,10 @@
                             <a href="/cars/"><i class="fa fa-automobile fa-fw"></i> Cars<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('cars/create') }}">New Car</a>
+                                    <a href="{{ url ('/index.phpcars/create') }}">New Car</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url ('cars') }}">Cars</a>
+                                    <a href="{{ url ('/index.php/cars') }}">Cars</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -40,10 +40,10 @@
                             <a href="/owners/"><i class="fa fa-user fa-fw"></i>Owners<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('owners/create') }}">New Owner</a>
+                                    <a href="{{ url ('/index.phpowners/create') }}">New Owner</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url ('owners') }}">Owners</a>
+                                    <a href="{{ url ('/index.php/owners') }}">Owners</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -52,10 +52,10 @@
                             <a href="/buyers/"><i class="fa fa-user fa-fw"></i>Buyers<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('buyers/create') }}">New Buyer</a>
+                                    <a href="{{ url ('/index.php/buyers/create') }}">New Buyer</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url ('buyers') }}">Buyer</a>
+                                    <a href="{{ url ('/index.php/buyers') }}">Buyer</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -64,10 +64,10 @@
                             <a href="/callrecords/"><i class="fa fa-phone fa-fw"></i>Call record<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('callrecords/create') }}">New Call</a>
+                                    <a href="{{ url ('/index.php/callrecords/create') }}">New Call</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url ('callrecords') }}">Call records</a>
+                                    <a href="{{ url ('/index.php/callrecords') }}">Call records</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -77,10 +77,10 @@
                             <a href="/requestedcars/"><i class="fa fa-automobile fa-fw"></i>Requested Cars<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('requestedcars/create') }}">New Car Request</a>
+                                    <a href="{{ url ('/index.php/requestedcars/create') }}">New Car Request</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url ('requestedcars') }}">Requested Cars</a>
+                                    <a href="{{ url ('/index.php/requestedcars') }}">Requested Cars</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -90,10 +90,10 @@
                             <a href="/foundcars/"><i class="fa fa-automobile fa-fw"></i>Found Cars<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('foundcars/create') }}">New Found Car</a>
+                                    <a href="{{ url ('/index.php/foundcars/create') }}">New Found Car</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url ('foundcars') }}">Found Cars</a>
+                                    <a href="{{ url ('/index.php/foundcars') }}">Found Cars</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

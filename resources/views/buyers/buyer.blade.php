@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('page_heading','Buyers')
-@section('search_page','/buyers/search')
+@section('search_page','/index.php/buyers/search')
 
 @section('section')
 

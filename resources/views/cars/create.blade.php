@@ -13,7 +13,7 @@
             }
         });
     </script>
-    <form role="form" action="/cars" method="post">
+    <form role="form" action="/index.php/cars" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-lg-6">
@@ -62,8 +62,8 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <label>Meri</label>
-                    <input class="form-control" name="meri" placeholder="Meri">
-                    <p class="help-block">Example yezore, yalezore</p>
+                    <input type="radio" name="meri" value="yalezore" checked>yalezore
+                    <input type="radio" name="meri" value="yezore">yezore
                 </div>
                 <div class="form-group">
                     <label>Mileage</label>
