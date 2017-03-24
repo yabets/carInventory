@@ -1,8 +1,8 @@
 @extends('layouts.dashboard')
-@section('page_heading','Create Owner')
+@section('page_heading','Create Buyer')
 @section('section')
 
-    <form role="form" action="/owners" method="post">
+    <form role="form" action="/buyers" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-lg-6">
@@ -19,8 +19,8 @@
                     <input class="form-control" name="altPhone" placeholder="phone">
                 </div>
                 <div class="form-group">
-                    <label>Type</label>
-                    <input class="form-control" name="owner" placeholder="1">
+                    <label>Star</label>
+                    <input class="form-control" name="star" placeholder="1 2 3 4 5">
                 </div>
                 <div class="form-group">
                     <label>Remark</label>

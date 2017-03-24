@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Buyer;
+use App\Owner;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +17,8 @@ class BuyerController extends Controller
      */
     public function index()
     {
-        //
+        $buyers = Buyer::all();
+        return view('buyers.buyer', compact('buyers'));
     }
 
     /**
@@ -25,7 +28,7 @@ class BuyerController extends Controller
      */
     public function create()
     {
-        //
+        return view('buyers.create');
     }
 
     /**
@@ -36,7 +39,10 @@ class BuyerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->except('_token');
+
+        Buyer::create($input);
+        return redirect('buyers');
     }
 
     /**
@@ -82,5 +88,20 @@ class BuyerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+
+        //Car::create($request->input());
+        $input = $request->except('_token');
+        $search = $input['search'];
+        $buyers = Buyer::where('Name','like','%'.$search.'%')
+            ->orWhere('Phone','like','%'.$search.'%')
+            ->orWhere('AltPhone','like','%'.$search.'%')
+            ->orWhere('Star','like','%'.$search.'%')
+            ->paginate(20);
+
+        return view('buyers.buyer', compact('buyers'));
     }
 }

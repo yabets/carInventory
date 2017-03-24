@@ -49,7 +49,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="/buyers/"><i class="fa fa-user fa-fw"></i>Owners<span class="fa arrow"></span></a>
+                            <a href="/buyers/"><i class="fa fa-user fa-fw"></i>Buyers<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
                                     <a href="{{ url ('buyers/create') }}">New Buyer</a>

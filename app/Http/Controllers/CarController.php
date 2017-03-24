@@ -118,7 +118,6 @@ class CarController extends Controller
             ->orWhere('Color','like','%'.$search.'%')
             ->orWhere('Year','like','%'.$search.'%')
             ->paginate(20);
-        dd($cars);
-        return view('cars', compact('cars'));
+        return view('cars.search', compact('cars'));
     }
 }

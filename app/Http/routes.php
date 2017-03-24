@@ -31,6 +31,8 @@ Route::get('/', function()
 });
 
 Route::post('/cars/search', 'CarController@search');
+Route::post('/owners/search', 'OwnerController@search');
+Route::post('/buyers/search', 'BuyerController@search');
 
 Route::get('/charts', function()
 {

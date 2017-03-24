@@ -43,14 +43,14 @@ class OwnerController extends Controller
     public function store(Request $request)
     {
         $input = $request->except('_token');
-        $validator = Validator::make($input, [
-            "name"=>"required|min:1|alpha_num"
-        ]);
-        if($validator->fails()){
-            return redirect('post/create')
-                ->withErrors($validator)
-                ->withInput();
-        }
+//        $validator = Validator::make($input, [
+//            "name"=>"required|min:1|alpha_num"
+//        ]);
+//        if($validator->fails()){
+//            return redirect('post/create')
+//                ->withErrors($validator)
+//                ->withInput();
+//        }
 
         Owner::create($input);
         return redirect('owners');
@@ -107,14 +107,12 @@ class OwnerController extends Controller
         //Car::create($request->input());
         $input = $request->except('_token');
         $search = $input['search'];
-        $cars = Owner::where('Name','like','%'.$search.'%')
-            ->orWhere('Brand','like','%'.$search.'%')
-            ->orWhere('Status','like','%'.$search.'%')
-            ->orWhere('Color','like','%'.$search.'%')
-            ->orWhere('Year','like','%'.$search.'%')
+        $owners = Owner::where('Name','like','%'.$search.'%')
+            ->orWhere('Phone','like','%'.$search.'%')
+            ->orWhere('AltPhone','like','%'.$search.'%')
+            ->orWhere('Owner','like','%'.$search.'%')
             ->paginate(20);
-        dd($cars);
-        return view('cars', compact('cars'));
+        return view('owners.search', compact('owners'));
     }
 
 }

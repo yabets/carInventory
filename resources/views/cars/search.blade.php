@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
-@section('page_heading','Buyers')
-@section('search_page','/buyers/search')
+@section('page_heading','Cars')
+@section('search_page','/cars/search')
 
 @section('section')
 
@@ -9,19 +9,25 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Alt Phone</th>
-                    <th>Star</th>
+                    <th>Brand</th>
+                    <th>Model Name</th>
+                    <th>Year</th>
+                    <th>Price</th>
+                    <th>Color</th>
+                    <th>Transmission</th>
+                    <th>Meri</th>
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach ($buyers as $buyer)
+                    @foreach ($cars as $car)
                         <tr>
-                            <td>{{$buyer->Name}}</td>
-                            <td>{{$buyer->Phone}}</td>
-                            <td>{{$buyer->AltPhone}}</td>
-                            <td>{{$buyer->Star}}</td>
+                            <td>{{$car->Brand}}</td>
+                            <td>{{$car->Name}}</td>
+                            <td>{{$car->Year}}</td>
+                            <td>{{$car->Price}}</td>
+                            <td>{{$car->Color}}</td>
+                            <td>{{$car->Transmission}}</td>
+                            <td>{{$car->Meri}}</td>
                             <td>
                                 <button type="button" class="btn btn-success">View</button>
                             </td>
