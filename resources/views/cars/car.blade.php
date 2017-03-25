@@ -188,7 +188,7 @@
                             <td>{{$car->Transmission}}</td>
                             <td>{{$car->Meri}}</td>
                             <td>
-                                <a href="index.php/cars/{{$car->id}}">
+                                <a href="/index.php/cars/{{$car->id}}">
                                     <button type="button" class="btn btn-success">View</button>
                                 </a>
                             </td>
