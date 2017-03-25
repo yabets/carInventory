@@ -133,6 +133,9 @@
                     <label for="owner">Owner</label>
                     <select class="form-control" id="owner" name="owner_id">
                         <option></option>
+                        @foreach ($owners as $owner)
+                            <option value="{{$owner->id}}">{{$owner->Name}}</option>
+                        @endforeach
                         <option value="1">Abebe</option>
                     </select>
                 </div>
