@@ -105,6 +105,10 @@
                     <input class="form-control" name="location" placeholder="location">
                     <p class="help-block">Example Kera, Saris, Bole, Piassa, Arat Kilo</p>
                 </div>
+                <div class="form-group">
+                    <label>Remark about the car</label>
+                    <textarea class="form-control" rows="3" name="remark"></textarea>
+                </div>
             </div>
 
             <div class="col-lg-6">
@@ -129,19 +133,52 @@
                     <input type="radio" name="status" value="unavailable">unavailable
                     <input type="radio" name="status" value="sold">sold
                 </div>
-                <div class="form-group">
-                    <label for="owner">Owner</label>
-                    <select class="form-control" id="owner" name="owner_id">
-                        <option></option>
-                        @foreach ($owners as $owner)
-                            <option value="{{$owner->id}}">{{$owner->Name}}</option>
-                        @endforeach
-                        <option value="1">Abebe</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Remark</label>
-                    <textarea class="form-control" rows="3" name="remark"></textarea>
+                <div>
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Existing Owner</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">New Owner</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <label for="owner">Owner Name</label>
+                            <select class="form-control" id="owner" name="owner_id">
+                                <option></option>
+                                @foreach ($owners as $owner)
+                                    <option value="{{$owner->id}}">{{$owner->Name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input class="form-control" name="name" placeholder="name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input class="form-control" name="phone" placeholder="phone number">
+                                </div>
+                                <div class="form-group">
+                                    <label>Alternative phone</label>
+                                    <input class="form-control" name="altPhone" placeholder="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label>Type</label>
+                                    <input type="radio" name="Owner" value="1" checked>owner
+                                    <input type="radio" name="Owner" value="0">agent
+                                </div>
+                                <div class="form-group">
+                                    <label>Remark</label>
+                                    <textarea class="form-control" rows="3" name="remark"></textarea>
+                                </div>
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

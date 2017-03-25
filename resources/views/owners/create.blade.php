@@ -20,8 +20,8 @@
                 </div>
                 <div class="form-group">
                     <label>Type</label>
-                    <input class="form-control" name="owner" placeholder="1">
-                </div>
+                    <input type="radio" name="Owner" value="1" checked>owner
+                    <input type="radio" name="Owner" value="0">agentg
                 <div class="form-group">
                     <label>Remark</label>
                     <textarea class="form-control" rows="3" name="remark"></textarea>
