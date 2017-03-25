@@ -145,9 +145,14 @@
             <div class="col-lg-2">
                 <div class="form-group">
                     <label for="owner">Owner</label>
-                    <select class="form-control" id="owner" name="owner">
+                    <select class="form-control" id="owner" name="owner_id">
                         <option></option>
-                        <option value="1">Abebe</option>
+                        <?php
+                        $fowners = \App\Owner::all();
+                        ?>
+                        @foreach ($fowners as $owner)
+                            <option value="{{$owner->id}}">{{$owner->Name}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
