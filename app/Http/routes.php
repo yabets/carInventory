@@ -1,6 +1,6 @@
 <?php
 
-use App\Task;
+use App\Param;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +22,11 @@ Route::resource('foundcars', 'FoundCarController');
 Route::resource('callrecords', 'CallRecordController');
 Route::resource('requestedcars', 'RequestedCarController');
 
-
+Route::get('/params',function()
+{
+    $params = Param::first();
+    return ($params);
+});
 
 
 Route::get('/', function()

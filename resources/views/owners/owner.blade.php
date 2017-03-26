@@ -34,7 +34,9 @@
                                 </a>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-primary">Edit</button>
+                                <a href="/index.php/owners/{{$owner->id}}/edit">
+                                    <button type="button" class="btn btn-primary">Edit</button>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

@@ -99,7 +99,10 @@ class OwnerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $owner = Owner::findOrFail($id);
+        $owner->delete();
+
+        return redirect('owners');
     }
 
     public function search(Request $request)

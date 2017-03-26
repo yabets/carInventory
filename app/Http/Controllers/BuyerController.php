@@ -53,7 +53,8 @@ class BuyerController extends Controller
      */
     public function show($id)
     {
-        //
+        $buyer = Buyer::findOrFail($id);
+        return view('buyers.view', compact('buyer'));
     }
 
     /**
@@ -87,7 +88,9 @@ class BuyerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $buyer = Buyer::findOrFail($id);
+        $buyer->delete();
+        return redirect('buyers');
     }
 
     public function search(Request $request)

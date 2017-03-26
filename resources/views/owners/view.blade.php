@@ -30,6 +30,20 @@
                 <td>Remark</td>
                 <td>{{$owner->Remark}}</td>
             </tr>
+            <tr>
+                <td><a href="/index.php/owners/{{$owner->id}}/edit">
+                        <button type="button" class="btn btn-primary">Edit</button>
+                    </a>
+                </td>
+                <td>
+                    <form action="/index.php/owners/{{ $owner->id }}" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
         </tbody>
     </table>
 
@@ -62,7 +76,9 @@
                     </a>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary">Edit</button>
+                    <a href="/index.php/cars/{{$car->id}}/edit">
+                        <button type="button" class="btn btn-primary">Edit</button>
+                    </a>
                 </td>
             </tr>
         @endforeach

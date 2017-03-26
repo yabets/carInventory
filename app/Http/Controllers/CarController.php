@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Owner;
+use App\Param;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -21,8 +22,8 @@ class CarController extends Controller
     public function index()
     {
         //
-        $cars = Car::all();
-        //dd($cars);
+        //$cars = Car::all();
+        $cars = Car::latest()->get();
         return view('cars.car')->with(['cars'=>$cars]);
     }
 
@@ -34,7 +35,7 @@ class CarController extends Controller
     public function create()
     {
 
-        $owners = Owner::all();
+        $owners = Owner::latest()->get();
         return view('cars.create')->with(["owners" => $owners]);
     }
 
@@ -82,7 +83,10 @@ class CarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $car = Car::findOrFail($id);
+        $owners = Owner::latest()->get();
+        $params = Param::first();
+        return view('cars.edit', compact('car', 'owners', 'params'));
     }
 
     /**
@@ -94,7 +98,10 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $car = Car::findOrFail($id);
+        $car->update($request->all());
+        $cars = Car::all();
+        return view('cars.car', compact('cars'));
     }
 
     /**
@@ -105,7 +112,8 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $car = Car::findOrFail($id)->delete();
+        return redirect('cars');
     }
 
     public function search(Request $request)
