@@ -18,12 +18,12 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="brand">Brand</label>
-                    <select class="form-control" id="brand" name="brand">
-                        <option value="Toyota">Toyota</option>
-                        <option value="Mercedes-Benz">Mercedes-Benz</option>
-                        <option value="BMW">BMW</option>
-                    </select>
+                {{ Form::label('brand', 'Brand') }}
+                {{ Form::select('brand',
+                    ["Toyota"=>"Toyota", "Mercedes-Benz"=>"Mercedes-Benz", "BMW"=>"BMW"],
+                    null,
+                    ['class'=>'form-control'])
+                 }}
                 </div>
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -138,7 +138,7 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Existing Owner</a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">New Owner</a></li>
+                        <li role="presentation"><a href="#" aria-controls="profile" role="tab" data-toggle="tab">New Owner</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -146,7 +146,6 @@
                         <div role="tabpanel" class="tab-pane active" id="home">
                             <label for="owner">Owner Name</label>
                             <select class="form-control" id="owner" name="owner_id">
-                                <option></option>
                                 @foreach ($owners as $owner)
                                     <option value="{{$owner->id}}">{{$owner->Name}}</option>
                                 @endforeach
@@ -179,6 +178,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
+                    {{Form::label('Post')}}
+                    {{Form::radio('published', '0', true, array('class'=>'form-control'))}} unpublished
+                    {{Form::radio('published', '1', false, array('class'=>'form-control'))}} published
                 </div>
             </div>
         </div>

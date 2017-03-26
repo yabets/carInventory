@@ -23,10 +23,14 @@
                             <td>{{$buyer->AltPhone}}</td>
                             <td>{{$buyer->Star}}</td>
                             <td>
-                                <button type="button" class="btn btn-success">View</button>
+                               <a href="/index.php/buyers/{{$buyer->id}}">
+                                   <button type="button" class="btn btn-success">View</button>
+                               </a>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-primary">Edit</button>
+                                <a href="/index.php/buyers/{{$buyer->id}}/edit">
+                                    <button type="button" class="btn btn-primary">Edit</button>
+                                </a>
                             </td>
                         </tr>
                     @endforeach
