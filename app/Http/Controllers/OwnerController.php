@@ -64,7 +64,8 @@ class OwnerController extends Controller
      */
     public function show($id)
     {
-        //
+        $owner = Owner::findOrFail($id);
+        return view('owners.view', compact('owner'));
     }
 
     /**

@@ -29,7 +29,9 @@
                                 @endif
                             </td>
                             <td>
-                                <button type="button" class="btn btn-success">View</button>
+                                <a href="/index.php/owners/{{$owner->id}}">
+                                    <button type="button" class="btn btn-success">View</button>
+                                </a>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-primary">Edit</button>
