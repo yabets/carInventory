@@ -36,7 +36,7 @@ Route::put('/param/', 'ParamController@update')->name('param.update');
 
 Route::get('/', function()
 {
-    return redirect()->route('cars.index');
+    return redirect('index.php/cars');
 });
 
 Route::post('/cars/search', 'CarController@search');
