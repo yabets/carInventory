@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Param;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class params extends Controller
+class ParamController extends Controller
 {
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $param = Param::first();
+        return view('param', compact('param'));
     }
 
     /**
@@ -25,9 +26,10 @@ class params extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $param = Param::first();
+        return view('params', compact('param'));
     }
 
     /**
@@ -37,8 +39,11 @@ class params extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $params = Param::first();
+        $input = $request->except('_token', '_method');
+        $params->update($input);
+        return redirect('/param');
     }
 }

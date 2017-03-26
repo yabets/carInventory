@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Param;
 
 /*
@@ -28,10 +29,14 @@ Route::get('/params',function()
     return ($params);
 });
 
+Route::get('/param', 'ParamController@show');
+Route::get('/param/edit', 'ParamController@edit');
+Route::put('/param/', 'ParamController@update')->name('param.update');
+
 
 Route::get('/', function()
 {
-    return View::make('home');
+    return View::make('cars/car');
 });
 
 Route::post('/cars/search', 'CarController@search');
