@@ -12,16 +12,17 @@
                 </div>
                 <div class="form-group">
                     <label>Phone</label>
-                    <input class="form-control" name="phone" placeholder="phone number">
+                    <input class="form-control" type="tel" pattern="^\d{10}$" name="phone" placeholder="phone number">
                 </div>
                 <div class="form-group">
                     <label>Alternative phone</label>
-                    <input class="form-control" name="altPhone" placeholder="phone">
+                    <input class="form-control" type="tel" pattern="^\d{10}$" name="altPhone" placeholder="phone">
                 </div>
                 <div class="form-group">
                     <label>Type</label>
                     <input type="radio" name="Owner" value="1" checked>owner
                     <input type="radio" name="Owner" value="0">agent
+                </div>
                 <div class="form-group">
                     <label>Remark</label>
                     <textarea class="form-control" rows="3" name="remark"></textarea>
