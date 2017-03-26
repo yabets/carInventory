@@ -3,34 +3,33 @@
 @section('section')
     <?php
         $owners = \App\Owner::all();
+        $params = \App\Param::first();
+        $brands = explode(",", $params->Brand);
+        $names = explode(",", $params->Name);
+        $types = explode(",", $params->Type);
+        $colors = explode(",", $params->Color);
+        $status = explode(",", $params->Status);
+        $transmissions = explode(",", $params->Transmission);
     ?>
-    <script>
-        $(document).ready(function () {
-            var owners = JSON.parse('{!!json_encode($owners->toArray())!!}');
-            for (var i = 0; i < owners.length; i++)
-            {
-                console.log(owners[i]["Name"]);
-            }
-        });
-    </script>
+
     <form role="form" action="/index.php/cars" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
-                {{ Form::label('brand', 'Brand') }}
-                {{ Form::select('brand',
-                    ["Toyota"=>"Toyota", "Mercedes-Benz"=>"Mercedes-Benz", "BMW"=>"BMW"],
-                    null,
-                    ['class'=>'form-control'])
-                 }}
+                    {{ Form::label('brand', 'Brand') }}
+                    <select class="form-control" id="brand" name="brand">
+                        @foreach($brands as $brand)
+                            <option value="{{$brand}}" >{{$brand}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="name">Name</label>
                     <select class="form-control" id="name" name="name">
-                        <option value="Corolla">Corolla</option>
-                        <option value="Hilux">Hilux</option>
-                        <option value="Vitz">Vitz</option>
+                        @foreach($names as $name)
+                            <option value="{{$name}}" >{{$name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
@@ -119,8 +118,9 @@
                 </div>
                 <div class="form-group">
                     <label for="transmission">Transmission</label>
-                    <input type="radio" name="transmission" value="manual" checked>manual
-                    <input type="radio" name="transmission" value="automatic">automatic
+                    @foreach($transmissions as $transmission)
+                        <input type="radio" name="transmission" value="{{$transmission}}">{{$transmission}}
+                    @endforeach
                 </div>
                 <div class="form-group">
                     <label>Mileage</label>
@@ -129,9 +129,9 @@
                 </div>
                 <div class="form-group">
                     <label>Status</label>
-                    <input type="radio" name="status" value="available" checked>available
-                    <input type="radio" name="status" value="unavailable">unavailable
-                    <input type="radio" name="status" value="sold">sold
+                    @foreach($status as $statu)
+                        <input type="radio" name="status" value="{{$statu}}" >{{$statu}}
+                    @endforeach
                 </div>
                 <div>
 

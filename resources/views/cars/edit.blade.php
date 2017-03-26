@@ -8,6 +8,7 @@
     <?php
             $brands = explode(",", $params->Brand);
             $names = explode(",", $params->Name);
+            $types = explode(",", $params->Type);
             $colors = explode(",", $params->Color);
             $status = explode(",", $params->Status);
             $transmissions = explode(",", $params->Transmission);
