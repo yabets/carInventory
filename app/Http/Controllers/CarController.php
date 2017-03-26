@@ -49,14 +49,14 @@ class CarController extends Controller
 
         //Car::create($request->input());
         $input = $request->except('_token');
-        $validator = Validator::make($input, [
-            "name"=>"required|min:1|alpha_num"
-        ]);
-        if($validator->fails()){
-            return redirect('post/create')
-                ->withErrors($validator)
-                ->withInput();
-        }
+//        $validator = Validator::make($input, [
+//            "name"=>"required|min:1|alpha_num"
+//        ]);
+//        if($validator->fails()){
+//            return redirect('post/create')
+//                ->withErrors($validator)
+//                ->withInput();
+//        }
 
         Car::create($input);
         return redirect('cars');
