@@ -12,6 +12,10 @@ class Car extends Model
     public function owner(){
         return $this->belongsTo('App\Owner');
     }
+
+    public function call_records(){
+        return $this->belongsTo('App\CallRecord', 'found_cars', 'call_id', 'car_id;');;
+    }
 }
 
 

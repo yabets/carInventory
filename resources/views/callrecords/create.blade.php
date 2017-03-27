@@ -3,11 +3,20 @@
 @section('section')
     <script>
         $(document).ready(function () {
-           $("#f").click(function () {
+            if($('#f').is(':checked')) {
+                $(".foundcar").css('pointer-events', 'visible');
+                $(".foundcar").css('opacity', '1');
+                $(".nofound").css({'pointer-events':'none','opacity':'0.4'});
+            }else{
+                $(".foundcar").css({'pointer-events':'none','opacity':'0.4'});
+                $(".nofound").css('pointer-events', 'visible');
+                $(".nofound").css('opacity', '1');
+            }
+            $("#f").click(function () {
                $(".foundcar").css('pointer-events', 'visible');
                $(".foundcar").css('opacity', '1');
                $(".nofound").css({'pointer-events':'none','opacity':'0.4'});
-           });
+            });
             $("#nf").click(function () {
                 $(".foundcar").css({'pointer-events':'none','opacity':'0.4'});
                 $(".nofound").css('pointer-events', 'visible');
@@ -23,8 +32,8 @@
         </div>
         <div class="row">
             <div class="form-group col-md-4">
-                <label>Name</label>
-                <input class="form-control" name="name" placeholder="name">
+                <label>Buyer Name</label>
+                <input class="form-control" name="bname" placeholder="name">
             </div>
             <div class="form-group col-md-4">
                 <label>Phone</label>
@@ -32,7 +41,7 @@
             </div>
             <div class="form-group col-md-4">
                 <label>Alternative phone</label>
-                <input class="form-control" type="tel" pattern="^\d{10}$" 1name="altPhone" placeholder="phone">
+                <input class="form-control" type="tel" pattern="^\d{10}$" name="altPhone" placeholder="phone">
             </div>
             <div class="form-group col-md-4">
                 <label>Star</label>
@@ -47,7 +56,7 @@
         <div class="row">
             <div class="form-group col-md-4">
                 <label>Found</label>
-                <input type="radio" id="f" name="found" value="1"> Yes
+                <input type="radio" id="f" name="found" value="1" checked> Yes
                 <input type="radio" id="nf" name="found" value="0"> No
             </div>
         </div>
