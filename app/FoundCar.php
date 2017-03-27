@@ -17,6 +17,6 @@ class FoundCar extends Model
     }
 
     public function callRecord(){
-        return $this->belongsTo('App\CallRecord');
+        return $this->belongsTo('App\CallRecord', 'call_id');
     }
 }

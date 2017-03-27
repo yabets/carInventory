@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\CallRecord;
 use App\Car;
+use App\FoundCar;
 use App\Param;
+use App\Buyer;
+use App\RequestedCar;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,7 +21,9 @@ class CallRecordController extends Controller
      */
     public function index()
     {
-        //
+        $calls = CallRecord::latest()->get();
+        dd($calls);
+        return view('callrecords.index', compact('calls'));
     }
 
     /**
@@ -40,7 +46,41 @@ class CallRecordController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->except('_token');
+        $buyer = new Buyer;
+        $buyer->Name = $input['bname'];
+        $buyer->Phone = $input['phone'];
+        $buyer->AltPhone = $input['altPhone'];
+        $buyer->Star = $input['star'];
+        $buyer->save();
+        $call = new CallRecord;
+        $call->found = $input['found'];
+        if($input['found'] == 1){
+            $call->wantSee = $input['wantSee'];
+            $call->schedule = $input['schedule'];
+            $call->checked = $input['checked'];
+            $call->sold = $input['sold'];
+            $buyer->callRecords()->save($call);
+            $found = new FoundCar();
+            $found->car_id = $input['car_id'];
+            $found->call_id = $call->id;
+            $found->save();
+        }else{
+            $call->save();
+            $requested = new RequestedCar;
+            $requested->Brand = $input["brand"];
+            $requested->Name = $input["name"];
+            $requested->Year = $input["year"];
+            $requested->Color = $input["color"];
+            $requested->PriceFrom = $input["priceFrom"];
+            $requested->PriceTo = $input["priceTo"];
+            $requested->Transmission = $input["transmission"];
+            $requested->Plate = $input["plate"];
+            $requested->Status = $input["status"];
+            $requested->meri = $input["meri"];
+            $call->requestedCars()->save($requested);
+        }
+        return redirect('callrecords');
     }
 
     /**

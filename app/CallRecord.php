@@ -16,8 +16,8 @@ class CallRecord extends Model
         return $this->hasMany('App\RequestedCar');
     }
 
-    public function foundCars(){
-        return $this->hasMany('App\FounddCar');
+    public function cars(){
+        return $this->belongsToMany('App\Car', 'found_cars', 'car_id', 'call_id');
     }
 
 }
