@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\Param;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -27,7 +28,8 @@ class CallRecordController extends Controller
     public function create()
     {
         $cars = Car::latest()->get();
-        return view('callrecords.create', compact('cars'));
+        $params = Param::first();
+        return view('callrecords.create', compact('cars', 'params'));
     }
 
     /**

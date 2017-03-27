@@ -77,29 +77,13 @@
                             <a href="/requestedcars/"><i class="fa fa-automobile fa-fw"></i>Requested Cars<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('/requestedcars/create') }}">New Car Request</a>
-                                </li>
-                                <li>
                                     <a href="{{ url ('/requestedcars') }}">Requested Cars</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <!-- CarFound menu -->
                         <li>
-                            <a href="/foundcars/"><i class="fa fa-automobile fa-fw"></i>Found Cars<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('/foundcars/create') }}">New Found Car</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url ('/foundcars') }}">Found Cars</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="/foundcars/"><i class="fa  fa-th fa-fw"></i>Parameters<span class="fa arrow"></span></a>
+                            <a href="/param/"><i class="fa  fa-th fa-fw"></i>Parameters<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
                                     <a href="{{ url ('/param') }}">Parameters</a>
