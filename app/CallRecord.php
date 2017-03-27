@@ -13,11 +13,11 @@ class CallRecord extends Model
     }
 
     public function requestedCars(){
-        return $this->hasMany('App\RequestedCar');
+        return $this->hasMany('App\RequestedCar', 'call_id');
     }
 
     public function cars(){
-        return $this->belongsToMany('App\Car', 'found_cars', 'car_id', 'call_id');
+        return $this->belongsToMany('App\Car', 'found_cars', 'call_id', 'car_id');
     }
 
 }

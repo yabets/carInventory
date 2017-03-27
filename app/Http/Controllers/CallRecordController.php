@@ -22,7 +22,6 @@ class CallRecordController extends Controller
     public function index()
     {
         $calls = CallRecord::latest()->get();
-        dd($calls);
         return view('callrecords.index', compact('calls'));
     }
 
@@ -66,6 +65,7 @@ class CallRecordController extends Controller
             $found->call_id = $call->id;
             $found->save();
         }else{
+            $buyer->callRecords()->save($call);
             $call->save();
             $requested = new RequestedCar;
             $requested->Brand = $input["brand"];
@@ -78,7 +78,8 @@ class CallRecordController extends Controller
             $requested->Plate = $input["plate"];
             $requested->Status = $input["status"];
             $requested->meri = $input["meri"];
-            $call->requestedCars()->save($requested);
+            $requested->call_id = $call->id;
+            $requested->save();
         }
         return redirect('callrecords');
     }
