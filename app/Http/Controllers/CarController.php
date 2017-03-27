@@ -50,6 +50,32 @@ class CarController extends Controller
 
         //Car::create($request->input());
         $input = $request->except('_token');
+        if($input['oname']==""){
+            $input = array_except($input, ['oname', 'phone', 'altPhone', 'Owner']);
+            Car::create($input);
+        }else{
+            $owner = new Owner;
+            $owner->Name = $input['oname'];
+            $owner->Phone = $input['phone'];
+            $owner->AltPhone = $input['altPhone'];
+            $owner->Owner = $input['Owner'];
+            $owner->save();
+            $input = array_except($input, ['oname', 'phone', 'altPhone', 'Owner']);
+            $car = new Car;
+            $car->Brand = $input["brand"];
+            $car->Name = $input["name"];
+            $car->Year = $input["year"];
+            $car->Color = $input["color"];
+            $car->Price = $input["price"];
+            $car->Plate = $input["plate"];
+            $car->location = $input["location"];
+            $car->remark = $input["remark"];
+            $car->meri = $input["meri"];
+            $car->mileage = $input["mileage"];
+            $car->published = $input["published"];
+            $owner->cars()->save($car);
+        }
+        return redirect('cars');
 //        $validator = Validator::make($input, [
 //            "name"=>"required|min:1|alpha_num"
 //        ]);
@@ -59,8 +85,6 @@ class CarController extends Controller
 //                ->withInput();
 //        }
 
-        Car::create($input);
-        return redirect('cars');
     }
 
     /**
