@@ -124,7 +124,7 @@
                 </div>
                 <div class="form-group">
                     <label>Mileage</label>
-                    <input class="form-control" type="number" min="0" name="mileage " placeholder="100,000">
+                    <input class="form-control" type="number" min="0" name="mileage" placeholder="100,000">
                     <p class="help-block">Example 100,000 250,000 959,900</p>
                 </div>
                 <div class="form-group">
@@ -134,11 +134,14 @@
                     @endforeach
                 </div>
                 <div>
-
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Existing Owner</a></li>
-                        <li role="presentation"><a href="#" aria-controls="profile" role="tab" data-toggle="tab">New Owner</a></li>
+                        <li role="presentation" class="active">
+                            <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Existing Owner</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">New Owner</a>
+                        </li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -147,15 +150,15 @@
                             <label for="owner">Owner Name</label>
                             <select class="form-control" id="owner" name="owner_id">
                                 @foreach ($owners as $owner)
-                                    <option value="{{$owner->id}}">{{$owner->Name}}</option>
+                                    <option value="{{$owner->id}}">{{$owner->id}} - {{$owner->Name}}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">
+                        <div role="tabpanel" class="tab-pane " id="profile">
                             <div class="form-group">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input class="form-control" name="name" placeholder="name">
+                                    <input class="form-control" name="oname" placeholder="name">
                                 </div>
                                 <div class="form-group">
                                     <label>Phone</label>
@@ -169,10 +172,6 @@
                                     <label>Type</label>
                                     <input type="radio" name="Owner" value="1" checked>owner
                                     <input type="radio" name="Owner" value="0">agent
-                                </div>
-                                <div class="form-group">
-                                    <label>Remark</label>
-                                    <textarea class="form-control" rows="3" name="remark"></textarea>
                                 </div>
                                 <hr />
                             </div>

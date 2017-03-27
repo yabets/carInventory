@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Buyer extends Model
 {
-    protected $fillable = ['name', 'phone', 'altPhone', 'remark', 'star'];
+    protected $fillable = [];
 
+    public function callRecords(){
+        return $this->hasMany('App\CallRecord');
+    }
 }
