@@ -79,14 +79,9 @@
                 <div class="form-group">
                     <label for="color">Color</label>
                     <select class="form-control" id="color" name="color">
-                        <option value="white">White</option>
-                        <option value="silver">Silver</option>
-                        <option value="black">Black</option>
-                        <option value="grey">Grey</option>
-                        <option value="blue">Blue</option>
-                        <option value="red">Red</option>
-                        <option value="brown">Brown</option>
-                        <option value="green">Green</option>
+                        @foreach($colors as $color)
+                            <option value="{{$color}}" >{{$color}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
