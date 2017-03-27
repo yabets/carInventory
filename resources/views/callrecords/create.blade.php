@@ -27,14 +27,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label>Found</label>
                 <input type="radio" name="found" value="1" checked> Yes
                 <input type="radio" name="found" value="0"> No
             </div>
         </div>
         <div class="row">
-            <div class="form-group">
+            <div class="form-group col-md-11">
                 <label>Car</label>
                 <select class="form-control" name="car_id">
                     @foreach($cars as $car)
@@ -67,7 +67,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-md-9git add. ">
+            <div class="form-group col-md-9">
                 <lable>Remark</lable>
                 <input type="textreas" class="form-control">
             </div>
