@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CallRecord extends Model
 {
-    protected $fillable = [];
+    protected $fillable = ['found', 'wantSee', 'schedule', 'checked', 'sold', 'Remark'];
 
     public function buyer(){
         return $this->belongsTo('App\Buyer');

@@ -17,7 +17,7 @@ class BuyerController extends Controller
      */
     public function index()
     {
-        $buyers = Buyer::all();
+        $buyers = Buyer::latest()->get();
         return view('buyers.buyer', compact('buyers'));
     }
 
@@ -88,8 +88,7 @@ class BuyerController extends Controller
      */
     public function destroy($id)
     {
-        $buyer = Buyer::findOrFail($id);
-        $buyer->delete();
+        Buyer::findOrFail($id)->delete();
         return redirect('buyers');
     }
 

@@ -127,6 +127,7 @@ class CallRecordController extends Controller
      */
     public function destroy($id)
     {
+        dd($id);
         CallRecord::findOrFail($id)->delete();
         return redirect('callrecords');
     }
@@ -140,20 +141,27 @@ class CallRecordController extends Controller
     {
         $input = $request->except('_token');
         $calls = CallRecord::latest()->get();
-        if(!isset($input['filter'])){
-            return view('callrecords.index', compact('calls'));
-        }
-        if($input['filters'] == 'found'){
+        if(isset($input['found'])){
             $calls = $calls->where('found', 1);
         }
-        if(filter == 'wantSee'){
+        if(isset($input['wantSee'])){
             $calls = $calls->where('wantSee', 1);
         }
-        if($input['filters'] == 'checked'){
+        if(isset($input['checked'])){
             $calls = $calls->where('checked', 1);
         }
-        if($input['filters'] == 'sold'){
+        if(isset($input['sold'])){
             $calls = $calls->where('sold', 1);
+        }
+        if($input['scheduleFrom'] != '' and $input['scheduleTo'] != ''){
+            $calls = $calls->filter(function($call)use($input){
+                return (data_get($call, 'schedule') >= $input['scheduleFrom']) && (data_get($call, 'schedule') <= $input['scheduleTo']);
+            });
+        }
+        if($input['callFrom'] != '' and $input['callTo'] != ''){
+            $calls = $calls->filter(function($call)use($input){
+                return (data_get($call, 'updated_at') >= $input['callFrom']) && (data_get($call, 'updated_at') <= $input['callTo']);
+            });
         }
         return view('callrecords.index', compact('calls'));
     }
