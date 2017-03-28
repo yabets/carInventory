@@ -4,13 +4,13 @@
 
 @section('filters')
     <?php
-    $params = \App\Param::first();
-    $brands = explode(",", $params->Brand);
-    $names = explode(",", $params->Name);
-    $types = explode(",", $params->Type);
-    $colors = explode(",", $params->Color);
-    $status = explode(",", $params->Status);
-    $transmissions = explode(",", $params->Transmission);
+        $params = \App\Param::first();
+        $brands = explode(",", $params->Brand);
+        $names = explode(",", $params->Name);
+        $types = explode(",", $params->Type);
+        $colors = explode(",", $params->Color);
+        $status = explode(",", $params->Status);
+        $transmissions = explode(",", $params->Transmission);
     ?>
     <form class="form-inline" role="form" action="/index.php/cars/filter" method="post"
           xmlns="http://www.w3.org/1999/html">
@@ -82,9 +82,9 @@
                     <label for="transmission">Transmission</label>
                     <select class="form-control" name="transmission">
                         <option></option>
-                    @foreach($transmissions as $transmission)
-                        <option value="{{$transmission}}">{{$transmission}}</option>
-                    @endforeach
+                        @foreach($transmissions as $transmission)
+                            <option value="{{$transmission}}">{{$transmission}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>

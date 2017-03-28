@@ -28,7 +28,7 @@ class RequestedCarController extends Controller
     public function create()
     {
         //
-        return view('requestedcars.create');
+        return redirect('requestedcars');
     }
 
     /**
@@ -39,8 +39,7 @@ class RequestedCarController extends Controller
      */
     public function store(Request $request)
     {
-        $request->save();
-        return $request->input();
+        return redirect('requestedcars');
     }
 
     /**
@@ -51,7 +50,8 @@ class RequestedCarController extends Controller
      */
     public function show($id)
     {
-        //
+        $car = RequestedCar::findOrFail($id);
+        return view('requestedcars.view', compact('car'));
     }
 
     /**
@@ -86,11 +86,46 @@ class RequestedCarController extends Controller
      */
     public function destroy($id)
     {
+        RequestedCar::findOrFail($id)->delete();
         return redirect('requestedcars');
     }
 
     public function search()
     {
         return redirect('requestedcars');
+    }
+
+    public function filter(Request $request){
+        $input = $request->except('_token');
+        $cars = RequestedCar::latest()->get();
+
+        if($input['brand'] != ''){
+        $cars = $cars->where('Brand', $input['brand']);
+        }
+        if($input['name'] != ''){
+            $cars = $cars->where('Name', $input['name']);
+        }
+        if($input['color'] != ''){
+            $cars = $cars->where('Color', $input['color']);
+        }
+        if($input['transmission'] != ''){
+            $cars = $cars->where('Transmission', $input['transmission']);
+        }
+        if($input['meri'] != ''){
+            $cars = $cars->where('Meri', $input['meri']);
+        }
+        if($input['status'] != ''){
+            $cars = $cars->where('Status', $input['status']);
+        }
+        if($input['year'] != ''){
+            $cars = $cars->where('Year', $input['year']);
+        }
+        if($input['priceFrom'] != '' and $input['priceTo'] != ''){
+            $cars = $cars->filter(function($car)use($input){
+                return (data_get($car, 'priceFrom') >= $input['priceFrom']) or (data_get($car, 'priceTo') <= $input['priceTo']);
+            });
+        }
+
+        return view('requestedcars.car', compact('cars'));
     }
 }

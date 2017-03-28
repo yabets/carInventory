@@ -3,6 +3,15 @@
 @section('search_page','/index.php/requestedcars/search')
 
 @section('filters')
+    <?php
+        $params = \App\Param::first();
+        $brands = explode(",", $params->Brand);
+        $names = explode(",", $params->Name);
+        $types = explode(",", $params->Type);
+        $colors = explode(",", $params->Color);
+        $status = explode(",", $params->Status);
+        $transmissions = explode(",", $params->Transmission);
+    ?>
     <form class="form-inline" role="form" action="/index.php/requestedcars/filter" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="jumbotron form-inline">
@@ -11,9 +20,9 @@
                     <label for="brand">Brand</label>
                     <select class="form-control" id="brand" name="brand">
                         <option></option>
-                        <option value="Toyota">Toyota</option>
-                        <option value="Mercedes-Benz">Mercedes-Benz</option>
-                        <option value="BMW">BMW</option>
+                        @foreach($brands as $brand)
+                            <option value="{{$brand}}" >{{$brand}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -23,9 +32,9 @@
                     <label for="name">Name</label>
                     <select class="form-control" id="name" name="name">
                         <option></option>
-                        <option value="Corolla">Corolla</option>
-                        <option value="Hilux">Hilux</option>
-                        <option value="Vitz">Vitz</option>
+                        @foreach($names as $name)
+                            <option value="{{$name}}" >{{$name}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -95,14 +104,9 @@
                     <label for="color">Color</label>
                     <select class="form-control" id="color" name="color">
                         <option></option>
-                        <option value="white">White</option>
-                        <option value="silver">Silver</option>
-                        <option value="black">Black</option>
-                        <option value="grey">Grey</option>
-                        <option value="blue">Blue</option>
-                        <option value="red">Red</option>
-                        <option value="brown">Brown</option>
-                        <option value="green">Green</option>
+                        @foreach($colors as $color)
+                            <option value="{{$color}}" >{{$color}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -112,8 +116,9 @@
                     <label for="transmission">Transmission</label>
                     <select class="form-control" id="transmission" name="transmission">
                         <option></option>
-                        <option>manual</option>
-                        <option>automatic</option>
+                        @foreach($transmissions as $transmission)
+                            <option value="{{$transmission}}">{{$transmission}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -135,23 +140,8 @@
                     <label for="status">Status</label>
                     <select class="form-control" id="status" name="status">
                         <option></option>
-                        <option value="available">available</option>
-                        <option value="unavailable">unavailable</option>
-                        <option value="sold">sold</option>
-                    </select>
-                </div>
-            </div>
-            {{--col-lg-2--}}
-            <div class="col-lg-2">
-                <div class="form-group">
-                    <label for="owner">Buyer</label>
-                    <select class="form-control" id="owner" name="owner_id">
-                        <option></option>
-                        <?php
-                        $fowners = \App\Buyer::all();
-                        ?>
-                        @foreach ($fowners as $owner)
-                            <option value="{{$owner->id}}">{{$owner->Name}}</option>
+                        @foreach($status as $statu)
+                            <option value="{{$statu}}" >{{$statu}}</option>
                         @endforeach
                     </select>
                 </div>

@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
-@section('page_heading', 'Car')
-@section('search_page','/index.php/cars/search')
+@section('page_heading', 'Requested Car')
+@section('search_page','/index.php/callrecords/search')
 
 @section('section')
     <table class="table table-hover">
@@ -26,12 +26,12 @@
                 <td>{{$car->Transmission}}</td>
             </tr>
             <tr>
-                <td>Price</td>
-                <td>{{$car->Price}}</td>
+                <td>Price From</td>
+                <td>{{$car->PriceFrom}}</td>
             </tr>
             <tr>
-                <td>Location</td>
-                <td>{{$car->location}}</td>
+                <td>Price To</td>
+                <td>{{$car->PriceTo}}</td>
             </tr>
             <tr>
                 <td>Plate</td>
@@ -46,47 +46,22 @@
                 <td>{{$car->Meri}}</td>
             </tr>
             <tr>
-                <td>Mileage</td>
-                <td>{{$car->Mileage}}</td>
-            </tr>
-
-            <tr>
-                <td>Posted</td>
-                <td>
-                    @if ($car->published == 1)
-                        yes
-                    @else
-                        no
-                    @endif
-                </td>
+                <td>Date</td>
+                <td>{{$car->created_at}}</td>
             </tr>
             <tr>
-                <td>Number of posts</td>
-                <td>{{$car->counter}}</td>
-            </tr>
-            <tr>
-                <td>Owner Name</td>
-                <td><a href="/index.php/owners/{{$car->owner->id}}">{{$car->owner->Name}}</a></td>
-            </tr>
-            <tr>
-                <td>Remark</td>
-                <td>{{$car->Remark}}</td>
-            </tr>
-            <tr>
-                <td><a href="/index.php/cars/{{$car->id}}/edit">
+                 <td><a href="/index.php/requestedcars/{{$car->id}}/edit">
                         <button type="button" class="btn btn-primary">Edit</button>
                     </a>
                 </td>
                 <td>
-                    <form action="/index.php/cars/{{$car->id }}" method="POST">
+                    <form action="/index.php/requestedcars/{{$car->id }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <button class="btn btn-danger">Delete</button>
                     </form>
                 </td>
             </tr>
-
         </tbody>
     </table>
-
 @stop
