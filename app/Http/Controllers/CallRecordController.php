@@ -127,6 +127,34 @@ class CallRecordController extends Controller
      */
     public function destroy($id)
     {
-        //
+        CallRecord::findOrFail($id)->delete();
+        return redirect('callrecords');
+    }
+
+    public function search(Request $request)
+    {
+        return redirect('callrecords');
+    }
+
+    public function filter(Request $request)
+    {
+        $input = $request->except('_token');
+        $calls = CallRecord::latest()->get();
+        if(!isset($input['filter'])){
+            return view('callrecords.index', compact('calls'));
+        }
+        if($input['filters'] == 'found'){
+            $calls = $calls->where('found', 1);
+        }
+        if(filter == 'wantSee'){
+            $calls = $calls->where('wantSee', 1);
+        }
+        if($input['filters'] == 'checked'){
+            $calls = $calls->where('checked', 1);
+        }
+        if($input['filters'] == 'sold'){
+            $calls = $calls->where('sold', 1);
+        }
+        return view('callrecords.index', compact('calls'));
     }
 }

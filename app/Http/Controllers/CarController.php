@@ -136,7 +136,7 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        $car = Car::findOrFail($id)->delete();
+        Car::findOrFail($id)->delete();
         return redirect('cars');
     }
 
@@ -158,12 +158,8 @@ class CarController extends Controller
     public function filter(Request $request)
     {
         $input = $request->except('_token');
-        //$users = DB::table('users')->get();
-
         $cars = Car::all();
-
-
-
+        
         if($input['brand'] != ''){
             $cars = $cars->where('Brand', $input['brand']);
         }
@@ -186,6 +182,5 @@ class CarController extends Controller
             $cars = $cars->where('Status', $input['status']);
         }
         return view('cars.car', compact('cars'));
-
     }
 }

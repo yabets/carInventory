@@ -6,6 +6,7 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="jumbotron form-inline">
             <div class="form-group col-md-3">
+                <input class="form-control checkbox" type="checkbox" name="filters" value="found"> Found cars <br>
                 <input class="form-control checkbox" type="checkbox" name="filters" value="wantSee"> Want to See <br>
                 <input class="form-control checkbox" type="checkbox" name="filters" value="checked"> Checked cars <br>
                 <input class="form-control checkbox" type="checkbox" name="filters" value="sold"> Sold cars <br>

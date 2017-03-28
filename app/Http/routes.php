@@ -41,7 +41,8 @@ Route::get('/', function()
 
 Route::post('/cars/search', 'CarController@search');
 Route::post('/cars/filter', 'CarController@filter');
-Route::post('/callrecords/filter', 'CallController@filter');
+Route::post('/callrecords/filter', 'CallRecordController@filter');
+Route::post('/callrecords/search', 'CallRecordController@search');
 Route::post('/owners/search', 'OwnerController@search');
 Route::post('/buyers/search', 'BuyerController@search');
 
