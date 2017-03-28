@@ -76,7 +76,8 @@ class OwnerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $owner = Owner::findOrFail($id);
+        return view('owners.edit', compact('owner'));
     }
 
     /**
@@ -88,7 +89,10 @@ class OwnerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $owner = Owner::findOrFail($id);
+        $input = $request->except('_method', '_token');
+        $owner->update($input);
+        return redirect('owners');
     }
 
     /**

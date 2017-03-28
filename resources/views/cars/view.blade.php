@@ -14,6 +14,10 @@
                 <td>{{$car->Name}}</td>
             </tr>
             <tr>
+                <td>Type</td>
+                <td>{{$car->Type}}</td>
+            </tr>
+            <tr>
                 <td>Year</td>
                 <td>{{$car->Year}}</td>
             </tr>

@@ -1,22 +1,21 @@
 @extends('layouts.dashboard')
-@section('page_heading','Edit Car')
+@section('page_heading','Create New Car Request')
 @section('section')
-    {{--<form role="form" action="/index.php/cars/{{$car->id}}" method="post">--}}
-    {{ Form::model($car, array('route' => array('cars.update', $car->id), 'method' => 'PUT')) }}
-        {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
-        {{--<input type="hidden" name="_method" value="PATCH">--}}
+
+    {{ Form::model($car, array('route' => array('requestedcars.update', $car->id), 'method' => 'PUT')) }}
     <?php
-            $brands = explode(",", $params->Brand);
-            $names = explode(",", $params->Name);
-            $types = explode(",", $params->Type);
-            $colors = explode(",", $params->Color);
-            $status = explode(",", $params->Status);
-            $transmissions = explode(",", $params->Transmission);
+        $brands = explode(",", $params->Brand);
+        $names = explode(",", $params->Name);
+        $types = explode(",", $params->Type);
+        $colors = explode(",", $params->Color);
+        $status = explode(",", $params->Status);
+        $transmissions = explode(",", $params->Transmission);
     ?>
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
-                    {{ Form::label('brand', 'Brand') }}
+                    <label>Brand</label>
                     <select class="form-control" id="brand" name="brand">
                         <option value="{{$car->Brand}}" selected="selected">{{$car->Brand}}</option>
                         @foreach($brands as $brand)
@@ -25,7 +24,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label>Name</label>
                     <select class="form-control" id="name" name="name">
                         <option value="{{$car->Name}}" selected="selected">{{$car->Name}}</option>
                         @foreach($names as $name)
@@ -34,16 +33,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="name">Type</label>
-                    <select class="form-control" id="name" name="type">
-                        <option value="{{$car->Type}}" selected="selected">{{$car->Type}}</option>
-                        @foreach($types as $type)
-                            <option value="{{$type}}" >{{$type}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="year">Year</label>
+                    <label>Year</label>
                     <select class="form-control" id="year" name="year">
                         <option value="{{$car->Year}}" selected="selected">{{$car->Year}}</option>
                         <option value="1980">1980</option>
@@ -88,7 +78,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="color">Color</label>
+                    <label>Color</label>
                     <select class="form-control" id="color" name="color">
                         <option value="{{$car->Color}}" selected="selected">{{$car->Color}}</option>
                         @foreach($colors as $color)
@@ -97,41 +87,31 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    {{Form::label('price', 'Price')}}
-                    {{Form::number('price', $car->Price, array('class'=>'form-control'))}}
+                    <label>Price From</label>
+                    {{Form::number('pricefrom', $car->PriceFrom, array('class'=>'form-control'))}}
                 </div>
                 <div class="form-group">
-                    {{Form::label('plate', 'Plate')}}
-                    {{Form::text('plate', $car->Plate, array('class'=>'form-control'))}}
-                    <p class="help-block">Example AA-2-A-12345, OR-3-12345 </p>
-                </div>
-                <div class="form-group">
-                    {{Form::label('Location')}}
-                    {{Form::text('location', $car->Location, array('class'=>'form-control'))}}
-                    <p class="help-block">Example Kera, Saris, Bole, Piassa, Arat Kilo</p>
-                </div>
-                <div class="form-group">
-                    {{Form::label('Remark')}}
-                    {{Form::textarea('remark', $car->Remark, array('class'=>'form-control'))}}
+                    <label>Price To</label>
+                    {{Form::number('priceto', $car->PriceTo, array('class'=>'form-control'))}}
                 </div>
             </div>
 
             <div class="col-lg-6">
                 <div class="form-group">
-                    <label>Meri</label>
-                    <input type="radio" name="meri" value="yalezore" @if($car->Meri == "yalezore") checked @endif>yalezore
-                    <input type="radio" name="meri" value="yezore" @if($car->Meri == "yezore") checked @endif>yezore
-                </div>
-                <div class="form-group">
-                    <label for="transmission">Transmission</label>
-                        <input type="radio" name="transmission" value="{{$car->Transmission}}" checked>{{$car->Transmission}}
+                    <label>Transmission</label>
+                    <input type="radio" name="transmission" value="{{$car->Transmission}}" checked>{{$car->Transmission}}
                     @foreach($transmissions as $transmission)
                         <input type="radio" name="transmission" value="{{$transmission}}">{{$transmission}}
                     @endforeach
                 </div>
                 <div class="form-group">
-                    {{Form::label('Mileage')}}
-                    {{Form::number('mileage', $car->Mileage, array('class'=>'form-control'))}}
+                    <label>Plate</label>
+                    {{Form::text('priceto', $car->PriceTo, array('class'=>'form-control'))}}
+                </div>
+                <div class="form-group">
+                    <label>Meri</label>
+                    <input type="radio" name="meri" value="yalezore" @if($car->Meri == "yalezore") checked @endif>yalezore
+                    <input type="radio" name="meri" value="yezore" @if($car->Meri == "yezore") checked @endif>yezore
                 </div>
                 <div class="form-group">
                     <label>Status</label>
@@ -141,32 +121,12 @@
                     @endforeach
                 </div>
                 <div class="form-group">
-                    <label for="owner">Owner Name</label>
-                    <select class="form-control" id="owner" name="owner_id">
-                        <option value="{{$car->owner->id}}">{{$car->owner->Name}}</option>
-                        @foreach ($owners as $owner)
-                            <option value="{{$owner->id}}">{{$owner->Name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="form-group">
-                    {{Form::label('Posted')}}
-                    @if($car->published ==1)
-                        <input type="radio" name="published" value="0"> not published
-                        <input type="radio" name="published" value="1" checked> published
-                    @else
-                        <input type="radio" name="published" value="0" checked> not published
-                        <input type="radio" name="published" value="1"> published
-                    @endif
-                </div>
-                <div class="form-group">
-                    {{Form::label('Count of post')}}
-                    {{Form::number('counter', $car->counter, array('class'=>'form-control'))}}
+                    <label>Remark</label>
+                    <textarea class="form-control" rows="3" name="remark"></textarea>
                 </div>
             </div>
         </div>
-    {{ Form::submit('Update car', array('class' => 'btn btn-primary')) }}
-    <a href="/index.php/cars/" ><button class = 'btn btn-success'>Cancel</button></a>
-    {{ Form::close() }}
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
     <hr>
 @stop

@@ -11,6 +11,7 @@ use App\RequestedCar;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Prophecy\Call\Call;
 
 class CallRecordController extends Controller
 {
@@ -104,7 +105,10 @@ class CallRecordController extends Controller
      */
     public function edit($id)
     {
-        //
+        $call = CallRecord::findOrFail($id);
+        $cars = Car::latest()->get();
+        $params = Param::first();
+        return view('callrecords.edit', compact('call', 'params', 'cars'));
     }
 
     /**
@@ -116,7 +120,8 @@ class CallRecordController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        CallRecord::findOrFail($id)->update($request->all());
+        return redirect('callrecords');
     }
 
     /**
@@ -127,7 +132,6 @@ class CallRecordController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
         CallRecord::findOrFail($id)->delete();
         return redirect('callrecords');
     }

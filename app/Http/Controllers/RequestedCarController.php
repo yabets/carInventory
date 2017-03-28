@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Param;
 use App\RequestedCar;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,6 @@ class RequestedCarController extends Controller
      */
     public function create()
     {
-        //
         return redirect('requestedcars');
     }
 
@@ -62,7 +62,9 @@ class RequestedCarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $car = RequestedCar::findOrFail($id);
+        $params = Param::first();
+        return view('requestedcars.edit', compact('car', 'params'));
     }
 
     /**
@@ -74,7 +76,7 @@ class RequestedCarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        RequestedCar::findOrFail($id)->delete();
+        RequestedCar::findOrFail($id)->update($request->all());
         return redirect('requestedcars');
     }
 
