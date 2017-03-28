@@ -92,7 +92,8 @@ class CallRecordController extends Controller
      */
     public function show($id)
     {
-        //
+        $call = CallRecord::findOrFail($id);
+        return view('callrecords.view', compact('call'));
     }
 
     /**

@@ -1,5 +1,6 @@
 @extends('layouts.dashboard')
 @section('page_heading', 'Car')
+@section('search_page','/index.php/cars/search')
 
 @section('section')
     <table class="table table-hover">
@@ -35,7 +36,8 @@
             <tr>
                 <td>Transmission</td>
                 <td>{{$car->Transmission}}</td>
-            </tr><tr>
+            </tr>
+            <tr>
                 <td>Plate</td>
                 <td>{{$car->Plate}}</td>
             </tr>
@@ -83,7 +85,6 @@
                     <form action="/index.php/cars/{{$car->id }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-
                         <button class="btn btn-danger">Delete</button>
                     </form>
                 </td>
