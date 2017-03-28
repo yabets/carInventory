@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 @section('page_heading','Create Call Record')
+@section('search_page','/index.php/callrecords/search')
+
 @section('section')
     <script>
         $(document).ready(function () {

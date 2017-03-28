@@ -107,7 +107,7 @@
                     <tr>
                         <td>Brand</td>
                         <td>
-                            <a href="/index.php/cars/{{$car->id}}">{{$car->Brand}}</a>
+                            <a href="/index.php/requestedcars/{{$car->id}}">{{$car->Brand}}</a>
                         </td>
                     </tr>
                     <tr>
@@ -147,9 +147,6 @@
                         <td>{{$car->Meri}}</td>
                     </tr>
                     <tr>
-                        <td>Mileage</td>
-                        <td>{{$car->Mileage}}</td>
-                    </tr>
                 @endforeach
             @endif
 

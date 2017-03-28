@@ -1,5 +1,6 @@
 @extends('layouts.dashboard')
 @section('page_heading','Call Records')
+@section('search_page','/index.php/callrecords/search')
 
 @section('filters')
     <form  role="form" action="/index.php/callrecords/filter" method="post">
@@ -34,8 +35,6 @@
 @endsection
 
 @section('section')
-
-
     <div class="col-sm-12">
         @section ('htable_panel_body')
             <table class="table table-hover">
