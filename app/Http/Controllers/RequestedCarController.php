@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\RequestedCar;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +16,8 @@ class RequestedCarController extends Controller
      */
     public function index()
     {
-        //
+        $cars = RequestedCar::latest()->get();
+        return view ('requestedcars.car', compact('cars'));
     }
 
     /**
@@ -72,7 +74,8 @@ class RequestedCarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        RequestedCar::findOrFail($id)->delete();
+        return redirect('requestedcars');
     }
 
     /**
@@ -83,6 +86,11 @@ class RequestedCarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return redirect('requestedcars');
+    }
+
+    public function search()
+    {
+        return redirect('requestedcars');
     }
 }
