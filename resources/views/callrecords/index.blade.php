@@ -7,10 +7,10 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="jumbotron form-inline">
             <div class="form-group col-md-3">
-                <input class="form-control checkbox" type="checkbox" name="filters" value="found"> Found cars <br>
-                <input class="form-control checkbox" type="checkbox" name="filters" value="wantSee"> Want to See <br>
-                <input class="form-control checkbox" type="checkbox" name="filters" value="checked"> Checked cars <br>
-                <input class="form-control checkbox" type="checkbox" name="filters" value="sold"> Sold cars <br>
+                <input class="form-control checkbox" type="checkbox" name="found" value="found"> Found cars <br>
+                <input class="form-control checkbox" type="checkbox" name="wantSee" value="wantSee"> Want to See <br>
+                <input class="form-control checkbox" type="checkbox" name="checked" value="checked"> Checked cars <br>
+                <input class="form-control checkbox" type="checkbox" name="sold" value="sold"> Sold cars <br>
             </div>
             <div class="form-group col-md-5">
                 <label>Scheduled</label>
@@ -26,8 +26,9 @@
                     <input class="form-control" name="callTo">
                 </div>
             </div>
-            <div class="col-offset-3">
-                <button type="submit" class="btn btn-primary col-offset-3">Filter</button>
+            <p class="clearfix"></p>
+            <div class="col-lg-4 col-offset-4">
+                <button type="submit" class="btn btn-primary">Filter</button>
             </div>
         </div>
 

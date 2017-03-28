@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('page_heading','Cars')
+@section('page_heading','Car Search result')
 @section('search_page','index.php/cars/search')
 
 @section('section')
@@ -29,10 +29,14 @@
                             <td>{{$car->Transmission}}</td>
                             <td>{{$car->Meri}}</td>
                             <td>
-                                <button type="button" class="btn btn-success">View</button>
+                                <a href="/index.php/cars/{{$car->id}}">
+                                    <button type="button" class="btn btn-success">View</button>
+                                </a>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-primary">Edit</button>
+                                <a href="/index.php/cars/{{$car->id}}/edit">
+                                    <button type="button" class="btn btn-primary">Edit</button>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

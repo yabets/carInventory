@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('page_heading','Owners')
+@section('page_heading','Owners Search Result')
 @section('search_page','/index.php/owners/search')
 
 @section('section')
@@ -29,10 +29,14 @@
                             @endif
                         </td>
                         <td>
-                            <button type="button" class="btn btn-success">View</button>
+                            <a href="/index.php/owners/{{$owner->id}}">
+                                <button type="button" class="btn btn-success">View</button>
+                            </a>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary">Edit</button>
+                            <a href="/index.php/owners/{{$owner->id}}/edit">
+                                <button type="button" class="btn btn-primary">Edit</button>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

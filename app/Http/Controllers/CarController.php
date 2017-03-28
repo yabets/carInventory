@@ -166,9 +166,6 @@ class CarController extends Controller
         if($input['name'] != ''){
             $cars = $cars->where('Name', $input['name']);
         }
-        if($input['year'] != ''){
-            $cars = $cars->where('Year', $input['year']);
-        }
         if($input['color'] != ''){
             $cars = $cars->where('Color', $input['color']);
         }
@@ -180,6 +177,25 @@ class CarController extends Controller
         }
         if($input['status'] != ''){
             $cars = $cars->where('Status', $input['status']);
+        }
+        if($input['owner_id'] != ''){
+            $cars = $cars->where('owner_id', (int)$input['owner_id']);
+        }
+        if($input['priceFrom'] != '' and $input['priceTo'] == ''){
+            $cars = $cars->where('Price', (int)$input['priceFrom']);
+        }
+        if($input['priceFrom'] == '' and $input['priceTo'] != ''){
+            $cars = $cars->where('Price', (int)$input['priceTo']);
+        }
+        if($input['priceFrom'] != '' and $input['priceTo'] != ''){
+            $cars = $cars->filter(function($car)use($input){
+               return (data_get($car, 'Price') >= $input['priceFrom']) && (data_get($car, 'Price') <= $input['priceTo']);
+            });
+        }
+        if($input['yearFrom'] != '' and $input['yearTo'] != ''){
+            $cars = $cars->filter(function($car)use($input){
+               return (data_get($car, 'Year') >= $input['yearFrom']) && (data_get($car, 'Year') <= $input['yearTo']);
+            });
         }
         return view('cars.car', compact('cars'));
     }

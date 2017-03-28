@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 @section('page_heading','Create Buyer')
+@section('search_page','/index.php/buyers/search')
+
 @section('section')
 
     <form role="form" action="/index.php/buyers" method="post">

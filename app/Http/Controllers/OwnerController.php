@@ -111,6 +111,16 @@ class OwnerController extends Controller
         //Car::create($request->input());
         $input = $request->except('_token');
         $search = $input['search'];
+        if($input['search']== 'Agent'){
+            $owners = Owner::all();
+            $owners = $owners->where('Owner', 0);
+            return view('owners.search', compact('owners'));
+        }
+        if($input['search']== 'Owner'){
+            $owners = Owner::all();
+            $owners = $owners->where('Owner', 1);
+            return view('owners.search', compact('owners'));
+        }
         $owners = Owner::where('Name','like','%'.$search.'%')
             ->orWhere('Phone','like','%'.$search.'%')
             ->orWhere('AltPhone','like','%'.$search.'%')
