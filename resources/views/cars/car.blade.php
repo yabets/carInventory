@@ -12,8 +12,7 @@
         $status = explode(",", $params->Status);
         $transmissions = explode(",", $params->Transmission);
     ?>
-    <form class="form-inline" role="form" action="/index.php/cars/filter" method="post"
-          xmlns="http://www.w3.org/1999/html">
+    <form class="form-inline" role="form" action="/index.php/cars/filter" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="jumbotron form-inline">
             <div class="col-lg-3">

@@ -65,7 +65,8 @@ class BuyerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $buyer = Buyer::findOrFail($id);
+        return view('buyers.edit', compact('buyer'));
     }
 
     /**
@@ -77,7 +78,9 @@ class BuyerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $buyer = $request->except('_method', '_token');
+        Buyer::findOrFail($id)->update($request->all());
+        return redirect('buyers');
     }
 
     /**
