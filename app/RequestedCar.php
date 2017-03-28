@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class RequestedCar extends Model
 {
-    protected $fillable = ['brand', 'name', 'year', 'color', 'pricefrom', 'transmission', 'plate', 'priceto', 'meri', 'status', 'remark'];
+    protected $fillable = ['brand', 'name', 'type','year', 'color', 'pricefrom', 'transmission', 'plate', 'priceto', 'meri', 'status', 'remark'];
 
 
     public function callRecord(){

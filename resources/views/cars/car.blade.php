@@ -41,11 +41,12 @@
             {{--col-lg-2--}}
             <div class="col-lg-2">
                 <div class="form-group">
-                    <label for="meri">Meri</label>
-                    <select class="form-control" id="meri" name="meri">
+                    <label for="meri">Type</label>
+                    <select class="form-control" id="meri" name="type">
                         <option></option>
-                        <option>yalezore</option>
-                        <option>yezore</option>
+                        @foreach($types as $type)
+                            <option value="{{$type}}" >{{$type}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -118,6 +119,16 @@
             </div>
             {{--col-lg-2--}}
             <p class="clearfix"></p>
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <label for="meri">Meri</label>
+                    <select class="form-control" id="meri" name="meri">
+                        <option></option>
+                        <option>yalezore</option>
+                        <option>yezore</option>
+                    </select>
+                </div>
+            </div>
             <div class="col-lg-5">
                 <div class="form-group">
                     <label>Year</label>
@@ -141,6 +152,7 @@
                 <tr>
                     <th>Brand</th>
                     <th>Model Name</th>
+                    <th>Type</th>
                     <th>Year</th>
                     <th>Price</th>
                     <th>Color</th>
@@ -153,6 +165,7 @@
                         <tr>
                             <td>{{$car->Brand}}</td>
                             <td>{{$car->Name}}</td>
+                            <td>{{$car->Type}}</td>
                             <td>{{$car->Year}}</td>
                             <td>{{$car->Price}}</td>
                             <td>{{$car->Color}}</td>

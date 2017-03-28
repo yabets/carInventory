@@ -33,6 +33,14 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="name">Type</label>
+                    <select class="form-control" id="name" name="type">
+                        @foreach($types as $type)
+                            <option value="{{$type}}" >{{$type}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="year">Year</label>
                     <select class="form-control" id="year" name="year">
                         <option value="1980">1980</option>
@@ -94,11 +102,7 @@
                     <input class="form-control" name="plate" placeholder="plate">
                     <p class="help-block">Example AA-2-A-12345, OR-3-12345 </p>
                 </div>
-                <div class="form-group">
-                    <label>Location</label>
-                    <input class="form-control" name="location" placeholder="location">
-                    <p class="help-block">Example Kera, Saris, Bole, Piassa, Arat Kilo</p>
-                </div>
+
                 <div class="form-group">
                     <label>Remark about the car</label>
                     <textarea class="form-control" rows="3" name="remark"></textarea>
@@ -127,6 +131,11 @@
                     @foreach($status as $statu)
                         <input type="radio" name="status" value="{{$statu}}" >{{$statu}}
                     @endforeach
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input class="form-control" name="location" placeholder="location">
+                    <p class="help-block">Example Kera, Saris, Bole, Piassa, Arat Kilo</p>
                 </div>
                 <div>
                     <!-- Nav tabs -->

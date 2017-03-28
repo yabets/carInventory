@@ -34,6 +34,15 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="name">Type</label>
+                    <select class="form-control" id="name" name="type">
+                        <option value="{{$car->Type}}" selected="selected">{{$car->Type}}</option>
+                        @foreach($types as $type)
+                            <option value="{{$type}}" >{{$type}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="year">Year</label>
                     <select class="form-control" id="year" name="year">
                         <option value="{{$car->Year}}" selected="selected">{{$car->Year}}</option>

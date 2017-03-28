@@ -166,6 +166,9 @@ class CarController extends Controller
         if($input['name'] != ''){
             $cars = $cars->where('Name', $input['name']);
         }
+        if($input['type'] != ''){
+            $cars = $cars->where('Type', $input['type']);
+        }
         if($input['color'] != ''){
             $cars = $cars->where('Color', $input['color']);
         }
