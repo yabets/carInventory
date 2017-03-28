@@ -54,7 +54,10 @@
                 </thead>
                 <tbody>
                 @foreach ($calls as $call)
-                    <?php $buyer = \App\Buyer::findOrFail($call->buyer_id); ?>
+                    <?php
+                        $buyer = \App\Buyer::findOrFail($call->buyer_id);
+                        $scheudle = $call->schedule->diffForHumans();
+                    ?>
                     <tr>
                         <td>
                             <a href="/index.php/buyers/{{$call->buyer->id}}">
@@ -64,7 +67,7 @@
                         <td>{{$call->buyer->Phone}}</td>
                         <td> @if ($call->found == 1) yes @else no @endif </td>
                         <td> @if ($call->wantSee == 1) yes @else no @endif </td>
-                        <td>{{$call->schedule}}</td>
+                        <td>{{$scheudle}}</td>
                         <td> @if ($call->checked == 1) yes @else no @endif </td>
                         <td> @if ($call->sold == 1) yes @else no @endif </td>
                         <td>{{$call->created_at}}</td>
