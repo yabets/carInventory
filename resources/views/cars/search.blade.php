@@ -16,6 +16,7 @@
                     <th>Color</th>
                     <th>Transmission</th>
                     <th>Meri</th>
+                    <th>Plate Type</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,6 +29,7 @@
                             <td>{{$car->Color}}</td>
                             <td>{{$car->Transmission}}</td>
                             <td>{{$car->Meri}}</td>
+                            <td>{{$car->PlateType}}</td>
                             <td>
                                 <a href="/index.php/cars/{{$car->id}}">
                                     <button type="button" class="btn btn-success">View</button>

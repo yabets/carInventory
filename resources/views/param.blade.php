@@ -17,6 +17,10 @@
                 <td>{{$param->Type}}</td>
             </tr>
             <tr>
+                <td>Plate Type</td>
+                <td>{{$param->PlateType}}</td>
+            </tr>
+            <tr>
                 <td>Color</td>
                 <td>{{$param->Color}}</td>
             </tr>

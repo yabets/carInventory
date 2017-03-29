@@ -9,6 +9,7 @@
             $brands = explode(",", $params->Brand);
             $names = explode(",", $params->Name);
             $types = explode(",", $params->Type);
+            $platetypes = explode(",", $params->PlateType);
             $colors = explode(",", $params->Color);
             $status = explode(",", $params->Status);
             $transmissions = explode(",", $params->Transmission);
@@ -104,6 +105,15 @@
                     {{Form::label('plate', 'Plate')}}
                     {{Form::text('plate', $car->Plate, array('class'=>'form-control'))}}
                     <p class="help-block">Example AA-2-A-12345, OR-3-12345 </p>
+                </div>
+                <div class="form-group">
+                    <label for="meri">Plate Type</label>
+                    <select class="form-control" name="platetype">
+                        <option value="{{$car->PlateType}}">{{$car->PlateType}}</option>
+                        @foreach($platetypes as $type)
+                            <option value="{{$type}}" >{{$type}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     {{Form::label('Location')}}

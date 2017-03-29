@@ -16,6 +16,10 @@
             {{Form::text('Type', null, array('class'=>'form-control'))}}
         </div>
         <div class="form-group">
+            {{Form::label('Plate Type')}}
+            {{Form::text('PlateType', null, array('class'=>'form-control'))}}
+        </div>
+        <div class="form-group">
             {{Form::label('Color')}}
             {{Form::text('Color', null, array('class'=>'form-control'))}}
         </div>

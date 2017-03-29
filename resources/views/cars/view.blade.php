@@ -42,6 +42,10 @@
                 <td>{{$car->Plate}}</td>
             </tr>
             <tr>
+                <td>Plate Type</td>
+                <td>{{$car->PlateType}}</td>
+            </tr>
+            <tr>
                 <td>Status</td>
                 <td>{{$car->Status}}</td>
             </tr>

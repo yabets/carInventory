@@ -24,6 +24,7 @@
                 $(".nofound").css('pointer-events', 'visible');
                 $(".nofound").css('opacity', '1');
             });
+            $("#datepicker").datepicker();
         });
     </script>
 
@@ -83,17 +84,17 @@
 
             <div class="form-group col-md-3 foundcar">
                 <label>schedule</label>
-                <input type="datetime" name="schedule" value="1" checked>
+                <input type="date" name="schedule" id="datepicker">
             </div>
             <div class="form-group col-md-3 foundcar">
                 <label>Checked</label>
-                <input type="radio" name="checked" value="1" checked> Yes
-                <input type="radio" name="checked" value="0"> No
+                <input type="radio" name="checked" value="1"> Yes
+                <input type="radio" name="checked" value="0" checked> No
             </div>
             <div class="form-group col-md-3 foundcar">
                 <label>Sold</label>
-                <input type="radio" name="sold" value="1" checked> Yes
-                <input type="radio" name="sold" value="0"> No
+                <input type="radio" name="sold" value="1"> Yes
+                <input type="radio" name="sold" value="0" checked> No
             </div>
         </div>
         <hr />
