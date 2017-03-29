@@ -124,7 +124,7 @@ class CarController extends Controller
     {
         $car = Car::findOrFail($id);
         $car->update($request->all());
-        $cars = Car::all();
+        $cars = Car::latest()->get();
         return view('cars.car', compact('cars'));
     }
 
@@ -158,7 +158,7 @@ class CarController extends Controller
     public function filter(Request $request)
     {
         $input = $request->except('_token');
-        $cars = Car::all();
+        $cars = Car::latest()->get();
         
         if($input['brand'] != ''){
             $cars = $cars->where('Brand', $input['brand']);
@@ -168,6 +168,9 @@ class CarController extends Controller
         }
         if($input['type'] != ''){
             $cars = $cars->where('Type', $input['type']);
+        }
+        if($input['platetype'] != ''){
+            $cars = $cars->where('PlateType', $input['platetype']);
         }
         if($input['color'] != ''){
             $cars = $cars->where('Color', $input['color']);

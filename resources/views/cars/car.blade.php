@@ -8,6 +8,7 @@
         $brands = explode(",", $params->Brand);
         $names = explode(",", $params->Name);
         $types = explode(",", $params->Type);
+        $platetypes = explode(",", $params->PlateType);
         $colors = explode(",", $params->Color);
         $status = explode(",", $params->Status);
         $transmissions = explode(",", $params->Transmission);
@@ -15,7 +16,7 @@
     <form class="form-inline" role="form" action="/index.php/cars/filter" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="jumbotron form-inline">
-            <div class="col-lg-3">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label for="brand">Brand</label>
                     <select class="form-control" id="brand" name="brand">
@@ -27,7 +28,7 @@
                 </div>
             </div>
             {{--col-lg-2--}}
-            <div class="col-lg-2">
+            <div class="col-md-2">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <select class="form-control" id="name" name="name">
@@ -39,9 +40,9 @@
                 </div>
             </div>
             {{--col-lg-2--}}
-            <div class="col-lg-2">
+            <div class="col-md-2">
                 <div class="form-group">
-                    <label for="meri">Type</label>
+                    <label>Type</label>
                     <select class="form-control" id="meri" name="type">
                         <option></option>
                         @foreach($types as $type)
@@ -129,6 +130,17 @@
                     </select>
                 </div>
             </div>
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <label>Plate Type</label>
+                    <select class="form-control" name="platetype">
+                        <option></option>
+                        @foreach($platetypes as $type)
+                            <option value="{{$type}}" >{{$type}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
             <div class="col-lg-5">
                 <div class="form-group">
                     <label>Year</label>
@@ -153,6 +165,7 @@
                     <th>Brand</th>
                     <th>Model Name</th>
                     <th>Type</th>
+                    <th>Plate Type</th>
                     <th>Year</th>
                     <th>Price</th>
                     <th>Color</th>
@@ -166,6 +179,7 @@
                             <td>{{$car->Brand}}</td>
                             <td>{{$car->Name}}</td>
                             <td>{{$car->Type}}</td>
+                            <td>{{$car->PlateType}}</td>
                             <td>{{$car->Year}}</td>
                             <td>{{$car->Price}}</td>
                             <td>{{$car->Color}}</td>
