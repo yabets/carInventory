@@ -136,8 +136,23 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $car = Car::findOrFail($id);
-        $car->update($request->all());
+        if ($request->hasFile('image')) {
+            // get the file object
+            $file = $request->file('image');
+            // set the upload path (starting form the public path)
+            $rewardsUploadPath = '/uploads/images/';
+            // create a unique name for this file
+            $fileName = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString())
+                . '-' . str_random(5) . '.' . $file->getClientOriginalExtension();
+            // move the uploaded file to its destination
+            $file->move(public_path() . $rewardsUploadPath, $fileName);
+            // save the file path and name
+            //$filePathAndName = $rewardsUploadPath . $fileName;
+            $car->Image = $fileName;
+        }
+        $car->update($request->except('Image'));
         $cars = Car::latest()->get();
         return view('cars.car', compact('cars'));
     }
