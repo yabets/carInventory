@@ -83,7 +83,7 @@
             <tr>
                 <td>Images</td>
                 <td class="text-center">
-                    <img src="/uploads/images/{{$car->Image}}"/>
+                    <img src="/public/uploads/images/{{$car->Image}}"/>
                 </td>
             </tr>
             <tr>
