@@ -12,14 +12,25 @@
         $status = explode(",", $params->Status);
         $transmissions = explode(",", $params->Transmission);
     ?>
-
+    <script>
+        $(document).ready(function(){
+            $("#platetype").change(function(){
+                if($("#platetype option:selected").text() == "new"){
+                    console.log($("#platetype option:selected").text());
+                    $("#plate").prop("disabled", true);
+                }else{
+                    $("#plate").prop("disabled", false);
+                }
+            });
+        });
+    </script>
     <form role="form" action="/index.php/cars" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
                     {{ Form::label('brand', 'Brand') }}
-                    <select class="form-control" id="brand" name="brand">
+                    <select class="form-control" id="brand" name="brand" required>
                         @foreach($brands as $brand)
                             <option value="{{$brand}}" >{{$brand}}</option>
                         @endforeach
@@ -27,7 +38,7 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <select class="form-control" id="name" name="name">
+                    <select class="form-control" id="name" name="name" required>
                         @foreach($names as $name)
                             <option value="{{$name}}" >{{$name}}</option>
                         @endforeach
@@ -95,22 +106,23 @@
                 </div>
                 <div class="form-group">
                     <label>Price</label>
-                    <input class="form-control" type="number" min="0" name="price" placeholder="100000">
+                    <input class="form-control" type="number" min="0" name="price" placeholder="100000" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Plate</label>
-                    <input class="form-control" name="plate" placeholder="plate">
-                    <p class="help-block">Example AA-2-A-12345, OR-3-12345 </p>
-                </div>
-                <div class="form-group">
                     <label for="meri">Plate Type</label>
-                    <select class="form-control" name="platetype">
+                    <select class="form-control" id="platetype" name="platetype" required>
                         @foreach($platetypes as $type)
                             <option value="{{$type}}" >{{$type}}</option>
                         @endforeach
                     </select>
                 </div>
+                <div class="form-group">
+                    <label>Plate</label>
+                    <input class="form-control" id="plate" name="plate" placeholder="plate">
+                    <p class="help-block">Example AA-2-A-12345, OR-3-12345 </p>
+                </div>
+
                 <div class="form-group">
                     <label>Remark about the car</label>
                     <textarea class="form-control" rows="3" name="remark"></textarea>
@@ -123,7 +135,7 @@
                 </div>
                 <div class="form-group">
                     <label>Meri</label>
-                    <input type="radio" name="meri" value="yalezore" checked>yalezore
+                    <input type="radio" name="meri" value="yalezore">yalezore
                     <input type="radio" name="meri" value="yezore">yezore
                 </div>
                 <div class="form-group">

@@ -8,15 +8,15 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <label>Name</label>
-                    <input class="form-control" name="name" placeholder="name">
+                    <input class="form-control" name="name" placeholder="name" required>
                 </div>
                 <div class="form-group">
                     <label>Phone</label>
-                    <input class="form-control" type="tel" pattern="^\d{10}$" name="phone" placeholder="phone number">
+                    <input class="form-control" type="tel" pattern="^\d{10}$" name="phone" placeholder="phone number" required>
                 </div>
                 <div class="form-group">
                     <label>Alternative phone</label>
-                    <input class="form-control" type="tel" pattern="^\d{10}$" name="altPhone" placeholder="phone">
+                    <input class="form-control" type="tel" pattern="^\d{10}$" name="altPhone" placeholder="phone" required>
                 </div>
                 <div class="form-group">
                     <label>Type</label>

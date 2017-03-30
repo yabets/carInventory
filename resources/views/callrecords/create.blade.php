@@ -36,11 +36,11 @@
         <div class="row">
             <div class="form-group col-md-4">
                 <label>Buyer Name</label>
-                <input class="form-control" name="bname" placeholder="name">
+                <input class="form-control" name="bname" placeholder="name" required>
             </div>
             <div class="form-group col-md-4">
                 <label>Phone</label>
-                <input class="form-control" type="tel" pattern="^\d{10}$" name="phone" placeholder="phone number">
+                <input class="form-control" type="tel" pattern="^\d{10}$" name="phone" placeholder="phone number" required>
             </div>
             <div class="form-group col-md-4">
                 <label>Alternative phone</label>

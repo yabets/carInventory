@@ -3,6 +3,11 @@
 @section('search_page','/index.php/callrecords/search')
 
 @section('filters')
+    <script>
+        $(document).ready(function () {
+            $(".datepicker").datepicker();
+        });
+    </script>
     <form  role="form" action="/index.php/callrecords/filter" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="jumbotron form-inline">
@@ -14,16 +19,16 @@
             </div>
             <div class="form-group col-md-5">
                 <label>Scheduled</label>
-                <input class="form-control" name="scheduleFrom">
+                <input class="form-control datepicker" name="scheduleFrom">
                 <label> - </label>
-                <input class="form-control" name="scheduleTo">
+                <input class="form-control datepicker" name="scheduleTo">
             </div>
             <div class="row">
                 <div class="form-group">
                     <label>Call recieved</label>
-                    <input class="form-control" name="callFrom">
+                    <input class="form-control datepicker" name="callFrom">
                     <label> - </label>
-                    <input class="form-control" name="callTo">
+                    <input class="form-control datepicker" name="callTo">
                 </div>
             </div>
             <p class="clearfix"></p>

@@ -11,4 +11,11 @@ class Owner extends Model
     public function cars(){
         return $this->hasMany('App\Car');
     }
+
+    public function delete()
+    {
+        $this->cars()->delete();
+        
+        return parent::delete();
+    }
 }

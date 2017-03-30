@@ -21,4 +21,11 @@ class CallRecord extends Model
         return $this->belongsToMany('App\Car', 'found_cars', 'call_id', 'car_id');
     }
 
+    public function delete()
+    {
+        $this->requestedCars()->delete();
+
+        return parent::delete();
+    }
+
 }

@@ -11,4 +11,11 @@ class Buyer extends Model
     public function callRecords(){
         return $this->hasMany('App\CallRecord');
     }
+
+    public function delete()
+    {
+        $this->callRecords()->delete();
+
+        return parent::delete();
+    }
 }

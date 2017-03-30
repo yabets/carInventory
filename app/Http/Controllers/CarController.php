@@ -24,7 +24,7 @@ class CarController extends Controller
     {
         //
         //$cars = Car::all();
-        $cars = Car::latest()->get();
+        $cars = Car::where('Status', 'available')->latest()->get();
         return view('cars.car')->with(['cars'=>$cars]);
     }
 
