@@ -13,7 +13,7 @@
         $transmissions = explode(",", $params->Transmission);
     ?>
 
-    <form role="form" action="/index.php/cars" method="post">
+    <form role="form" action="/index.php/cars" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-lg-6">
@@ -118,6 +118,9 @@
             </div>
 
             <div class="col-lg-6">
+                <div class="form-group">
+                    <input class="form-control" type="file" name="image">Car image
+                </div>
                 <div class="form-group">
                     <label>Meri</label>
                     <input type="radio" name="meri" value="yalezore" checked>yalezore

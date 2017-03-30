@@ -2,7 +2,7 @@
 @section('page_heading','Edit Car')
 @section('section')
     {{--<form role="form" action="/index.php/cars/{{$car->id}}" method="post">--}}
-    {{ Form::model($car, array('route' => array('cars.update', $car->id), 'method' => 'PUT')) }}
+    {{ Form::model($car, array('route' => array('cars.update', $car->id), 'method' => 'PUT', 'files' => true)) }}
         {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
         {{--<input type="hidden" name="_method" value="PATCH">--}}
     <?php
@@ -127,6 +127,10 @@
             </div>
 
             <div class="col-lg-6">
+                <div class="form-group">
+                    <img src="/uploads/images/{{$car->Image}}"/>
+                    <input class="form-control" type="file" name="image">Car Image
+                </div>
                 <div class="form-group">
                     <label>Meri</label>
                     <input type="radio" name="meri" value="yalezore" @if($car->Meri == "yalezore") checked @endif>yalezore

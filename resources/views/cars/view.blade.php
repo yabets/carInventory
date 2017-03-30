@@ -81,6 +81,12 @@
                 <td>{{$car->Remark}}</td>
             </tr>
             <tr>
+                <td>Images</td>
+                <td class="text-center">
+                    <img src="/uploads/images/{{$car->Image}}"/>
+                </td>
+            </tr>
+            <tr>
                 <td><a href="/index.php/cars/{{$car->id}}/edit">
                         <button type="button" class="btn btn-primary">Edit</button>
                     </a>

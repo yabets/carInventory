@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac76c0b1-5b05-48ce-8bdb-aa5ba736802f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Car.php" afterPath="$PROJECT_DIR$/app/Car.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CarController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Param.php" afterPath="$PROJECT_DIR$/app/Param.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cars/car.blade.php" afterPath="$PROJECT_DIR$/resources/views/cars/car.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cars/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/cars/create.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cars/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/cars/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cars/search.blade.php" afterPath="$PROJECT_DIR$/resources/views/cars/search.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cars/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/cars/view.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/param.blade.php" afterPath="$PROJECT_DIR$/resources/views/param.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/params.blade.php" afterPath="$PROJECT_DIR$/resources/views/params.blade.php" />
     </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,16 +39,39 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CarController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CarController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CarController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="126" column="36" selection-start-line="126" selection-start-column="36" selection-end-line="126" selection-end-column="36" />
+                <state relative-caret-position="454">
+                  <caret line="154" column="44" selection-start-line="154" selection-start-column="39" selection-end-line="154" selection-end-column="44" />
                   <folding>
-                    <element signature="e#3503#3637#0#PHP" expanded="false" />
-                    <element signature="e#3642#3755#0#PHP" expanded="false" />
-                    <element signature="e#3761#4292#0#PHP" expanded="false" />
-                    <element signature="e#4298#6314#0#PHP" expanded="false" />
+                    <element signature="e#40#54#0#PHP" expanded="true" />
+                    <element signature="e#252#353#0#PHP" expanded="false" />
+                    <element signature="e#358#528#0#PHP" expanded="false" />
+                    <element signature="e#534#643#0#PHP" expanded="false" />
+                    <element signature="e#648#791#0#PHP" expanded="false" />
+                    <element signature="e#797#956#0#PHP" expanded="false" />
+                    <element signature="e#3104#3226#0#PHP" expanded="false" />
+                    <element signature="e#3231#3355#0#PHP" expanded="false" />
+                    <element signature="e#3361#3501#0#PHP" expanded="false" />
+                    <element signature="e#3506#3726#0#PHP" expanded="false" />
+                    <element signature="e#3732#3914#0#PHP" expanded="false" />
+                    <element signature="e#4912#5046#0#PHP" expanded="false" />
+                    <element signature="e#5051#5164#0#PHP" expanded="false" />
+                    <element signature="e#5170#5701#0#PHP" expanded="false" />
+                    <marker date="1490853492000" expanded="false" signature="5747:7723" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/cars/edit.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="228">
+                  <caret line="130" column="64" selection-start-line="130" selection-start-column="64" selection-end-line="130" selection-end-column="64" />
+                  <folding>
+                    <element signature="e#2347#4947#0#HTML" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -71,6 +87,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -78,22 +104,10 @@
           <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/cars/create.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="107" column="66" selection-start-line="107" selection-start-column="66" selection-end-line="107" selection-end-column="66" />
+                <state relative-caret-position="-401">
+                  <caret line="121" column="73" selection-start-line="121" selection-start-column="73" selection-end-line="121" selection-end-column="73" />
                   <folding>
-                    <element signature="e#1885#4386#0#HTML" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/cars/edit.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-                  <folding>
-                    <element signature="e#2330#4930#0#HTML" expanded="false" />
+                    <element signature="e#1915#4416#0#HTML" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -112,8 +126,8 @@
           <file leaf-file-name="view.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/cars/view.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-356">
-                  <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+                <state relative-caret-position="199">
+                  <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="64" />
                   <folding />
                 </state>
               </provider>
@@ -141,17 +155,17 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/MailController.php" />
         <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Car.php" />
         <option value="$PROJECT_DIR$/resources/views/cars/car.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cars/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cars/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cars/search.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cars/view.blade.php" />
         <option value="$PROJECT_DIR$/app/Param.php" />
         <option value="$PROJECT_DIR$/resources/views/param.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/params.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cars/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cars/view.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cars/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CarController.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -228,25 +242,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,12 +328,12 @@
       <workItem from="1462531881373" duration="1398000" />
       <workItem from="1462734440470" duration="610000" />
       <workItem from="1490717515695" duration="995000" />
-      <workItem from="1490815530826" duration="2130000" />
+      <workItem from="1490815530826" duration="5705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21500000" />
+    <option name="totallyTimeSpent" value="25075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -548,14 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Jobs/Job.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -636,38 +624,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cars/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="107" column="66" selection-start-line="107" selection-start-column="66" selection-end-line="107" selection-end-column="66" />
-          <folding>
-            <element signature="e#1885#4386#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cars/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding>
-            <element signature="e#2330#4930#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cars/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cars/view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-356">
-          <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -704,16 +664,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cars/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-401">
+          <caret line="121" column="73" selection-start-line="121" selection-start-column="73" selection-end-line="121" selection-end-column="73" />
+          <folding>
+            <element signature="e#1915#4416#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cars/view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cars/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="130" column="64" selection-start-line="130" selection-start-column="64" selection-end-line="130" selection-end-column="64" />
+          <folding>
+            <element signature="e#2347#4947#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CarController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="126" column="36" selection-start-line="126" selection-start-column="36" selection-end-line="126" selection-end-column="36" />
+        <state relative-caret-position="454">
+          <caret line="154" column="44" selection-start-line="154" selection-start-column="39" selection-end-line="154" selection-end-column="44" />
           <folding>
-            <element signature="e#3503#3637#0#PHP" expanded="false" />
-            <element signature="e#3642#3755#0#PHP" expanded="false" />
-            <element signature="e#3761#4292#0#PHP" expanded="false" />
-            <element signature="e#4298#6314#0#PHP" expanded="false" />
+            <element signature="e#40#54#0#PHP" expanded="true" />
+            <element signature="e#252#353#0#PHP" expanded="false" />
+            <element signature="e#358#528#0#PHP" expanded="false" />
+            <element signature="e#534#643#0#PHP" expanded="false" />
+            <element signature="e#648#791#0#PHP" expanded="false" />
+            <element signature="e#797#956#0#PHP" expanded="false" />
+            <element signature="e#3104#3226#0#PHP" expanded="false" />
+            <element signature="e#3231#3355#0#PHP" expanded="false" />
+            <element signature="e#3361#3501#0#PHP" expanded="false" />
+            <element signature="e#3506#3726#0#PHP" expanded="false" />
+            <element signature="e#3732#3914#0#PHP" expanded="false" />
+            <element signature="e#4912#5046#0#PHP" expanded="false" />
+            <element signature="e#5051#5164#0#PHP" expanded="false" />
+            <element signature="e#5170#5701#0#PHP" expanded="false" />
+            <marker date="1490853492000" expanded="false" signature="5747:7723" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -8,3 +8,5 @@ Homestead.json
 /vendor
 .htaccess
 .idea/
+.idea/workspace.xml
+.idea/*

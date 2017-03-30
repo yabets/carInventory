@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Owner;
 use App\Param;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -34,7 +35,6 @@ class CarController extends Controller
      */
     public function create()
     {
-
         $owners = Owner::latest()->get();
         return view('cars.create')->with(["owners" => $owners]);
     }
@@ -50,31 +50,45 @@ class CarController extends Controller
 
         //Car::create($request->input());
         $input = $request->except('_token');
-        if($input['oname']==""){
-            $input = array_except($input, ['oname', 'phone', 'altPhone', 'Owner']);
-            Car::create($input);
-        }else{
+        $car = new Car;
+        // check if file was uploaded
+        if ($request->hasFile('image')) {
+            // get the file object
+            $file = $request->file('image');
+            // set the upload path (starting form the public path)
+            $rewardsUploadPath = '/uploads/images/';
+            // create a unique name for this file
+            $fileName = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString())
+                . '-' . str_random(5) . '.' . $file->getClientOriginalExtension();
+            // move the uploaded file to its destination
+            $file->move(public_path() . $rewardsUploadPath, $fileName);
+            // save the file path and name
+            //$filePathAndName = $rewardsUploadPath . $fileName;
+            $car->Image = $fileName;
+        }
+        $car->Brand = $input["brand"];
+        $car->Name = $input["name"];
+        $car->Year = $input["year"];
+        $car->Color = $input["color"];
+        $car->Price = $input["price"];
+        $car->Plate = $input["plate"];
+        $car->location = $input["location"];
+        $car->remark = $input["remark"];
+        $car->meri = $input["meri"];
+        $car->mileage = $input["mileage"];
+        $car->published = $input["published"];
+        if($input['oname']!=""){
             $owner = new Owner;
             $owner->Name = $input['oname'];
             $owner->Phone = $input['phone'];
             $owner->AltPhone = $input['altPhone'];
             $owner->Owner = $input['Owner'];
             $owner->save();
-            $input = array_except($input, ['oname', 'phone', 'altPhone', 'Owner']);
-            $car = new Car;
-            $car->Brand = $input["brand"];
-            $car->Name = $input["name"];
-            $car->Year = $input["year"];
-            $car->Color = $input["color"];
-            $car->Price = $input["price"];
-            $car->Plate = $input["plate"];
-            $car->location = $input["location"];
-            $car->remark = $input["remark"];
-            $car->meri = $input["meri"];
-            $car->mileage = $input["mileage"];
-            $car->published = $input["published"];
             $owner->cars()->save($car);
+            return redirect('cars');
         }
+        $car->owner_id = $input['owner_id'];
+        $car->save();
         return redirect('cars');
 //        $validator = Validator::make($input, [
 //            "name"=>"required|min:1|alpha_num"
@@ -122,8 +136,23 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $car = Car::findOrFail($id);
-        $car->update($request->all());
+        if ($request->hasFile('image')) {
+            // get the file object
+            $file = $request->file('image');
+            // set the upload path (starting form the public path)
+            $rewardsUploadPath = '/uploads/images/';
+            // create a unique name for this file
+            $fileName = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString())
+                . '-' . str_random(5) . '.' . $file->getClientOriginalExtension();
+            // move the uploaded file to its destination
+            $file->move(public_path() . $rewardsUploadPath, $fileName);
+            // save the file path and name
+            //$filePathAndName = $rewardsUploadPath . $fileName;
+            $car->Image = $fileName;
+        }
+        $car->update($request->except('Image'));
         $cars = Car::latest()->get();
         return view('cars.car', compact('cars'));
     }
