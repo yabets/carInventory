@@ -19,7 +19,7 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        $owners = Owner::all();
+        $owners = Owner::latest()->get();
         //dd($cars);
         return view('owners.owner', compact('owners'));
     }

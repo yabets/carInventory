@@ -3,7 +3,9 @@
 @section ('page_heading','Documentation')
 
 @section('section')
-
+<?php 
+echo(__DIR__);
+phpinfo(); ?>
 		@section ('dpanel_panel_title', 'Panel')
 		@section ('dpanel_panel_body')
 			@section ('inside_panel_title', 'Default title')

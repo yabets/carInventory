@@ -128,7 +128,7 @@
 
             <div class="col-lg-6">
                 <div class="form-group">
-                    <img src="/uploads/images/{{$car->Image}}"/>
+                    <img src="/public/uploads/images/{{$car->Image}}"/>
                     <input class="form-control" type="file" name="image">Car Image
                 </div>
                 <div class="form-group">
