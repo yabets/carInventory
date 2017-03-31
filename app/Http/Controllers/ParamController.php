@@ -29,6 +29,8 @@ class ParamController extends Controller
     public function edit()
     {
         $param = Param::first();
+        //
+        //JavaScript::put('params2', $param);
         return view('params', compact('param'));
     }
 

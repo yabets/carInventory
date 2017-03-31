@@ -11,6 +11,7 @@ use App\Http\Requests;
 
 use App\Car;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Pagination\Paginator;
 use DB;
 
 class CarController extends Controller
@@ -24,7 +25,8 @@ class CarController extends Controller
     {
         //
         //$cars = Car::all();
-        $cars = Car::where('Status', 'available')->latest()->get();
+//        $cars = Car::where('Status', 'available')->paginate(3);
+        $cars = DB::table('cars')->paginate(20);
         return view('cars.car')->with(['cars'=>$cars]);
     }
 

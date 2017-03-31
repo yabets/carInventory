@@ -2,6 +2,13 @@
 @section('page_heading', 'Parameters')
 
 @section('section')
+    <script>
+        var parameters;
+        $(document).ready(function(){
+            parameters = {!!json_encode($param) !!};
+        });
+
+    </script>
     {{ Form::model($param, array('route' => 'param.update', 'method' => 'PUT')) }}
         <div class="form-group">
             {{Form::label('Brand')}}

@@ -4,8 +4,14 @@
 
 @section('filters')
     <script>
-        $(document).ready(function () {
-            $(".datepicker").datepicker();
+
+        $.noConflict();
+        jQuery(document).ready(function ($) {
+            $("#datepicker").datepicker();
+            $("#datepicker1").datepicker();
+            $("#datepicker2").datepicker();
+            $("#datepicker3").datepicker();
+            $("#datepicker4").datepicker();
         });
     </script>
     <form  role="form" action="/index.php/callrecords/filter" method="post">
@@ -19,16 +25,16 @@
             </div>
             <div class="form-group col-md-5">
                 <label>Scheduled</label>
-                <input class="form-control datepicker" name="scheduleFrom">
+                <input class="form-control" id="datepicker3" name="scheduleFrom">
                 <label> - </label>
-                <input class="form-control datepicker" name="scheduleTo">
+                <input class="form-control" id="datepicker4" name="scheduleTo">
             </div>
             <div class="row">
                 <div class="form-group">
                     <label>Call recieved</label>
-                    <input class="form-control datepicker" name="callFrom">
+                    <input class="form-control" id="datepicker1" name="callFrom">
                     <label> - </label>
-                    <input class="form-control datepicker" name="callTo">
+                    <input class="form-control" id="datepicker2" name="callTo">
                 </div>
             </div>
             <p class="clearfix"></p>

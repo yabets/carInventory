@@ -140,9 +140,8 @@
                     <label for="status">Status</label>
                     <select class="form-control" id="status" name="status">
                         <option></option>
-                        @foreach($status as $statu)
-                            <option value="{{$statu}}" >{{$statu}}</option>
-                        @endforeach
+                        <option value="found">Found</option>
+                        <option value="not found">Not Found</option>
                     </select>
                 </div>
             </div>

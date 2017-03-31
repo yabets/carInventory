@@ -4,7 +4,9 @@
 
 @section('filters')
     <?php
+
         $params = \App\Param::first();
+
         $brands = explode(",", $params->Brand);
         $names = explode(",", $params->Name);
         $types = explode(",", $params->Type);
@@ -159,7 +161,7 @@
 @section('section')
     <div class="col-sm-12">
         @section ('htable_panel_body')
-            <table class="table table-hover">
+            <table class="table table-hover" id="myTable">
                 <thead>
                 <tr>
                     <th>Brand</th>
@@ -200,11 +202,12 @@
 
                 </tbody>
             </table>
+            {{$cars->render()}}
         @endsection
         @include('widgets.panel', array('header'=>true, 'as'=>'htable'))
-    </div>
-<<<<<<< HEAD
+            <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
 
-=======
->>>>>>> 6ef84a98f22dfdb53bd6a0460944e92db01fa881
+            <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+
+    </div>
 @stop

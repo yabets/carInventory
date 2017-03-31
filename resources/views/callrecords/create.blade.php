@@ -196,12 +196,7 @@
                 <label>Plate</label>
                 <input name="plate" placeholder="plate">
             </div>
-            <div class="form-group col-md-3">
-                <label>Status</label>
-                @foreach($status as $statu)
-                    <input type="radio" name="status" value="{{$statu}}" >{{$statu}}
-                @endforeach
-            </div>
+            <input type="radio" name="status" hidden value="not found" >git
             <div class="form-group col-md-2">
                 <label>Meri</label>
                 <input type="radio" name="meri" value="yalezore" checked> yalezore
