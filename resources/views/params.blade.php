@@ -24,20 +24,28 @@
                         console.log(e);
                     }
                 });
-//                $.post("/index.php/paramupdate/", {brand: brand, name: name}, function(result){
-//                    console.log(result);
-//                });
+            });
+            $('#brandBtn').click(function(){
+                var brand = $('#brandName').val();
+                console.log(brand);
+                $.ajax({
+                    method: "POST",
+                    url: '/index.php/parambrand/',
+                    data:{brand:brand},
+                    success: function(data){console.log(data);},
+                    error: function(e){console.log(e);}
+                });
             });
         });
     </script>
-    <form role="form" action="/index.php/params/" method="post">
+
 {{--    {{ Form::model($car, array('route' => array('cars.update', $car->id), 'method' => 'PUT', 'files' => true)) }}--}}
     {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
-    <input type="hidden" name="_method" value="PATCH">
+
 {{--    {{ Form::model($param, array('route' => 'param.update', 'method' => 'PUT')) }}--}}
         <div class="form-group">
-            {{Form::label('Brand')}}
-            <select class="form-control" id="target" name="platetype">
+            <label>Brand</label>
+            <select class="form-control" id="target" name="brand">
                 <option></option>
                 <?php $brands = explode(",", $param->Brand);?>
                 @foreach($brands as $brand)
@@ -45,7 +53,14 @@
                 @endforeach
             </select>
         </div>
-
+        <div class="form-group">
+            <label>New Brand</label>
+            <input type="text" name="brandName" id="brandName">
+            <input type="button" id="brandBtn" value="Add" class="btn btn-danger">
+        </div>
+        <hr />
+    {{ Form::model($param, array('route' => 'param.update', 'method' => 'PUT')) }}
+        <input type="hidden" name="_method" value="PATCH">
         <div class="form-group">
             {{Form::label('Name')}}
             <input class="form-control" type="text" name="modelname" id="modelName">

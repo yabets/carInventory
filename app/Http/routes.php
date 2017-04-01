@@ -37,6 +37,7 @@ Route::get('/param/{brand}', function ($brand){
 
 Route::get('/param', 'ParamController@show');
 Route::post('/paramupdate', 'ParamController@updates');
+Route::post('/parambrand', 'ParamController@brand');
 Route::get('/paramedit', 'ParamController@edit');
 //Route::get('/param/{brand}', 'ParamController@brand');
 

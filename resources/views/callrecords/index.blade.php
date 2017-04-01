@@ -4,9 +4,8 @@
 
 @section('filters')
     <script>
-
-        $.noConflict();
-        jQuery(document).ready(function ($) {
+        $(document).ready(function () {
+            console.log("in");
             $("#datepicker").datepicker();
             $("#datepicker1").datepicker();
             $("#datepicker2").datepicker();
@@ -23,18 +22,18 @@
                 <input class="form-control checkbox" type="checkbox" name="checked" value="checked"> Checked cars <br>
                 <input class="form-control checkbox" type="checkbox" name="sold" value="sold"> Sold cars <br>
             </div>
-            <div class="form-group col-md-5">
+            <div class="form-group col-md-7">
                 <label>Scheduled</label>
-                <input class="form-control" id="datepicker3" name="scheduleFrom">
+                <input type="date" class="form-control" id="datepicker3" name="scheduleFrom">
                 <label> - </label>
-                <input class="form-control" id="datepicker4" name="scheduleTo">
+                <input type="date" class="form-control" id="datepicker4" name="scheduleTo">
             </div>
             <div class="row">
                 <div class="form-group">
                     <label>Call recieved</label>
-                    <input class="form-control" id="datepicker1" name="callFrom">
+                    <input type="date" class="form-control" id="datepicker1" name="callFrom">
                     <label> - </label>
-                    <input class="form-control" id="datepicker2" name="callTo">
+                    <input type="date" class="form-control" id="datepicker2" name="callTo">
                 </div>
             </div>
             <p class="clearfix"></p>

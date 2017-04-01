@@ -7,13 +7,29 @@
         {{--<input type="hidden" name="_method" value="PATCH">--}}
     <?php
             $brands = explode(",", $params->Brand);
-            $names = explode(",", $params->Name);
+//            $names = explode(",", $params->Name);
             $types = explode(",", $params->Type);
             $platetypes = explode(",", $params->PlateType);
             $colors = explode(",", $params->Color);
             $status = explode(",", $params->Status);
             $transmissions = explode(",", $params->Transmission);
     ?>
+    <script>
+        $(document).ready(function(){
+            $('#brand').change(function(){
+                selBrand = $('#brand :selected').val();
+                url = "/index.php/param/" + selBrand;
+                $.get(url, function(data){
+                    var res = data.split(",");
+                    html = "<option></option>";
+                    for(var key in res) {
+                        html += "<option value=" + res[key]  + ">" +res[key] + "</option>"
+                    }
+                    $("#name").find('option').remove().end().append(html);
+                });
+            });
+        });
+    </script>
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
@@ -29,9 +45,6 @@
                     <label for="name">Name</label>
                     <select class="form-control" id="name" name="name">
                         <option value="{{$car->Name}}" selected="selected">{{$car->Name}}</option>
-                        @foreach($names as $name)
-                            <option value="{{$name}}" >{{$name}}</option>
-                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">

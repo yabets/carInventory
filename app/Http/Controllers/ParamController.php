@@ -62,4 +62,15 @@ class ParamController extends Controller
         $param->save();
         return 'done';
     }
+
+    public function brand(Request $request){
+        $brand = $request['brand'];
+        $param = Param::first();
+        $name = unserialize($param->Name);
+        $name[$brand] = '';
+        $param->Name = serialize($name);
+        $param->Brand = $param->Brand.','. $brand;
+        $param->save();
+        return $param->Brand. " " . $param->Name;
+    }
 }

@@ -5,7 +5,7 @@
         $owners = \App\Owner::all();
         $params = \App\Param::first();
         $brands = explode(",", $params->Brand);
-        $names = explode(",", $params->Name);
+//        $names = explode(",", $params->Name);
         $types = explode(",", $params->Type);
     $platetypes = explode(",", $params->PlateType);
         $colors = explode(",", $params->Color);
@@ -21,6 +21,18 @@
                 }else{
                     $("#plate").prop("disabled", false);
                 }
+            });
+            $('#brand').change(function(){
+                selBrand = $('#brand :selected').val();
+                url = "/index.php/param/" + selBrand;
+                $.get(url, function(data){
+                    var res = data.split(",");
+                    html = "<option></option>";
+                    for(var key in res) {
+                        html += "<option value=" + res[key]  + ">" +res[key] + "</option>"
+                    }
+                    $("#name").find('option').remove().end().append(html);
+                });
             });
         });
     </script>
@@ -39,9 +51,7 @@
                 <div class="form-group">
                     <label for="name">Name</label>
                     <select class="form-control" id="name" name="name" required>
-                        @foreach($names as $name)
-                            <option value="{{$name}}" >{{$name}}</option>
-                        @endforeach
+                        <option></option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -119,7 +129,7 @@
                 </div>
                 <div class="form-group">
                     <label>Plate</label>
-                    <input class="form-control" id="plate" name="plate" placeholder="plate">
+                    <input class="form-control" id="plate" name="plate" placeholder="plate" disabled>
                     <p class="help-block">Example AA-2-A-12345, OR-3-12345 </p>
                 </div>
 

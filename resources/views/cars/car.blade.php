@@ -16,7 +16,6 @@
                     }
                     $("#name").find('option').remove().end().append(html);
                 });
-
             });
         });
     </script>
