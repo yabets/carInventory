@@ -32,7 +32,6 @@ class ParamController extends Controller
         $param = Param::first();
         $brands = $param["Brand"];
         $names = unserialize($param["Name"]);
-        //JavaScript::put('params2', $param);
         return view('params', compact('param', 'brands', 'names'));
     }
 
