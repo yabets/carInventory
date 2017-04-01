@@ -29,8 +29,18 @@ Route::get('/params',function()
     return ($params);
 });
 
+Route::get('/param/{brand}', function ($brand){
+    $param = Param::first();
+    $names = unserialize($param["Name"]);
+    return $names[$brand];
+});
+
 Route::get('/param', 'ParamController@show');
-Route::get('/param/edit', 'ParamController@edit');
+Route::post('/paramupdate', 'ParamController@updates');
+Route::post('/parambrand', 'ParamController@brand');
+Route::get('/paramedit', 'ParamController@edit');
+//Route::get('/param/{brand}', 'ParamController@brand');
+
 Route::put('/param/', 'ParamController@update')->name('param.update');
 
 

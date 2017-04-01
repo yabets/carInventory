@@ -5,12 +5,28 @@
     {{ Form::model($car, array('route' => array('requestedcars.update', $car->id), 'method' => 'PUT')) }}
     <?php
         $brands = explode(",", $params->Brand);
-        $names = explode(",", $params->Name);
+//        $names = explode(",", $params->Name);
         $types = explode(",", $params->Type);
         $colors = explode(",", $params->Color);
         $status = explode(",", $params->Status);
         $transmissions = explode(",", $params->Transmission);
     ?>
+    <script>
+        $(document).ready(function(){
+            $('#brand').change(function(){
+                selBrand = $('#brand :selected').val();
+                url = "/index.php/param/" + selBrand;
+                $.get(url, function(data){
+                    var res = data.split(",");
+                    html = "<option></option>";
+                    for(var key in res) {
+                        html += "<option value=" + res[key]  + ">" +res[key] + "</option>"
+                    }
+                    $("#name").find('option').remove().end().append(html);
+                });
+            });
+        });
+    </script>
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-lg-6">
@@ -27,9 +43,7 @@
                     <label>Name</label>
                     <select class="form-control" id="name" name="name">
                         <option value="{{$car->Name}}" selected="selected">{{$car->Name}}</option>
-                        @foreach($names as $name)
-                            <option value="{{$name}}" >{{$name}}</option>
-                        @endforeach
+
                     </select>
                 </div>
                 <div class="form-group">

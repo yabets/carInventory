@@ -3,10 +3,26 @@
 @section('search_page','/index.php/cars/search')
 
 @section('filters')
+    <script>
+        $(document).ready(function(){
+            $('#brand').change(function(){
+                selBrand = $('#brand :selected').val();
+                url = "/index.php/param/" + selBrand;
+                $.get(url, function(data){
+                    var res = data.split(",");
+                    html = "<option></option>";
+                    for(var key in res) {
+                        html += "<option value=" + res[key]  + ">" +res[key] + "</option>"
+                    }
+                    $("#name").find('option').remove().end().append(html);
+                });
+            });
+        });
+    </script>
     <?php
         $params = \App\Param::first();
         $brands = explode(",", $params->Brand);
-        $names = explode(",", $params->Name);
+//        $names = explode(",", $params->Name);
         $types = explode(",", $params->Type);
         $platetypes = explode(",", $params->PlateType);
         $colors = explode(",", $params->Color);
@@ -33,9 +49,6 @@
                     <label for="name">Name</label>
                     <select class="form-control" id="name" name="name">
                         <option></option>
-                        @foreach($names as $name)
-                            <option value="{{$name}}" >{{$name}}</option>
-                        @endforeach
                     </select>
                 </div>
             </div>
@@ -159,7 +172,7 @@
 @section('section')
     <div class="col-sm-12">
         @section ('htable_panel_body')
-            <table class="table table-hover">
+            <table class="table table-hover" id="myTable">
                 <thead>
                 <tr>
                     <th>Brand</th>
@@ -200,7 +213,15 @@
 
                 </tbody>
             </table>
+            {{$cars->render()}}
         @endsection
         @include('widgets.panel', array('header'=>true, 'as'=>'htable'))
+<<<<<<< HEAD
+=======
+            <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+
+            <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+
+>>>>>>> 08ee35b70204572241393a4cf43168a80426c0c3
     </div>
 @stop

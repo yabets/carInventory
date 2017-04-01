@@ -2,15 +2,69 @@
 @section('page_heading', 'Parameters')
 
 @section('section')
-    {{ Form::model($param, array('route' => 'param.update', 'method' => 'PUT')) }}
+    <script>
+        $(document).ready(function(){
+            $('#target').change(function(){
+                selBrand = $('#target :selected').val();
+                url = "/index.php/param/" + selBrand;
+                $.get(url, function(data){
+                    $("#modelName").val(data);
+                });
+            });
+            $('#update').click(function () {
+                var brand = $('#target :selected').val();
+                var name = $('#modelName').val();
+                console.log(name);
+                $.ajax({
+                    method: "POST",
+                    url: '/index.php/paramupdate/',
+                    data: {brand: brand, name: name},
+                    success: function(data){ console.log(data);},
+                    error: function(e){
+                        console.log(e);
+                    }
+                });
+            });
+            $('#brandBtn').click(function(){
+                var brand = $('#brandName').val();
+                console.log(brand);
+                $.ajax({
+                    method: "POST",
+                    url: '/index.php/parambrand/',
+                    data:{brand:brand},
+                    success: function(data){console.log(data);},
+                    error: function(e){console.log(e);}
+                });
+            });
+        });
+    </script>
+
+    {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
         <div class="form-group">
-            {{Form::label('Brand')}}
-            {{Form::text('Brand', null, array('class'=>'form-control'))}}
+            <label>Brand</label>
+            <select class="form-control" id="target" name="brand">
+                <option></option>
+                <?php $brands = explode(",", $param->Brand);?>
+                @foreach($brands as $brand)
+                    <option value="{{$brand}}" >{{$brand}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            <label>New Brand</label>
+            <input type="text" name="brandName" id="brandName">
+            <input type="button" id="brandBtn" value="Add" class="btn btn-danger">
         </div>
         <div class="form-group">
             {{Form::label('Name')}}
-            {{Form::text('Name', null, array('class'=>'form-control'))}}
+            <input type="text" name="modelname" id="modelName">
+            <input type="button" class="btn btn-primary" id="update" value="Update">
         </div>
+        <hr />
+    {{ Form::model($param, array('route' => 'param.update', 'method' => 'PUT')) }}
+    <form action="/index.php/param" method="post">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="_method" value="PUT">
         <div class="form-group">
             {{Form::label('Type')}}
             {{Form::text('Type', null, array('class'=>'form-control'))}}

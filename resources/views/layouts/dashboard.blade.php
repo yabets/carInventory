@@ -74,12 +74,14 @@
                         </li>
                         <!-- CarRequest menu -->
                         <li>
-                            <a href="/requestedcars/"><i class="fa fa-automobile fa-fw"></i>Requested Cars<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('/requestedcars') }}">Requested Cars</a>
-                                </li>
-                            </ul>
+                            <a href="/requestedcars/"><i class="fa fa-automobile fa-fw"></i>Requested Cars
+                                {{--<span class="fa arrow"></span>--}}
+                            </a>
+                            {{--<ul class="nav nav-second-level">--}}
+                                {{--<li {{ (Request::is('*blank') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('/requestedcars') }}">Requested Cars</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
@@ -89,7 +91,7 @@
                                     <a href="{{ url ('/param') }}">Parameters</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url ('/param/edit') }}">Edit Param</a>
+                                    <a href="{{ url ('/paramedit') }}">Edit Param</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

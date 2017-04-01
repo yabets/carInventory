@@ -25,6 +25,18 @@
                 $(".nofound").css('opacity', '1');
             });
             $("#datepicker").datepicker();
+            $('#brand').change(function(){
+                selBrand = $('#brand :selected').val();
+                url = "/index.php/param/" + selBrand;
+                $.get(url, function(data){
+                    var res = data.split(",");
+                    html = "<option></option>";
+                    for(var key in res) {
+                        html += "<option value=" + res[key]  + ">" +res[key] + "</option>"
+                    }
+                    $("#name").find('option').remove().end().append(html);
+                });
+            });
         });
     </script>
 
@@ -81,7 +93,6 @@
                 <input type="radio" name="wantSee" value="1" checked> Yes
                 <input type="radio" name="wantSee" value="0"> No
             </div>
-
             <div class="form-group col-md-3 foundcar">
                 <label>schedule</label>
                 <input type="date" name="schedule" id="datepicker">
@@ -121,9 +132,7 @@
             <div class="form-group col-md-2">
                 <label for="name">Name</label>
                 <select class="form-control" id="name" name="name">
-                    @foreach($names as $name)
-                        <option value="{{$name}}" >{{$name}}</option>
-                    @endforeach
+                    <option></option>
                 </select>
             </div>
             <div class="form-group col-md-2">
@@ -196,12 +205,7 @@
                 <label>Plate</label>
                 <input name="plate" placeholder="plate">
             </div>
-            <div class="form-group col-md-3">
-                <label>Status</label>
-                @foreach($status as $statu)
-                    <input type="radio" name="status" value="{{$statu}}" >{{$statu}}
-                @endforeach
-            </div>
+            <input type="radio" name="status" hidden value="not found" >git
             <div class="form-group col-md-2">
                 <label>Meri</label>
                 <input type="radio" name="meri" value="yalezore" checked> yalezore
