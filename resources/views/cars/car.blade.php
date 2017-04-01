@@ -203,8 +203,4 @@
         @endsection
         @include('widgets.panel', array('header'=>true, 'as'=>'htable'))
     </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 6ef84a98f22dfdb53bd6a0460944e92db01fa881
 @stop
