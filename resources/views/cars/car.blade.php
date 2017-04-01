@@ -3,12 +3,27 @@
 @section('search_page','/index.php/cars/search')
 
 @section('filters')
+    <script>
+        $(document).ready(function(){
+            $('#brand').change(function(){
+                selBrand = $('#brand :selected').val();
+                url = "/index.php/param/" + selBrand;
+                $.get(url, function(data){
+                    var res = data.split(",");
+                    html = "<option></option>";
+                    for(var key in res) {
+                        html += "<option value=" + res[key]  + ">" +res[key] + "</option>"
+                    }
+                    $("#name").find('option').remove().end().append(html);
+                });
+
+            });
+        });
+    </script>
     <?php
-
         $params = \App\Param::first();
-
         $brands = explode(",", $params->Brand);
-        $names = explode(",", $params->Name);
+//        $names = explode(",", $params->Name);
         $types = explode(",", $params->Type);
         $platetypes = explode(",", $params->PlateType);
         $colors = explode(",", $params->Color);
@@ -35,9 +50,6 @@
                     <label for="name">Name</label>
                     <select class="form-control" id="name" name="name">
                         <option></option>
-                        @foreach($names as $name)
-                            <option value="{{$name}}" >{{$name}}</option>
-                        @endforeach
                     </select>
                 </div>
             </div>

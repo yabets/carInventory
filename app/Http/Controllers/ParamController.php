@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Param;
+use App\RequestedCar;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -29,9 +30,11 @@ class ParamController extends Controller
     public function edit()
     {
         $param = Param::first();
-        //
+        $brands = $param["Brand"];
+        $names = unserialize($param["Name"]);
+
         //JavaScript::put('params2', $param);
-        return view('params', compact('param'));
+        return view('params', compact('param', 'brands', 'names'));
     }
 
     /**
@@ -47,5 +50,16 @@ class ParamController extends Controller
         $input = $request->except('_token', '_method');
         $params->update($input);
         return redirect('/param');
+    }
+
+    public function updates(Request $request){
+        $brand = $request['brand'];
+        $model = $request['name'];
+        $param = Param::first();
+        $name = unserialize($param->Name);
+        $name[$brand] = $model;
+        $param->Name = serialize($name);
+        $param->save();
+        return 'done';
     }
 }
