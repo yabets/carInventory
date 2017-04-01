@@ -39,10 +39,7 @@
         });
     </script>
 
-{{--    {{ Form::model($car, array('route' => array('cars.update', $car->id), 'method' => 'PUT', 'files' => true)) }}--}}
     {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
-
-{{--    {{ Form::model($param, array('route' => 'param.update', 'method' => 'PUT')) }}--}}
         <div class="form-group">
             <label>Brand</label>
             <select class="form-control" id="target" name="brand">
@@ -58,14 +55,16 @@
             <input type="text" name="brandName" id="brandName">
             <input type="button" id="brandBtn" value="Add" class="btn btn-danger">
         </div>
-        <hr />
-    {{ Form::model($param, array('route' => 'param.update', 'method' => 'PUT')) }}
-        <input type="hidden" name="_method" value="PATCH">
         <div class="form-group">
             {{Form::label('Name')}}
-            <input class="form-control" type="text" name="modelname" id="modelName">
+            <input type="text" name="modelname" id="modelName">
             <input type="button" class="btn btn-primary" id="update" value="Update">
         </div>
+        <hr />
+    {{ Form::model($param, array('route' => 'param.update', 'method' => 'PUT')) }}
+    <form action="/index.php/param" method="post">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="_method" value="PUT">
         <div class="form-group">
             {{Form::label('Type')}}
             {{Form::text('Type', null, array('class'=>'form-control'))}}
@@ -86,7 +85,7 @@
             {{Form::label('Status')}}
             {{Form::text('Status', null, array('class'=>'form-control'))}}
         </div>
-        {{--<button type="submit" class="btn btn-primary">Update</button>--}}
+        <button type="submit" class="btn btn-primary">Update</button>
     <a href="/index.php/param/" ><button class = 'btn btn-success'>Cancel</button></a>
     </form>
 @stop
