@@ -10,7 +10,7 @@
             </tr>
             <tr>
                 <td>Name</td>
-                <td>{!!json_encode(unserialize($param->Name)!!}</td>
+                <td>{!!json_encode(unserialize($param->Name))!!}</td>
             </tr>
             <tr>
                 <td>Type</td>
