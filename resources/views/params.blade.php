@@ -16,7 +16,7 @@
                 var name = $('#modelName').val();
                 console.log(name);
                 $.ajax({
-                    method: "POST",
+                    method: "GET",
                     url: '/index.php/paramupdate/',
                     data: {brand: brand, name: name},
                     success: function(data){ console.log(data);},
@@ -29,7 +29,7 @@
                 var brand = $('#brandName').val();
                 console.log(brand);
                 $.ajax({
-                    method: "POST",
+                    method: "GET",
                     url: '/index.php/parambrand/',
                     data:{brand:brand},
                     success: function(data){console.log(data);},
@@ -57,7 +57,7 @@
         </div>
         <div class="form-group">
             {{Form::label('Name')}}
-            <input type="text" name="modelname" id="modelName">
+            <input class="form-control" type="text" name="modelname" id="modelName">
             <input type="button" class="btn btn-primary" id="update" value="Update">
         </div>
         <hr />
