@@ -35,9 +35,11 @@ Route::get('/param/{brand}', function ($brand){
     return $names[$brand];
 });
 
+Route::get('/paramupdate', 'ParamController@updates');
+Route::get('/parambrand', 'ParamController@brand');
 Route::get('/param', 'ParamController@show');
-Route::post('/paramupdate', 'ParamController@updates');
-Route::post('/parambrand', 'ParamController@brand');
+//Route::post('/paramupdate', 'ParamController@updates');
+//Route::post('/parambrand', 'ParamController@brand');
 Route::get('/paramedit', 'ParamController@edit');
 //Route::get('/param/{brand}', 'ParamController@brand');
 
