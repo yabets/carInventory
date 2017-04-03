@@ -19,6 +19,30 @@
 	<link rel="stylesheet" href="{{ asset("assets/stylesheets/styles.css") }}" />
 </head>
 <body>
+	<style>
+		.no-js #loader { display: none;  }
+		.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+		.se-pre-con {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			background: url(images/loader-64x/Preloader_2.gif) center no-repeat #fff;
+		}
+	</style>
+	<div class="se-pre-con"></div>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+	<script>
+		//paste this code under the head tag or in a separate js file.
+		// Wait for window load
+		$(window).load(function() {
+			// Animate loader off screen
+			$(".se-pre-con").fadeOut("slow");;
+		});
+	</script>
+
 	@yield('body')
 
 </body>
