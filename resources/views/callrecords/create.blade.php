@@ -94,7 +94,7 @@
                 $(".nofound3").css('opacity', '1');
                 $("#count").val(3);
             });
-            $("#datepicker3").datepicker();
+//            $("#datepicker3").datepicker();
             $('#brand3').change(function(){
                 selBrand = $('#brand3 :selected').val();
                 url = "/index.php/param/" + selBrand;
