@@ -66,8 +66,12 @@
                 @foreach ($calls as $call)
                     <?php
                         $buyer = \App\Buyer::findOrFail($call->buyer_id);
-                        $scheudle = $call->schedule->diffForHumans();
-                    ?>
+			if (isset($call->schedule)){
+	                        $scheudle = $call->schedule->diffForHumans();
+                    	}else{
+				$schedule = $call->schedule;
+			}
+		    ?>
                     <tr>
                         <td>
                             <a href="/index.php/buyers/{{$call->buyer->id}}">
