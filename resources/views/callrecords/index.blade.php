@@ -81,7 +81,7 @@
                         <td>{{$call->buyer->Phone}}</td>
                         <td> @if ($call->found == 1) yes @else no @endif </td>
                         <td> @if ($call->wantSee == 1) yes @else no @endif </td>
-                        <td>{{$scheudle}}</td>
+                        <td>{{$schedule}}</td>
                         <td> @if ($call->checked == 1) yes @else no @endif </td>
                         <td> @if ($call->sold == 1) yes @else no @endif </td>
                         <td>{{$call->created_at}}</td>
