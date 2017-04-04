@@ -61,7 +61,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="/callrecords/"><i class="fa fa-phone fa-fw"></i>Call record<span class="fa arrow"></span></a>
+                            <a href="callrecords/"><i class="fa fa-phone fa-fw"></i>Call record<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
                                     <a href="{{ url ('/callrecords/create') }}">New Call</a>
@@ -74,7 +74,7 @@
                         </li>
                         <!-- CarRequest menu -->
                         <li>
-                            <a href="/requestedcars/"><i class="fa fa-automobile fa-fw"></i>Requested Cars
+                            <a href="{{ url('/requestedcars/') }}"><i class="fa fa-automobile fa-fw"></i>Requested Cars
                                 {{--<span class="fa arrow"></span>--}}
                             </a>
                             {{--<ul class="nav nav-second-level">--}}

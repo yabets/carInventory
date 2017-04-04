@@ -216,12 +216,10 @@
             {{$cars->render()}}
         @endsection
         @include('widgets.panel', array('header'=>true, 'as'=>'htable'))
-<<<<<<< HEAD
-=======
+
             <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
 
             <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
 
->>>>>>> 08ee35b70204572241393a4cf43168a80426c0c3
     </div>
 @stop
