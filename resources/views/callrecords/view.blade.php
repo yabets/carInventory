@@ -155,12 +155,12 @@
             @endif
 
             <tr>
-                <td><a href="/index.php/callrecords/{{$car->id}}/edit">
+                <td><a href="/index.php/callrecords/{{$call->id}}/edit">
                         <button type="button" class="btn btn-primary">Edit</button>
                     </a>
                 </td>
                 <td>
-                    <form action="/index.php/callrecords/{{$car->id }}" method="POST">
+                    <form action="/index.php/callrecords/{{$call->id }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <button class="btn btn-danger">Delete</button>

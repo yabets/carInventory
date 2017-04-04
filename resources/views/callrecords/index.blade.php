@@ -20,6 +20,7 @@
                 <input class="form-control checkbox" type="checkbox" name="found" value="found"> Found cars <br>
                 <input class="form-control checkbox" type="checkbox" name="wantSee" value="wantSee"> Want to See <br>
                 <input class="form-control checkbox" type="checkbox" name="checked" value="checked"> Checked cars <br>
+                <input class="form-control checkbox" type="checkbox" name="seen" value="seen"> Seen cars <br>
                 <input class="form-control checkbox" type="checkbox" name="sold" value="sold"> Sold cars <br>
             </div>
             <div class="form-group col-md-7">
@@ -100,6 +101,7 @@
                                 @endforeach
                             @else
                                 @foreach ($call->requestedCars as $rCar)
+                                    <?php $rid = $rCar->id; ?>
                                     <a href="/index.php/requestedcars/{{$rCar->id}}">
                                         {{$rCar['Brand']}} -
                                         {{$rCar['Name']}} -
@@ -109,12 +111,18 @@
                             @endif
                         </td>
                         <td>
-                            <a href="/index.php/callrecords/{{$call->id}}">
+                            <?php if ($call->found == 1) {
+                                    $s = 'callrecords/' . $call->id;
+                                }else {
+                                    $s = 'requestedcars/' .$rid;
+                                }
+                            ?>
+                            <a href="/index.php/{{$s}}">
                                 <button type="button" class="btn btn-success">View</button>
                             </a>
                         </td>
                         <td>
-                            <a href="/index.php/callrecords/{{$call->id}}/edit">
+                            <a href="/index.php/{{$s}}/edit">
                                 <button type="button" class="btn btn-primary">Edit</button>
                             </a>
                         </td>

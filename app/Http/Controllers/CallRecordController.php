@@ -61,7 +61,12 @@ class CallRecordController extends Controller
         $call->found = $input['found'];
         if($input['found'] == 1){
             $call->wantSee = $input['wantSee'];
-            $call->schedule = $input['schedule'];
+            if($call->wantSee == 1){
+                $call->schedule = $input['schedule'];
+            }else{
+                $call->schedule = null;
+            }
+
             $call->checked = $input['checked'];
             $call->seen = $input['seen'];
             $call->sold = $input['sold'];
@@ -194,6 +199,10 @@ class CallRecordController extends Controller
     public function update(Request $request, $id)
     {
         CallRecord::findOrFail($id)->update($request->all());
+        $input = $request->all();
+        if($input['wantSee'] == 0){
+            //CallRecord::findOrFail($id)->schedule(array('schedule'=>'2020-04-27 00:00:00'));
+        }
         return redirect('callrecords');
     }
 
@@ -226,6 +235,9 @@ class CallRecordController extends Controller
         }
         if(isset($input['checked'])){
             $calls = $calls->where('checked', 1);
+        }
+        if(isset($input['seen'])){
+            $calls = $calls->where('seen', 1);
         }
         if(isset($input['sold'])){
             $calls = $calls->where('sold', 1);
