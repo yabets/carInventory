@@ -66,11 +66,11 @@
                 @foreach ($calls as $call)
                     <?php
                         $buyer = \App\Buyer::findOrFail($call->buyer_id);
-			if (isset($call->schedule)){
-	                        $scheudle = $call->schedule->diffForHumans();
+			            if (isset($call->schedule)){
+                            $schedule = $call->schedule->diffForHumans();
                     	}else{
-				$schedule = $call->schedule;
-			}
+				        $schedule = $call->schedule;
+			        }
 		    ?>
                     <tr>
                         <td>
