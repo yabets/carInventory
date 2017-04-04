@@ -160,8 +160,8 @@ class CarController extends Controller
             $car->Image = $fileName;
         }
         $car->update($request->except('Image'));
-        $cars = Car::latest()->get();
-        return view('cars.car', compact('cars'));
+        $cars = DB::table('cars')->paginate(20);
+        return view('cars.car')->with(['cars'=>$cars]);
     }
 
     /**
