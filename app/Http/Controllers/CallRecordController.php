@@ -11,6 +11,7 @@ use App\RequestedCar;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use DB;
 use Prophecy\Call\Call;
 
 class CallRecordController extends Controller
@@ -22,7 +23,9 @@ class CallRecordController extends Controller
      */
     public function index()
     {
-        $calls = CallRecord::latest()->get();
+        $calls = CallRecord::latest()->paginate(20);
+        //$calls  = DB::table('call_records')->paginate(20);
+        //$users = App\User::paginate(15);
         return view('callrecords.index', compact('calls'));
     }
 
@@ -59,6 +62,7 @@ class CallRecordController extends Controller
             $call->wantSee = $input['wantSee'];
             $call->schedule = $input['schedule'];
             $call->checked = $input['checked'];
+            $call->seen = $input['seen'];
             $call->sold = $input['sold'];
             $buyer->callRecords()->save($call);
             $found = new FoundCar();

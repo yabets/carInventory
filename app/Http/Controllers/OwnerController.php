@@ -10,6 +10,8 @@ use App\Http\Requests;
 
 use App\Owner;
 
+use DB;
+
 class OwnerController extends Controller
 {
     /**
@@ -19,8 +21,10 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        $owners = Owner::latest()->get();
-        //dd($cars);
+//        $owners = Owner::latest()->get();
+//        return view('owners.owner', compact('owners'));
+
+        $cars = DB::table('owners')->paginate(20);
         return view('owners.owner', compact('owners'));
     }
 

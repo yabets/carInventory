@@ -210,7 +210,6 @@
                             </td>
                         </tr>
                     @endforeach
-
                 </tbody>
             </table>
             {{$cars->render()}}

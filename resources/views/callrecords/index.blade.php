@@ -57,6 +57,7 @@
                     <th>Want See</th>
                     <th>Schedule</th>
                     <th>Checked</th>
+                    <th>Seen</th>
                     <th>Buy</th>
                     <th>Time</th>
                     <th>Car</th>
@@ -66,12 +67,14 @@
                 @foreach ($calls as $call)
                     <?php
                         $buyer = \App\Buyer::findOrFail($call->buyer_id);
-			            if (isset($call->schedule)){
+                        //strtotime($datestring)
+                            //if($val instanceof Carbon)
+			            if ($call->schedule instanceof \Carbon\Carbon){
                             $schedule = $call->schedule->diffForHumans();
                     	}else{
-				        $schedule = $call->schedule;
-			        }
-		    ?>
+                            $schedule = $call->schedule;
+                        }
+                    ?>
                     <tr>
                         <td>
                             <a href="/index.php/buyers/{{$call->buyer->id}}">
@@ -83,6 +86,7 @@
                         <td> @if ($call->wantSee == 1) yes @else no @endif </td>
                         <td>{{$schedule}}</td>
                         <td> @if ($call->checked == 1) yes @else no @endif </td>
+                        <td> @if ($call->seen == 1) yes @else no @endif </td>
                         <td> @if ($call->sold == 1) yes @else no @endif </td>
                         <td>{{$call->created_at}}</td>
                         <td>

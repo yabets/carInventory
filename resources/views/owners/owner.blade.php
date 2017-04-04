@@ -40,9 +40,9 @@
                             </td>
                         </tr>
                     @endforeach
-
                 </tbody>
             </table>
+            {{$owners->render()}}
         @endsection
         @include('widgets.panel', array('header'=>true, 'as'=>'htable'))
     </div>

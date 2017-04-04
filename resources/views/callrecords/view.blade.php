@@ -35,6 +35,10 @@
                     <td> @if ($call->checked == 1) yes @else no @endif </td>
                 </tr>
                 <tr>
+                    <td>Seen</td>
+                    <td> @if ($call->seen == 1) yes @else no @endif </td>
+                </tr>
+                <tr>
                     <td>Sold</td>
                     <td> @if ($call->sold == 1) yes @else no @endif </td>
                 </tr>

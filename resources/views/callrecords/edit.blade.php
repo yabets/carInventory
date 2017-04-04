@@ -68,6 +68,11 @@
                 <input type="radio" name="checked" value="0" @if($call->checked == 0) checked @endif> No
             </div>
             <div class="form-group col-md-3 foundcar">
+                <label>Seen</label>
+                <input type="radio" name="checked" value="1" @if($call->seen == 1) checked @endif> Yes
+                <input type="radio" name="checked" value="0" @if($call->seen == 0) checked @endif> No
+            </div>
+            <div class="form-group col-md-3 foundcar">
                 <label>Sold</label>
                 <input type="radio" name="sold" value="1" @if($call->sold == 1) checked @endif> Yes
                 <input type="radio" name="sold" value="0" @if($call->sold == 0) checked @endif> No

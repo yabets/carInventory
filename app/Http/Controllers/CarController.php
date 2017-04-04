@@ -23,10 +23,9 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
-        //$cars = Car::all();
+        $cars = Car::where('Status', 'available')->latest()->paginate(20);
 //        $cars = Car::where('Status', 'available')->paginate(3);
-        $cars = DB::table('cars')->paginate(20);
+        //$cars = DB::table('cars')->paginate(20);
         return view('cars.car')->with(['cars'=>$cars]);
     }
 
@@ -194,8 +193,8 @@ class CarController extends Controller
     public function filter(Request $request)
     {
         $input = $request->except('_token');
-        $cars = Car::latest()->get();
-        
+        $cars = Car::latest();
+
         if($input['brand'] != ''){
             $cars = $cars->where('Brand', $input['brand']);
         }
@@ -239,6 +238,7 @@ class CarController extends Controller
                return (data_get($car, 'Year') >= $input['yearFrom']) && (data_get($car, 'Year') <= $input['yearTo']);
             });
         }
+        $cars = $cars->paginate(20);
         return view('cars.car', compact('cars'));
     }
 }
