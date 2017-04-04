@@ -51,11 +51,13 @@
                $(".foundcar2").css('pointer-events', 'visible');
                $(".foundcar2").css('opacity', '1');
                $(".nofound2").css({'pointer-events':'none','opacity':'0.4'});
+                $("#count").val(2);
             });
             $("#nf2").click(function () {
                 $(".foundcar2").css({'pointer-events':'none','opacity':'0.4'});
                 $(".nofound2").css('pointer-events', 'visible');
                 $(".nofound2").css('opacity', '1');
+                $("#count").val(2);
             });
 //            $("#datepicker2").datepicker();
             $('#brand2').change(function(){
@@ -84,11 +86,13 @@
                $(".foundcar3").css('pointer-events', 'visible');
                $(".foundcar3").css('opacity', '1');
                $(".nofound3").css({'pointer-events':'none','opacity':'0.4'});
+                $("#count").val(3);
             });
             $("#nf3").click(function () {
                 $(".foundcar3").css({'pointer-events':'none','opacity':'0.4'});
                 $(".nofound3").css('pointer-events', 'visible');
                 $(".nofound3").css('opacity', '1');
+                $("#count").val(3);
             });
             $("#datepicker3").datepicker();
             $('#brand3').change(function(){
@@ -104,12 +108,12 @@
                 });
             });
 
-
         });
     </script>
 
     <form role="form" action="/index.php/callrecords" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="_cars" id="count" value="1">
         <div class="row">
             <h2 class="col-md-3">Buyer</h2>
         </div>
@@ -203,7 +207,6 @@
                 $names = explode(",", $params->Name);
                 $types = explode(",", $params->Type);
                 $colors = explode(",", $params->Color);
-                $status = explode(",", $params->Status);
                 $transmissions = explode(",", $params->Transmission);
             ?>
             <div class="row nofound">
@@ -294,7 +297,7 @@
                     <label>Plate</label>
                     <input name="plate" placeholder="plate">
                 </div>
-                <input type="radio" name="status" hidden value="not found" >git
+                <input name="status" hidden value="not found" >
                 <div class="form-group col-md-2">
                     <label>Meri</label>
                     <input type="radio" name="meri" value="yalezore" checked> yalezore
@@ -364,7 +367,6 @@
                 $names = explode(",", $params->Name);
                 $types = explode(",", $params->Type);
                 $colors = explode(",", $params->Color);
-                $status = explode(",", $params->Status);
                 $transmissions = explode(",", $params->Transmission);
             ?>
             <div class="row nofound2">
@@ -455,7 +457,7 @@
                     <label>Plate</label>
                     <input name="plate2" placeholder="plate">
                 </div>
-                <input type="radio" name="status2" hidden value="not found" >git
+                <input name="status2" hidden value="not found" >
                 <div class="form-group col-md-2">
                     <label>Meri</label>
                     <input type="radio" name="meri2" value="yalezore" checked> yalezore
@@ -477,8 +479,8 @@
             <div class="row">
                 <div class="form-group col-md-4">
                     <label>Found</label>
-                    <input type="radio" id="f3" name="found2" value="1"> Yes
-                    <input type="radio" id="nf3" name="found2" value="0"> No
+                    <input type="radio" id="f3" name="found3" value="1"> Yes
+                    <input type="radio" id="nf3" name="found3" value="0"> No
                 </div>
             </div>
             <div class="row foundcar3">
@@ -525,7 +527,6 @@
                 $names = explode(",", $params->Name);
                 $types = explode(",", $params->Type);
                 $colors = explode(",", $params->Color);
-                $status = explode(",", $params->Status);
                 $transmissions = explode(",", $params->Transmission);
             ?>
             <div class="row nofound3">
@@ -616,7 +617,7 @@
                     <label>Plate</label>
                     <input name="plate3" placeholder="plate">
                 </div>
-                <input type="radio" name="status3" hidden value="not found" >git
+                <input name="status3" hidden value="not found" >
                 <div class="form-group col-md-2">
                     <label>Meri</label>
                     <input type="radio" name="meri3" value="yalezore" checked> yalezore

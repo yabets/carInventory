@@ -56,6 +56,7 @@ class CallRecordController extends Controller
         $buyer->AltPhone = $input['altPhone'];
         $buyer->Star = $input['star'];
         $buyer->save();
+        //first car
         $call = new CallRecord;
         $call->found = $input['found'];
         if($input['found'] == 1){
@@ -81,10 +82,78 @@ class CallRecordController extends Controller
             $requested->PriceTo = $input["priceTo"];
             $requested->Transmission = $input["transmission"];
             $requested->Plate = $input["plate"];
-            $requested->Status = $input["status"];
+            $requested->Status = "not found";
             $requested->meri = $input["meri"];
             $requested->call_id = $call->id;
             $requested->save();
+        }
+
+        if($input['_cars'] == 2 || $input['_cars'] == 3) {
+            //second car
+            $call = new CallRecord;
+            $call->found = $input['found2'];
+            if ($input['found2'] == 1) {
+                $call->wantSee = $input['wantSee2'];
+                $call->schedule = $input['schedule2'];
+                $call->checked = $input['checked2'];
+                $call->seen = $input['seen2'];
+                $call->sold = $input['sold2'];
+                $buyer->callRecords()->save($call);
+                $found = new FoundCar();
+                $found->car_id = $input['car_id2'];
+                $found->call_id = $call->id;
+                $found->save();
+            } else {
+                $buyer->callRecords()->save($call);
+                $call->save();
+                $requested = new RequestedCar;
+                $requested->Brand = $input["brand2"];
+                $requested->Name = $input["name2"];
+                $requested->Year = $input["year2"];
+                $requested->Color = $input["color2"];
+                $requested->PriceFrom = $input["priceFrom2"];
+                $requested->PriceTo = $input["priceTo2"];
+                $requested->Transmission = $input["transmission2"];
+                $requested->Plate = $input["plate2"];
+                $requested->Status = "not found";
+                $requested->meri = $input["meri2"];
+                $requested->call_id = $call->id;
+                $requested->save();
+            }
+        }
+
+        if($input['_cars']==3) {
+            //third car
+            $call = new CallRecord;
+            $call->found = $input['found3'];
+            if ($input['found3'] == 1) {
+                $call->wantSee = $input['wantSee3'];
+                $call->schedule = $input['schedule3'];
+                $call->checked = $input['checked3'];
+                $call->seen = $input['seen3'];
+                $call->sold = $input['sold3'];
+                $buyer->callRecords()->save($call);
+                $found = new FoundCar();
+                $found->car_id = $input['car_id3'];
+                $found->call_id = $call->id;
+                $found->save();
+            } else {
+                $buyer->callRecords()->save($call);
+                $call->save();
+                $requested = new RequestedCar;
+                $requested->Brand = $input["brand3"];
+                $requested->Name = $input["name3"];
+                $requested->Year = $input["year3"];
+                $requested->Color = $input["color3"];
+                $requested->PriceFrom = $input["priceFrom3"];
+                $requested->PriceTo = $input["priceTo3"];
+                $requested->Transmission = $input["transmission3"];
+                $requested->Plate = $input["plate3"];
+                $requested->Status = "not found";
+                $requested->meri = $input["meri3"];
+                $requested->call_id = $call->id;
+                $requested->save();
+            }
         }
         return redirect('callrecords');
     }

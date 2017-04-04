@@ -99,7 +99,7 @@
                     </tr>
                     <tr>
                         <td>Owner Phone Number</td>
-                        <td><a href="/index.php/owners/{{$car->owner->id}}">{{$car->owner->Name}}</a></td>
+                        <td><a href="/index.php/owners/{{$car->owner->id}}">{{$car->owner->Phone}}</a></td>
                     </tr>
                 @endforeach
             @else
