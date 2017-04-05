@@ -17,7 +17,7 @@ class RequestedCarController extends Controller
      */
     public function index()
     {
-        $cars = RequestedCar::latest()->get();
+        $cars = RequestedCar::latest()->paginate(20);
         return view ('requestedcars.car', compact('cars'));
     }
 
@@ -92,9 +92,21 @@ class RequestedCarController extends Controller
         return redirect('requestedcars');
     }
 
-    public function search()
+    public function search(Request $request)
     {
-        return redirect('requestedcars');
+        $input = $request->except('_token');
+        $search = $input['search'];
+
+        $cars = RequestedCar::where('Brand', 'like', '%'.$search.'%')
+            ->orWhere('Name','like','%'.$search.'%')
+            ->orWhere('Year','like','%'.$search.'%')
+            ->orWhere('Color','like','%'.$search.'%')
+            ->orWhere('Transmission','like','%'.$search.'%')
+            ->orWhere('Plate','like','%'.$search.'%')
+            ->orWhere('Status','like','%'.$search.'%')
+            ->orWhere('Meri','like','%'.$search.'%')
+            ->paginate(20);
+        return view ('requestedcars.car', compact('cars'));
     }
 
     public function filter(Request $request){

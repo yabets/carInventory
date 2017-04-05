@@ -213,9 +213,9 @@
                             </td>
                         </tr>
                     @endforeach
-
                 </tbody>
             </table>
+            {{$cars->render()}}
         @endsection
         @include('widgets.panel', array('header'=>true, 'as'=>'htable'))
     </div>

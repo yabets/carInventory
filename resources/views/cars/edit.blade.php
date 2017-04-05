@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 @section('page_heading','Edit Car')
+@section('search_page','/index.php/cars/search')
+
 @section('section')
     {{--<form role="form" action="/index.php/cars/{{$car->id}}" method="post">--}}
     {{ Form::model($car, array('route' => array('cars.update', $car->id), 'method' => 'PUT', 'files' => true)) }}

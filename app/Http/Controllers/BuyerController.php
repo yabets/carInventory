@@ -17,7 +17,7 @@ class BuyerController extends Controller
      */
     public function index()
     {
-        $buyers = Buyer::latest()->get();
+        $buyers = Buyer::latest()->paginate(20);
         return view('buyers.buyer', compact('buyers'));
     }
 

@@ -124,9 +124,9 @@
 
                     </tr>
                 @endforeach
-
                 </tbody>
             </table>
+            {{$calls->render()}}
         @endsection
         @include('widgets.panel', array('header'=>true, 'as'=>'htable'))
     </div>

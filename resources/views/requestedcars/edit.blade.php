@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 @section('page_heading','Create New Car Request')
+@section('search_page','/index.php/requestedcars/search')
+
 @section('section')
 
     {{ Form::model($car, array('route' => array('requestedcars.update', $car->id), 'method' => 'PUT')) }}

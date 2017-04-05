@@ -37,6 +37,7 @@
 
                 </tbody>
             </table>
+            {{$buyers->render()}}
         @endsection
         @include('widgets.panel', array('header'=>true, 'as'=>'htable'))
     </div>

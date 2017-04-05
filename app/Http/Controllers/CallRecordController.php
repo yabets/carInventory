@@ -36,7 +36,7 @@ class CallRecordController extends Controller
      */
     public function create()
     {
-        $cars = Car::latest()->get();
+        $cars = Car::latest()->paginate(20);
         $params = Param::first();
         return view('callrecords.create', compact('cars', 'params'));
     }

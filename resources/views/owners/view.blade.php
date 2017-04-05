@@ -1,5 +1,6 @@
 @extends('layouts.dashboard')
 @section('page_heading', 'Car')
+@section('search_page','/index.php/owners/search')
 
 @section('section')
     <table class="table table-hover">

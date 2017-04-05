@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 @section('page_heading','Edit Owner')
+@section('search_page','/index.php/owners/search')
+
 @section('section')
 
     {{--<form role="form" action="/index.php/owners" method="post">--}}

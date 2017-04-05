@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 @section('page_heading','Create Car')
+@section('search_page','/index.php/cars/search')
+
 @section('section')
     <?php
         $owners = \App\Owner::all();
