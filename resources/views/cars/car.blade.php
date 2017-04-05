@@ -22,7 +22,6 @@
     <?php
         $params = \App\Param::first();
         $brands = explode(",", $params->Brand);
-//        $names = explode(",", $params->Name);
         $types = explode(",", $params->Type);
         $platetypes = explode(",", $params->PlateType);
         $colors = explode(",", $params->Color);
@@ -157,6 +156,7 @@
             <div class="col-lg-5">
                 <div class="form-group">
                     <label>Year</label>
+                    <select></select>
                     <select class="form-control" name="yearFrom">
                         <option value="1980">1980</option>
                         <option value="1981">1981</option>
@@ -199,6 +199,7 @@
                         <option value="2018">2018</option>
                     </select>
                     <label> - </label>
+                    <select></select>
                     <select class="form-control" name="yearTo">
                         <option value="1980">1980</option>
                         <option value="1981">1981</option>
