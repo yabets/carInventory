@@ -199,7 +199,6 @@
                         <option value="2018">2018</option>
                     </select>
                     <label> - </label>
-                    <select></select>
                     <select class="form-control" name="yearTo">
                         <option></option>
                         <option value="1980">1980</option>
