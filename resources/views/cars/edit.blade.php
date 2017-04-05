@@ -35,24 +35,22 @@
                 <div class="form-group">
                     {{ Form::label('brand', 'Brand') }}
                     <select class="form-control" id="brand" name="brand">
-                        <option value="{{$car->Brand}}" selected="selected">{{$car->Brand}}</option>
                         @foreach($brands as $brand)
-                            <option value="{{$brand}}" >{{$brand}}</option>
+                            <option value="{{$brand}}" @if($car->Brand == $brand) selected @endif>{{$brand}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="name">Name</label>
                     <select class="form-control" id="name" name="name">
-                        <option value="{{$car->Name}}" selected="selected">{{$car->Name}}</option>
+                        <option value="{{$car->Name}}" selected>{{$car->Name}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="name">Type</label>
                     <select class="form-control" id="name" name="type">
-                        <option value="{{$car->Type}}" selected="selected">{{$car->Type}}</option>
                         @foreach($types as $type)
-                            <option value="{{$type}}" >{{$type}}</option>
+                            <option value="{{$type}}" @if($car->Type == $type) selected @endif>{{$type}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -104,9 +102,8 @@
                 <div class="form-group">
                     <label for="color">Color</label>
                     <select class="form-control" id="color" name="color">
-                        <option value="{{$car->Color}}" selected="selected">{{$car->Color}}</option>
                         @foreach($colors as $color)
-                            <option value="{{$color}}" >{{$color}}</option>
+                            <option value="{{$color}}" @if($car->Color == $color) selected @endif>{{$color}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -122,9 +119,8 @@
                 <div class="form-group">
                     <label for="meri">Plate Type</label>
                     <select class="form-control" name="platetype">
-                        <option value="{{$car->PlateType}}">{{$car->PlateType}}</option>
                         @foreach($platetypes as $type)
-                            <option value="{{$type}}" >{{$type}}</option>
+                            <option value="{{$type}}" @if($car->PlateType == $type) selected @endif>{{$type}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -151,9 +147,8 @@
                 </div>
                 <div class="form-group">
                     <label for="transmission">Transmission</label>
-                        <input type="radio" name="transmission" value="{{$car->Transmission}}" checked>{{$car->Transmission}}
                     @foreach($transmissions as $transmission)
-                        <input type="radio" name="transmission" value="{{$transmission}}">{{$transmission}}
+                        <input type="radio" name="transmission" value="{{$transmission}}" @if($car->Transmission == $transmission) checked @endif>{{$transmission}}
                     @endforeach
                 </div>
                 <div class="form-group">
@@ -162,17 +157,15 @@
                 </div>
                 <div class="form-group">
                     <label>Status</label>
-                    <input type="radio" value="{{$car->Status}}" selected="selected" checked>{{$car->Status}}
                     @foreach($status as $statu)
-                        <input type="radio" name="status" value="{{$statu}}" >{{$statu}}
+                        <input type="radio" name="status" value="{{$statu}}" @if($car->Status == $statu) checked @endif>{{$statu}}
                     @endforeach
                 </div>
                 <div class="form-group">
                     <label for="owner">Owner Name</label>
                     <select class="form-control" id="owner" name="owner_id">
-                        <option value="{{$car->owner->id}}">{{$car->owner->Name}}</option>
                         @foreach ($owners as $owner)
-                            <option value="{{$owner->id}}">{{$owner->Name}}</option>
+                            <option value="{{$owner->id}}" @if($car->owner->id == $owner->id) selected @endif>{{$owner->Name}}</option>
                         @endforeach
                     </select>
                 </div>
