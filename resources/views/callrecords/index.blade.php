@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        </form>
+    </form>
 @endsection
 
 @section('section')
@@ -67,14 +67,14 @@
                 <tbody>
                 @foreach ($calls as $call)
                     <?php
-                        $buyer = \App\Buyer::findOrFail($call->buyer_id);
-                        //strtotime($datestring)
-                            //if($val instanceof Carbon)
-			            if ($call->schedule instanceof \Carbon\Carbon){
-                            $schedule = $call->schedule->diffForHumans();
-                    	}else{
-                            $schedule = $call->schedule;
-                        }
+                    $buyer = \App\Buyer::findOrFail($call->buyer_id);
+                    //strtotime($datestring)
+                    //if($val instanceof Carbon)
+                    if ($call->schedule instanceof \Carbon\Carbon){
+                        $schedule = $call->schedule->diffForHumans();
+                    }else{
+                        $schedule = $call->schedule;
+                    }
                     ?>
                     <tr>
                         <td>
@@ -109,16 +109,19 @@
                                 @endforeach
                             @endif
                         </td>
-                        <td>
-                            <a href="/index.php/callrecords/{{$call->id}}">
-                                <button type="button" class="btn btn-success">View</button>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/index.php/callrecords/{{$call->id}}/edit">
-                                <button type="button" class="btn btn-primary">Edit</button>
-                            </a>
-                        </td>
+                        @if($call->found == 1)
+                            <td>
+                                <a href="/index.php/callrecords/{{$call->id}}">
+                                    <button type="button" class="btn btn-success">View</button>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/index.php/callrecords/{{$call->id}}/edit">
+                                    <button type="button" class="btn btn-primary">Edit</button>
+                                </a>
+                            </td>
+                        @endif
+
                     </tr>
                 @endforeach
 
