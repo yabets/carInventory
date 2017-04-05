@@ -156,8 +156,8 @@
             <div class="col-lg-5">
                 <div class="form-group">
                     <label>Year</label>
-                    <select></select>
                     <select class="form-control" name="yearFrom">
+                        <option></option>
                         <option value="1980">1980</option>
                         <option value="1981">1981</option>
                         <option value="1982">1982</option>
@@ -201,6 +201,7 @@
                     <label> - </label>
                     <select></select>
                     <select class="form-control" name="yearTo">
+                        <option></option>
                         <option value="1980">1980</option>
                         <option value="1981">1981</option>
                         <option value="1982">1982</option>
