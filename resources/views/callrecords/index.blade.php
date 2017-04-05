@@ -101,7 +101,6 @@
                                 @endforeach
                             @else
                                 @foreach ($call->requestedCars as $rCar)
-                                    <?php $rid = $rCar->id; ?>
                                     <a href="/index.php/requestedcars/{{$rCar->id}}">
                                         {{$rCar['Brand']}} -
                                         {{$rCar['Name']}} -
@@ -111,19 +110,12 @@
                             @endif
                         </td>
                         <td>
-                            <?php if ($call->found == 1) {
-                                    $s = 'callrecords/' . $call->id;
-                                }else {
-                                    if(!isset($rid)){ $rid = "";}
-                                    $s = 'requestedcars/' .$rid;
-                                }
-                            ?>
-                            <a href="/index.php/{{$s}}">
+                            <a href="/index.php/callrecords/{{$call->id}}">
                                 <button type="button" class="btn btn-success">View</button>
                             </a>
                         </td>
                         <td>
-                            <a href="/index.php/{{$s}}/edit">
+                            <a href="/index.php/callrecords/{{$call->id}}/edit">
                                 <button type="button" class="btn btn-primary">Edit</button>
                             </a>
                         </td>
