@@ -114,6 +114,7 @@
                             <?php if ($call->found == 1) {
                                     $s = 'callrecords/' . $call->id;
                                 }else {
+                                    if(!isset($rid)){ $rid = "";}
                                     $s = 'requestedcars/' .$rid;
                                 }
                             ?>

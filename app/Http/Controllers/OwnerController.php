@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\Validator;
-
 use App\Http\Requests;
 
 use App\Owner;
@@ -24,7 +22,7 @@ class OwnerController extends Controller
 //        $owners = Owner::latest()->get();
 //        return view('owners.owner', compact('owners'));
 
-        $cars = DB::table('owners')->paginate(20);
+        $owners = DB::table('owners')->paginate(20);
         return view('owners.owner', compact('owners'));
     }
 
