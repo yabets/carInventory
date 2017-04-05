@@ -82,8 +82,8 @@
             </tr>
             <tr>
                 <td>Images</td>
-                <td width="500px" height="500px" class="text-center">
-                    <img src="/public/uploads/images/{{$car->Image}}"/>
+                <td class="text-center">
+                    <img class="img-rounded" width="400" height="400" src="/public/uploads/images/{{$car->Image}}"/>
                 </td>
             </tr>
             <tr>
