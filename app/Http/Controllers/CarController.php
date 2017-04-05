@@ -73,11 +73,11 @@ class CarController extends Controller
         $car->Color = $input["color"];
         $car->Price = $input["price"];
         $car->Plate = $input["plate"];
-	$car->Type = $input["type"];
-	$car->Transmission = $input["transmission"];
-	$car->PlateType = $input["platetype"];
-	$car->Status = $input["status"];
-	
+        $car->Type = $input["type"];
+        $car->Transmission = $input["transmission"];
+        $car->PlateType = $input["platetype"];
+        $car->Status = $input["status"];
+
         $car->location = $input["location"];
         $car->remark = $input["remark"];
         $car->meri = $input["meri"];
@@ -95,16 +95,9 @@ class CarController extends Controller
         }
         $car->owner_id = $input['owner_id'];
         $car->save();
-        return redirect('cars');
-//        $validator = Validator::make($input, [
-//            "name"=>"required|min:1|alpha_num"
-//        ]);
-//        if($validator->fails()){
-//            return redirect('post/create')
-//                ->withErrors($validator)
-//                ->withInput();
-//        }
+        $cars = Car::where('Status', 'available')->latest()->paginate(20);
 
+        return view('cars.car')->with(['cars'=>$cars]);
     }
 
     /**
@@ -142,7 +135,7 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $car = Car::findOrFail($id);
         if ($request->hasFile('image')) {
             // get the file object
@@ -159,7 +152,8 @@ class CarController extends Controller
             $car->Image = $fileName;
         }
         $car->update($request->except('Image'));
-        $cars = DB::table('cars')->paginate(20);
+
+        $cars = Car::where('Status', 'available')->latest()->paginate(20);
         return view('cars.car')->with(['cars'=>$cars]);
     }
 
@@ -172,7 +166,9 @@ class CarController extends Controller
     public function destroy($id)
     {
         Car::findOrFail($id)->delete();
-        return redirect('cars');
+
+        $cars = Car::where('Status', 'available')->latest()->paginate(20);
+        return view('cars.car')->with(['cars'=>$cars]);
     }
 
     public function search(Request $request)
@@ -230,12 +226,12 @@ class CarController extends Controller
         }
         if($input['priceFrom'] != '' and $input['priceTo'] != ''){
             $cars = $cars->filter(function($car)use($input){
-               return (data_get($car, 'Price') >= $input['priceFrom']) && (data_get($car, 'Price') <= $input['priceTo']);
+                return (data_get($car, 'Price') >= $input['priceFrom']) && (data_get($car, 'Price') <= $input['priceTo']);
             });
         }
         if($input['yearFrom'] != '' and $input['yearTo'] != ''){
             $cars = $cars->filter(function($car)use($input){
-               return (data_get($car, 'Year') >= $input['yearFrom']) && (data_get($car, 'Year') <= $input['yearTo']);
+                return (data_get($car, 'Year') >= $input['yearFrom']) && (data_get($car, 'Year') <= $input['yearTo']);
             });
         }
         $cars = $cars->paginate(20);
