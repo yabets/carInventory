@@ -80,9 +80,13 @@ class CarController extends Controller
         $car->PlateType = $input["platetype"];
         $car->Status = $input["status"];
         $car->location = $input["location"];
-        $car->remark = $input["remark"];
+        if(isset($input["remark"])){
+            $car->remark = $input["remark"];
+        }
         $car->meri = $input["meri"];
-        $car->mileage = $input["mileage"];
+        if(isset($input["mileage"])){
+            $car->mileage = $input["mileage"];
+        }
         $car->published = $input["published"];
         if($input['oname']!=""){
             $owner = new Owner;
