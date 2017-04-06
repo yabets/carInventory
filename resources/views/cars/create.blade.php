@@ -125,7 +125,7 @@
                     <label for="meri">Plate Type</label>
                     <select class="form-control" id="platetype" name="platetype">
                         @foreach($platetypes as $type)
-                            <option value="{{$type}}" >{{$type}}</option>
+                            <option value="{{$type}}" required>{{$type}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -153,23 +153,23 @@
                 <div class="form-group">
                     <label for="transmission">Transmission</label>
                     @foreach($transmissions as $transmission)
-                        <input type="radio" name="transmission" value="{{$transmission}}">{{$transmission}}
+                        <input type="radio" name="transmission" value="{{$transmission}}" required>{{$transmission}}
                     @endforeach
                 </div>
                 <div class="form-group">
                     <label>Mileage</label>
-                    <input class="form-control" type="number" min="0" name="mileage" placeholder="100,000">
+                    <input class="form-control" type="number" min="0" name="mileage" placeholder="100,000" required>
                     <p class="help-block">Example 100,000 250,000 959,900</p>
                 </div>
                 <div class="form-group">
                     <label>Status</label>
                     @foreach($status as $statu)
-                        <input type="radio" name="status" value="{{$statu}}" >{{$statu}}
+                        <input type="radio" name="status" value="{{$statu}}" required>{{$statu}}
                     @endforeach
                 </div>
                 <div class="form-group">
                     <label>Location</label>
-                    <input class="form-control" name="location" placeholder="location">
+                    <input class="form-control" name="location" placeholder="location" required>
                     <p class="help-block">Example Kera, Saris, Bole, Piassa, Arat Kilo</p>
                 </div>
                 <div>
