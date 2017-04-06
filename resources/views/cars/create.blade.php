@@ -7,7 +7,6 @@
         $owners = \App\Owner::all();
         $params = \App\Param::first();
         $brands = explode(",", $params->Brand);
-//        $names = explode(",", $params->Name);
         $types = explode(",", $params->Type);
     $platetypes = explode(",", $params->PlateType);
         $colors = explode(",", $params->Color);
@@ -19,9 +18,9 @@
             $("#platetype").change(function(){
                 if($("#platetype option:selected").text() == "new"){
                     console.log($("#platetype option:selected").text());
-                    $("#plate").prop("disabled", true);
+                    $("#plate").prop("hidden", true);
                 }else{
-                    $("#plate").prop("disabled", false);
+                    $("#plate").prop("hidden", false);
                 }
             });
             $('#brand').change(function(){
@@ -132,7 +131,7 @@
                 </div>
                 <div class="form-group">
                     <label>Plate</label>
-                    <input class="form-control" id="plate" name="plate" placeholder="plate" disabled>
+                    <input class="form-control" id="plate" name="plate" placeholder="plate" hidden>
                     <p class="help-block">Example AA-2-A-12345, OR-3-12345 </p>
                 </div>
 
