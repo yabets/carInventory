@@ -18,9 +18,9 @@
             $("#platetype").change(function(){
                 if($("#platetype option:selected").text() == "new"){
                     console.log($("#platetype option:selected").text());
-                    $("#plate").prop("hidden", true);
+                    $("#plate").prop("disabled", true);
                 }else{
-                    $("#plate").prop("hidden", false);
+                    $("#plate").prop("disabled", false);
                 }
             });
             $('#brand').change(function(){

@@ -72,12 +72,13 @@ class CarController extends Controller
         $car->Year = $input["year"];
         $car->Color = $input["color"];
         $car->Price = $input["price"];
-        $car->Plate = $input["plate"];
+        if(isset($input["plate"])){
+            $car->Plate = $input["plate"];
+        }
         $car->Type = $input["type"];
         $car->Transmission = $input["transmission"];
         $car->PlateType = $input["platetype"];
         $car->Status = $input["status"];
-
         $car->location = $input["location"];
         $car->remark = $input["remark"];
         $car->meri = $input["meri"];
