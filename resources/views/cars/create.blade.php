@@ -45,6 +45,7 @@
                 <div class="form-group">
                     {{ Form::label('brand', 'Brand') }}
                     <select class="form-control" id="brand" name="brand" required>
+                        <option></option>
                         @foreach($brands as $brand)
                             <option value="{{$brand}}" >{{$brand}}</option>
                         @endforeach
@@ -123,7 +124,7 @@
 
                 <div class="form-group">
                     <label for="meri">Plate Type</label>
-                    <select class="form-control" id="platetype" name="platetype" required>
+                    <select class="form-control" id="platetype" name="platetype">
                         @foreach($platetypes as $type)
                             <option value="{{$type}}" >{{$type}}</option>
                         @endforeach
