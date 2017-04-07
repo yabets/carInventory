@@ -34,7 +34,7 @@
             </tr>
             <tr>
                 <td>
-                    <a href="/index.php/param/edit">
+                    <a href="/index.php/paramedit">
                         <button type="button" class="btn btn-primary">Edit</button>
                     </a>
                 </td>

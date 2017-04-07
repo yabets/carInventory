@@ -27,6 +27,9 @@
             });
             $('#brandBtn').click(function(){
                 var brand = $('#brandName').val();
+                if(brand === ''){
+                    return false;
+                }
                 console.log(brand);
                 $.ajax({
                     method: "GET",

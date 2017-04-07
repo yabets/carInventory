@@ -65,7 +65,9 @@ class ParamController extends Controller
         $brand = $request['brand'];
         $param = Param::first();
         $name = unserialize($param->Name);
-        $name[$brand] = '';
+        if($brand != ''){
+            $name[$brand] = '';    
+        }
         $param->Name = serialize($name);
         $param->Brand = $param->Brand.','. $brand;
         $param->save();
