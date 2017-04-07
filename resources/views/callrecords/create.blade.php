@@ -216,6 +216,7 @@
                 <div class="form-group col-md-2">
                     {{ Form::label('brand', 'Brand') }}
                     <select class="form-control" id="brand" name="brand">
+                        <option></option>
                         @foreach($brands as $brand)
                             <option value="{{$brand}}" >{{$brand}}</option>
                         @endforeach
