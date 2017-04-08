@@ -57,7 +57,7 @@ class ParamController extends Controller
         $model = $request['name'];
         $param = Param::first();
         //$name = unserialize($param->Name);
-        $name = unserialize(base64_decode($param->Name));
+        //$name = unserialize(base64_decode($param->Name));
         // $toDatabse = base64_encode(serialize($data));  // Save to database
         // $fromDatabase = unserialize(base64_decode($data)); //Getting Save Format 
         $name[$brand] = $model;
@@ -76,6 +76,7 @@ class ParamController extends Controller
         // $toDatabse = base64_encode(serialize($data));  // Save to database
         // $fromDatabase = unserialize(base64_decode($data)); //Getting Save Format 
         if($brand != ''){
+            dd($name);
             $name[$brand] = '';    
         }
         $param->Name = serialize(base64_encode($name));
