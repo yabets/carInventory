@@ -31,7 +31,9 @@ class ParamController extends Controller
     {
         $param = Param::first();
         $brands = $param["Brand"];
-        $names = unserialize($param["Name"]);
+        $names = unserialize(base64_decode($param["Name"]));
+        // $toDatabse = base64_encode(serialize($data));  // Save to database
+        // $fromDatabase = unserialize(base64_decode($data)); //Getting Save Format 
         return view('params', compact('param', 'brands', 'names'));
     }
 
@@ -54,9 +56,14 @@ class ParamController extends Controller
         $brand = $request['brand'];
         $model = $request['name'];
         $param = Param::first();
-        $name = unserialize($param->Name);
+        //$name = unserialize($param->Name);
+        $name = unserialize(base64_decode($param->Name));
+        // $toDatabse = base64_encode(serialize($data));  // Save to database
+        // $fromDatabase = unserialize(base64_decode($data)); //Getting Save Format 
         $name[$brand] = $model;
-        $param->Name = serialize($name);
+        $param->Name = serialize(base64_encode($name));
+        // $toDatabse = base64_encode(serialize($data));  // Save to database
+        // $fromDatabase = unserialize(base64_decode($data)); //Getting Save Format 
         $param->save();
         return 'done';
     }
@@ -64,11 +71,14 @@ class ParamController extends Controller
     public function brand(Request $request){
         $brand = $request['brand'];
         $param = Param::first();
-        $name = unserialize($param->Name);
+        $name = unserialize(base64_decode($param->Name));
+        //$names = unserialize(base64_decode($param["Name"]));
+        // $toDatabse = base64_encode(serialize($data));  // Save to database
+        // $fromDatabase = unserialize(base64_decode($data)); //Getting Save Format 
         if($brand != ''){
             $name[$brand] = '';    
         }
-        $param->Name = serialize($name);
+        $param->Name = serialize(base64_encode($name));
         $param->Brand = $param->Brand.','. $brand;
         $param->save();
         return $param->Brand. " " . $param->Name;
