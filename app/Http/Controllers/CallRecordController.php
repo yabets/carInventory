@@ -203,6 +203,21 @@ class CallRecordController extends Controller
         if($input['found'] == 1){
             CallRecord::findOrFail($id)->update($request->all());
         }else{
+            if(isset($input['requestedNew']) && $input['requestedNew'] == 1){
+                $requested = new RequestedCar;
+                $requested->Brand = $input["brandNew"];
+                $requested->Name = $input["nameNew"];
+                $requested->Year = $input["yearNew"];
+                $requested->Color = $input["colorNew"];
+                $requested->PriceFrom = $input["priceFromNew"];
+                $requested->PriceTo = $input["priceToNew"];
+                if(!isset($input["transmissionNew"])) {$requested->Transmission = $input["transmissionNew"];}
+                if(!isset($input["plateNew"])) {$requested->Plate = $input["plateNew"];}
+                $requested->Status = "not found";
+                if(!isset($input["meriNew"])) {$requested->meri = $input["meriNewNew"];}
+                $requested->call_id = $id;
+                $requested->save();
+            }
             RequestedCar::findOrFail($request->requestedId)->update($request->all());
         }
         return redirect('callrecords');

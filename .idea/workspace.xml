@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ac76c0b1-5b05-48ce-8bdb-aa5ba736802f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CallRecordController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CallRecordController.php" />
     </list>
     <list id="46c035ba-cadc-4167-9fb6-88a5634db97e" name="New changelist" comment="" />
     <ignored path="blog.iws" />
@@ -27,7 +28,77 @@
     <favorites_list name="blog" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/callrecords/edit.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="295">
+                  <caret line="330" column="53" selection-start-line="330" selection-start-column="53" selection-end-line="330" selection-end-column="53" />
+                  <folding>
+                    <element signature="e#12097#12197#0#HTML" expanded="false" />
+                    <element signature="e#13076#15461#0#HTML" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CallRecordController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CallRecordController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="385">
+                  <caret line="217" column="42" selection-start-line="217" selection-start-column="42" selection-end-line="217" selection-end-column="42" />
+                  <folding>
+                    <element signature="e#1524#2918#0#PHP" expanded="false" />
+                    <element signature="e#6141#6263#0#PHP" expanded="false" />
+                    <element signature="e#6268#6408#0#PHP" expanded="false" />
+                    <element signature="e#6414#6554#0#PHP" expanded="false" />
+                    <element signature="e#6795#6977#0#PHP" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/callrecords/create.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="81">
+                  <caret line="211" column="12" selection-start-line="211" selection-start-column="12" selection-end-line="306" selection-end-column="18" />
+                  <folding>
+                    <element signature="e#9506#9610#0#HTML" expanded="false" />
+                    <element signature="e#9665#10087#0#HTML" expanded="false" />
+                    <element signature="e#10104#10355#0#HTML" expanded="false" />
+                    <element signature="e#10372#12882#0#HTML" expanded="false" />
+                    <element signature="e#12899#13276#0#HTML" expanded="false" />
+                    <element signature="e#13293#13618#0#HTML" expanded="false" />
+                    <element signature="e#13650#14493#0#HTML" expanded="false" />
+                    <element signature="e#13692#13960#0#HTML" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/callrecords/create.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-6995">
+                  <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
+                  <folding>
+                    <element signature="e#25811#28312#0#HTML" expanded="false" />
+                    <element signature="e#25905#28289#0#HTML" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -179,18 +250,12 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="callrecords" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -204,11 +269,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,7 +382,7 @@
       <workItem from="1491390338894" duration="4096000" />
       <workItem from="1491624097735" duration="827000" />
       <workItem from="1491625544372" duration="259000" />
-      <workItem from="1491790858927" duration="6709000" />
+      <workItem from="1491790858927" duration="7279000" />
     </task>
     <task id="LOCAL-00001" summary="make year dropdown, fix CallRecord $rid field and fix OwnerController">
       <created>1491380245630</created>
@@ -421,18 +482,32 @@
       <option name="project" value="LOCAL" />
       <updated>1491798696188</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="edit requeted car with new request issude found">
+      <created>1491798874842</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1491798874842</updated>
+    </task>
+    <task id="LOCAL-00016" summary="edit requeted car with new request issude found">
+      <created>1491799425941</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1491799425941</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87639000" />
+    <option name="totallyTimeSpent" value="88209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15069444" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15069444" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942554" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942554" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
@@ -781,20 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CallRecordController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="155" column="84" selection-start-line="155" selection-start-column="84" selection-end-line="155" selection-end-column="84" />
-          <folding>
-            <element signature="e#1524#2918#0#PHP" expanded="false" />
-            <element signature="e#6141#6263#0#PHP" expanded="false" />
-            <element signature="e#6268#6408#0#PHP" expanded="false" />
-            <element signature="e#6414#6554#0#PHP" expanded="false" />
-            <element signature="e#6795#6977#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/callrecords/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="71">
@@ -815,41 +876,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/callrecords/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1585">
-          <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
-          <folding>
-            <element signature="e#10104#10355#0#HTML" expanded="false" />
-            <element signature="e#10209#10332#0#HTML" expanded="false" />
-            <element signature="e#10372#12882#0#HTML" expanded="false" />
-            <element signature="e#10477#12859#0#HTML" expanded="false" />
-            <element signature="e#12899#13276#0#HTML" expanded="false" />
-            <element signature="e#13006#13253#0#HTML" expanded="false" />
-            <element signature="e#13293#13618#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParamController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/callrecords/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="226" column="14" selection-start-line="226" selection-start-column="14" selection-end-line="226" selection-end-column="14" />
-          <folding>
-            <element signature="e#3219#3744#0#HTML" expanded="false" />
-            <element signature="e#3753#5255#0#HTML" expanded="false" />
-            <element signature="e#5431#11398#0#HTML" expanded="false" />
-            <element signature="e#6279#8868#0#HTML" expanded="false" />
-            <element signature="e#9787#11383#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -882,6 +913,48 @@
         <state relative-caret-position="-1714">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/callrecords/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="211" column="12" selection-start-line="211" selection-start-column="12" selection-end-line="306" selection-end-column="18" />
+          <folding>
+            <element signature="e#9506#9610#0#HTML" expanded="false" />
+            <element signature="e#9665#10087#0#HTML" expanded="false" />
+            <element signature="e#10104#10355#0#HTML" expanded="false" />
+            <element signature="e#10372#12882#0#HTML" expanded="false" />
+            <element signature="e#12899#13276#0#HTML" expanded="false" />
+            <element signature="e#13293#13618#0#HTML" expanded="false" />
+            <element signature="e#13650#14493#0#HTML" expanded="false" />
+            <element signature="e#13692#13960#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CallRecordController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="217" column="42" selection-start-line="217" selection-start-column="42" selection-end-line="217" selection-end-column="42" />
+          <folding>
+            <element signature="e#1524#2918#0#PHP" expanded="false" />
+            <element signature="e#6141#6263#0#PHP" expanded="false" />
+            <element signature="e#6268#6408#0#PHP" expanded="false" />
+            <element signature="e#6414#6554#0#PHP" expanded="false" />
+            <element signature="e#6795#6977#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/callrecords/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="330" column="53" selection-start-line="330" selection-start-column="53" selection-end-line="330" selection-end-column="53" />
+          <folding>
+            <element signature="e#12097#12197#0#HTML" expanded="false" />
+            <element signature="e#13076#15461#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
