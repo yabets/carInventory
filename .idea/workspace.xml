@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ac76c0b1-5b05-48ce-8bdb-aa5ba736802f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CallRecordController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CallRecordController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/callrecords/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/callrecords/edit.blade.php" />
     </list>
     <list id="46c035ba-cadc-4167-9fb6-88a5634db97e" name="New changelist" comment="" />
     <ignored path="blog.iws" />
@@ -323,7 +321,7 @@
       <workItem from="1491390338894" duration="4096000" />
       <workItem from="1491624097735" duration="827000" />
       <workItem from="1491625544372" duration="259000" />
-      <workItem from="1491790858927" duration="6601000" />
+      <workItem from="1491790858927" duration="6709000" />
     </task>
     <task id="LOCAL-00001" summary="make year dropdown, fix CallRecord $rid field and fix OwnerController">
       <created>1491380245630</created>
@@ -416,11 +414,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491797076695</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="edit requeted car with new request issude found">
+      <created>1491798696188</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1491798696188</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87531000" />
+    <option name="totallyTimeSpent" value="87639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -470,7 +475,8 @@
     <MESSAGE value="fix carController with consistent views" />
     <MESSAGE value="fix pagination search for requested cars" />
     <MESSAGE value="call record view, edit and update&#10;params fetch and update in new table(names)" />
-    <option name="LAST_COMMIT_MESSAGE" value="call record view, edit and update&#10;params fetch and update in new table(names)" />
+    <MESSAGE value="edit requeted car with new request issude found" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit requeted car with new request issude found" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
