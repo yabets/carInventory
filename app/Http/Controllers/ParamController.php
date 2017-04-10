@@ -7,6 +7,7 @@ use App\RequestedCar;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use DB;
 
 class ParamController extends Controller
 {
@@ -31,10 +32,7 @@ class ParamController extends Controller
     {
         $param = Param::first();
         $brands = $param["Brand"];
-        $names = unserialize(base64_decode($param["Name"]));
-        // $toDatabse = base64_encode(serialize($data));  // Save to database
-        // $fromDatabase = unserialize(base64_decode($data)); //Getting Save Format 
-        return view('params', compact('param', 'brands', 'names'));
+        return view('params', compact('param', 'brands'));
     }
 
     /**
@@ -52,36 +50,49 @@ class ParamController extends Controller
         return redirect('/param');
     }
 
+    /**
+     * Update names table with model name for selected brand
+     *
+     * @param Request $request
+     * @return string
+     */
     public function updates(Request $request){
         $brand = $request['brand'];
         $model = $request['name'];
-        $param = Param::first();
+//        $param = Param::first();
+//        DB::table('names')
+//            ->where('Brand', $brand)
+//            ->update('Name', $model);
+        //DB::table('names')->insert(['Brand' => $brand, 'Name' => $model ]);
+        DB::table('names')->where('Brand', $brand)->update(['Name' => $model]);
+            //->insert(['Brand' => $brand, 'Name' => $model ]);
         //$name = unserialize($param->Name);
-        //$name = unserialize(base64_decode($param->Name));
-        // $toDatabse = base64_encode(serialize($data));  // Save to database
-        // $fromDatabase = unserialize(base64_decode($data)); //Getting Save Format 
-        $name[$brand] = $model;
-        $param->Name = serialize(base64_encode($name));
-        // $toDatabse = base64_encode(serialize($data));  // Save to database
-        // $fromDatabase = unserialize(base64_decode($data)); //Getting Save Format 
-        $param->save();
-        return 'done';
+        //DB::table('users')
+//        ->where('id', 1)
+//            ->update(['votes' => 1]);
+//        $name[$brand] = $model;
+        //$param->Name = serialize($name);
+//        $param->save();
+        return 'updated';
     }
 
+    /**
+     * Insert a new brand
+     *
+     * @param Request $request
+     * @return string
+     */
     public function brand(Request $request){
         $brand = $request['brand'];
         $param = Param::first();
-        $name = unserialize(base64_decode($param->Name));
-        //$names = unserialize(base64_decode($param["Name"]));
-        // $toDatabse = base64_encode(serialize($data));  // Save to database
-        // $fromDatabase = unserialize(base64_decode($data)); //Getting Save Format 
+        //$name = unserialize($param->Name);
         if($brand != ''){
-            dd($name);
             $name[$brand] = '';    
         }
-        $param->Name = serialize(base64_encode($name));
+        //$param->Name = serialize($name);
         $param->Brand = $param->Brand.','. $brand;
         $param->save();
-        return $param->Brand. " " . $param->Name;
+        DB::table('names')->insert(['Brand' => $brand]);
+        return $param->Brand;
     }
 }

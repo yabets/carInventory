@@ -200,8 +200,10 @@ class CallRecordController extends Controller
     {
         CallRecord::findOrFail($id)->update($request->all());
         $input = $request->all();
-        if($input['wantSee'] == 0){
-            //CallRecord::findOrFail($id)->schedule(array('schedule'=>'2020-04-27 00:00:00'));
+        if($input['found'] == 1){
+            CallRecord::findOrFail($id)->update($request->all());
+        }else{
+            RequestedCar::findOrFail($request->requestedId)->update($request->all());
         }
         return redirect('callrecords');
     }

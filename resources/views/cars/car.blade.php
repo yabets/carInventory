@@ -9,6 +9,7 @@
                 selBrand = $('#brand').find(':selected').val();
                 url = "/index.php/param/" + selBrand;
                 $.get(url, function(data){
+                    console.log(data);
                     var res = data.split(",");
                     html = "<option></option>";
                     for(var key in res) {

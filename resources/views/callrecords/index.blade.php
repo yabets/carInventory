@@ -109,7 +109,6 @@
                                 @endforeach
                             @endif
                         </td>
-                        @if($call->found == 1)
                             <td>
                                 <a href="/index.php/callrecords/{{$call->id}}">
                                     <button type="button" class="btn btn-success">View</button>
@@ -120,7 +119,6 @@
                                     <button type="button" class="btn btn-primary">Edit</button>
                                 </a>
                             </td>
-                        @endif
 
                     </tr>
                 @endforeach

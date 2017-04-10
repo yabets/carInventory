@@ -9,10 +9,6 @@
                 <td>{{$param->Brand}}</td>
             </tr>
             <tr>
-                <td>Name</td>
-                <td>{!!json_encode(unserialize($param->Name))!!}</td>
-            </tr>
-            <tr>
                 <td>Type</td>
                 <td>{{$param->Type}}</td>
             </tr>

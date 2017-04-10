@@ -30,9 +30,10 @@ Route::get('/params',function()
 });
 
 Route::get('/param/{brand}', function ($brand){
-    $param = Param::first();
-    $names = unserialize($param["Name"]);
-    return $names[$brand];
+    $names = DB::table('names')->where('Brand', $brand)->get();
+    foreach ($names as $name) {
+        return $name->Name;
+    }
 });
 
 Route::get('/paramupdate', 'ParamController@updates');
