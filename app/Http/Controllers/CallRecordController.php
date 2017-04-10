@@ -85,10 +85,10 @@ class CallRecordController extends Controller
             $requested->Color = $input["color"];
             $requested->PriceFrom = $input["priceFrom"];
             $requested->PriceTo = $input["priceTo"];
-            $requested->Transmission = $input["transmission"];
-            $requested->Plate = $input["plate"];
+            if(!isset($input["transmission"])) {$requested->Transmission = $input["transmission"];}
+            if(!isset($input["plate"])) {$requested->Plate = $input["plate"];}
             $requested->Status = "not found";
-            $requested->meri = $input["meri"];
+            if(!isset($input["meri"])) {$requested->meri = $input["meri"];}
             $requested->call_id = $call->id;
             $requested->save();
         }
@@ -118,10 +118,10 @@ class CallRecordController extends Controller
                 $requested->Color = $input["color2"];
                 $requested->PriceFrom = $input["priceFrom2"];
                 $requested->PriceTo = $input["priceTo2"];
-                $requested->Transmission = $input["transmission2"];
-                $requested->Plate = $input["plate2"];
+                if(!isset($input["transmission2"])) {$requested->Transmission = $input["transmission2"];}
+                if(!isset($input["plate2"])) {$requested->Plate = $input["plate2"];}
                 $requested->Status = "not found";
-                $requested->meri = $input["meri2"];
+                if(!isset($input["meri2"])) {$requested->meri = $input["meri2"];}
                 $requested->call_id = $call->id;
                 $requested->save();
             }
@@ -152,10 +152,10 @@ class CallRecordController extends Controller
                 $requested->Color = $input["color3"];
                 $requested->PriceFrom = $input["priceFrom3"];
                 $requested->PriceTo = $input["priceTo3"];
-                $requested->Transmission = $input["transmission3"];
-                $requested->Plate = $input["plate3"];
+                if(!isset($input["transmission3"])) {$requested->Transmission = $input["transmission3"];}
+                if(!isset($input["plate3"])) {$requested->Plate = $input["plate3"];}
                 $requested->Status = "not found";
-                $requested->meri = $input["meri3"];
+                if(!isset($input["meri3"])) {$requested->meri = $input["meri3"];}
                 $requested->call_id = $call->id;
                 $requested->save();
             }

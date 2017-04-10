@@ -221,6 +221,10 @@
             </div>
         </div>
         @endforeach
+        @if ($call->requestedCars->isEmpty())
+            <input hiddent name="requestedNew" value="1">
+            <button>New Request</button>
+        @endif
     @endif
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
